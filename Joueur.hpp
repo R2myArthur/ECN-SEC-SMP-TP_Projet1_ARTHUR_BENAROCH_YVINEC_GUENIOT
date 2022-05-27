@@ -27,14 +27,17 @@ class Joueur {
     */
     Joueur(string name);
     /**
-    *  Je comprends pas a quoi ca sert ca? ME rappelle plus...
+    *  Définir la liste des coordonnées à partir du point arrière du bateau, de la taille et de son orientation
+    *  @param taille      : taille du bateau
+    *  @param point_coord : Point de coordonnée de l'arrière du bateau
+    *  @param orientation : orientation du bateau
     */
-    vector<Coordonnee> ConfigurerListeCoord(uint8_t taille, Coordonnee point_coord, orientation_t orientation);
+    vector<Coordonnee> DefinirListeCoord(uint8_t taille, Coordonnee point_coord, orientation_t orientation);
     // + ConfigurerListeCoord(taille, point_coord, orientation): vec<coord>
-
-    VerifierConflitPlateau(Coordonnee )
     // - VerifierConflitPlateau(list_coord): bool
     // - VerifierConflitBateau(list_coord): bool
     // - GetEtatVie(): vector<coordonnee>
 
-}  
+}  /*
+    
+*/
