@@ -32,7 +32,7 @@ class Joueur {
     vector<Coordonnee> ConfigurerListeCoord(uint8_t taille, Coordonnee point_coord, orientation_t orientation);
     // + ConfigurerListeCoord(taille, point_coord, orientation): vec<coord>
 
-    VerifierConflitPlateau()
+    VerifierConflitPlateau(Coordonnee )
     // - VerifierConflitPlateau(list_coord): bool
     // - VerifierConflitBateau(list_coord): bool
     // - GetEtatVie(): vector<coordonnee>

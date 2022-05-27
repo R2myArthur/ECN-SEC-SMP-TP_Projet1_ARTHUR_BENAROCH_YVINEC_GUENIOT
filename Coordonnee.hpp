@@ -12,4 +12,5 @@ class Coordonnee {
     Coordonnee(char x,int y);
     int get_y();
     char get_x();
+    bool operator==( Coordonnee &second_coord) const;
 };

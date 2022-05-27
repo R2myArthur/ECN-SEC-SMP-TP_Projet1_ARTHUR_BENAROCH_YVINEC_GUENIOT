@@ -12,3 +12,10 @@ int Coordonnee::get_y(){
 char Coordonnee::get_x(){
   return x;
 }
+
+bool Coordonnee::operator==( Coordonnee &second_coord) const {
+    if( (this->x == second_coord.get_x()) && (this->y == second_coord.get_y()) )
+        return true;
+    else
+        return false;
+}
