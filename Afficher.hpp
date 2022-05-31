@@ -42,4 +42,6 @@ class Afficher{
     void afficher_plateau_bas_Joueur(Joueur &j1_a_afficher);
     void deroulement_joueur(Joueur &joueur_qui_joue, Joueur &adversaire);
     void affichage_bateau_selection(bool orientation, std::string nom_bateau);
+    void ClearScrollback();
+
 };

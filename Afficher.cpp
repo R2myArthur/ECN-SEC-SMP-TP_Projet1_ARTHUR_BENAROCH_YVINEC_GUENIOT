@@ -95,11 +95,18 @@ void Afficher::deroulement_joueur(Joueur &joueur_qui_joue, Joueur &adversaire){
   this->afficher_plateau_haut_Joueur(joueur_qui_joue,adversaire);
   this->afficher_plateau_bas_Joueur(joueur_qui_joue);
   //std::this_thread::sleep_for(std::chrono::milliseconds(3000));
-  do {
-       std::cout << "Press ENTER to exit" << std::endl;
-       std::getline(std::cin, myString);
-  } while (myString.length() != 0);
+do{
+  std::cout<<"press enter pour passer au joueur suivant"<<std::endl;
+  std::cin>>myString;
+}while(myString != "\n");
   
+  this->ClearScrollback();
+}
+
+void Afficher::ClearScrollback()
+{
+    cout << "\x1B[3J\x1B[H";
+    cout << "\x1B[2J\x1B[H";
 }
 
 void Afficher::affichage_bateau_selection(bool orientation, std::string nom_bateau){
