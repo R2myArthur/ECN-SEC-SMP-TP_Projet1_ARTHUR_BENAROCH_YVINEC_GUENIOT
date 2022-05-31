@@ -95,10 +95,12 @@ void Afficher::deroulement_joueur(Joueur &joueur_qui_joue, Joueur &adversaire){
   this->afficher_plateau_haut_Joueur(joueur_qui_joue,adversaire);
   this->afficher_plateau_bas_Joueur(joueur_qui_joue);
   //std::this_thread::sleep_for(std::chrono::milliseconds(3000));
-do{
-  std::cout<<"press enter pour passer au joueur suivant"<<std::endl;
-  std::cin>>myString;
-}while(myString != "\n");
+  while (1) {
+    if (std::cin.get() == '\n') {
+      std::cout << "Enter key is pressed" << std::endl;
+      break;
+    }
+    }
   
   this->ClearScrollback();
 }
