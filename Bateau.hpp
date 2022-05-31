@@ -1,3 +1,13 @@
+/**
+ * \file     Bateau.hpp
+ * \brief    Fichier Header de la classe Bateau
+ * \author   Arthur, Benaroch, Gueniot, Yvinec
+ * \version  0.1
+ * \date     20 Mai 2022
+ *
+ * Contient l'ensemble des définitions de la classe Bateau du projet bataille navale
+ */
+
 #pragma once
 
 #include <iostream>
