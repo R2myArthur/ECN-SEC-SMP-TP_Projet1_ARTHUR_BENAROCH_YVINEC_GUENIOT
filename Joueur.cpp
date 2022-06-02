@@ -12,40 +12,116 @@
 #include "Afficher.hpp"
 
 /**
-  * <li>Déclaration du construsteur de la classe Joueur
+  * <li>Définition du construsteur de la classe Joueur
   */
-Joueur::Joueur(std::string nom){
+Joueur::Joueur(std::string nom, bool _is_a_bot){
     Coordonnee coord;
     Afficher affichage_bateau;
     std::vector<Coordonnee> liste_coord;
     this->nom = nom;
+    this->is_a_bot = _is_a_bot;
     std::string coord_abs, orientation_nonconvertie;
     int coord_ord;
     bool orientation;
-    for(int i =0; i<5; i++){//on parcourt le tableau de type de bateau soit 5 bateaux
-      this->AfficherJoueur();//on affiche la map joueur
-      do{
-        do{
-          do{
-              do{
-              std::cout<<this->GetNom()<<" choisi l'orientation (1 = vertical, 0= horizontal) du bateau "<< tableau_bateau_const[i] <<" :"<<std::endl;
-              std::cin>> orientation_nonconvertie;
-                }while( (orientation_nonconvertie != "0") && (orientation_nonconvertie !="1") );
-              (orientation_nonconvertie[0]=='0') ? orientation = 0 : orientation =1;
-              affichage_bateau.affichage_bateau_selection(orientation,tableau_bateau_const[i]);
-              coord = this->RenseignerCoordonnee();
-          }while( this->VerifierConflitBateaux(coord,true) ==true );//on verifie que la coordonnee choisie n'est pas en conflit avec une deja occupée, si c'est le cas alors on reboucle sur la aprtie precedente jusqu'a en trouver une qui convient
-        liste_coord = this->DefinirListeCoord(tableau_bateau_const[i], coord,orientation);//Grace a l'orientation, le type de bateau et la première coordonnee initialiser on genère les coordonées restantees qui composent le bateau
 
-        }while(this->VerifierConflitPlateau(liste_coord) == true);//verifie en premier que les coordonnées ne depasse pas du jeu
-      }while(this->VerifierConflitBateaux(liste_coord) == true);//on verifie qu'il n'y a pas de conflit avec d'autres bateaux deja placés
-      liste_bateau.push_back( Bateau(tableau_bateau_const[i],liste_coord,orientation) );//tout est bon on ajoute alors le bateau construit a notre liste de bateau
+    if ( this->is_a_bot == true ) {
+      /* Initialiser le random sur la base du temps */
+      srand (time(NULL));
     }
+  
+    //on parcourt le tableau de type de bateau soit 5 bateaux
+    for(int i =0; i<5; i++){
+      //on affiche la map joueur
+      this->AfficherJoueur();
+      //on verifie qu'il n'y a pas de conflit avec d'autres bateaux deja placés
+      do{
+        //verifie en premier que les coordonnées ne depasse pas du jeu
+        do{
+          //on verifie que la coordonnee choisie n'est pas en conflit avec une deja occupée, si c'est le cas alors on reboucle sur la aprtie precedente jusqu'a en trouver une qui convient
+          do{
+            // Définir l'orientation
+            do{
+              if ( this->is_a_bot == true){
+                string orient[2] = {"0", "1"};
+                orientation_nonconvertie = orient[rand()% 2];
+              } else {
+                std::cout<<this->GetNom()<<" choisi l'orientation (1 = vertical, 0= horizontal) du bateau "<< tableau_bateau_const[i] <<" :"<<std::endl;
+                std::cin>> orientation_nonconvertie;
+              }
+            }while( (orientation_nonconvertie != "0") && (orientation_nonconvertie !="1") );
+            (orientation_nonconvertie[0]=='0') ? orientation = 0 : orientation =1;
+            if ( this->is_a_bot == false){
+              affichage_bateau.affichage_bateau_selection(orientation,tableau_bateau_const[i]);
+            }
+            coord = this->RenseignerCoordonnee();
+            
+          }while( this->VerifierConflitBateaux(coord,true) ==true );
+          
+          //Grace a l'orientation, le type de bateau et la première coordonnee initialiser on genère les coordonées restantees qui composent le bateau
+          liste_coord = this->DefinirListeCoord(tableau_bateau_const[i], coord,orientation);
+          
+        }while(this->VerifierConflitPlateau(liste_coord) == true);
+        
+      }while(this->VerifierConflitBateaux(liste_coord) == true);
+      
+      //tout est bon on ajoute alors le bateau construit a notre liste de bateau
+      liste_bateau.push_back( Bateau(tableau_bateau_const[i],liste_coord,orientation) );
+    }
+}
+
+/*******************************************************
+** SERT UNIQUEMENT POUR FAIRE DU DEBUG
+********************************************************/
+Joueur::Joueur(){
+    Coordonnee coord;
+    Afficher affichage_bateau;
+    std::vector<Coordonnee> liste_coord;
+    this->nom = "test";
+    this->is_a_bot = true;
+    std::string coord_abs, orientation_nonconvertie;
+    int coord_ord;
+    bool orientation;
+
+    if ( this->is_a_bot == true ) {
+      /* Initialiser le random sur la base du temps */
+      srand (time(NULL));
+    }
+  
+    //on parcourt le tableau de type de bateau soit 5 bateaux
+    for(int i =0; i<5; i++){
+      //on verifie qu'il n'y a pas de conflit avec d'autres bateaux deja placés
+      do{
+        //verifie en premier que les coordonnées ne depasse pas du jeu
+        do{
+          //on verifie que la coordonnee choisie n'est pas en conflit avec une deja occupée, si c'est le cas alors on reboucle sur la aprtie precedente jusqu'a en trouver une qui convient
+          do{
+            // Définir l'orientation
+            do{
+              string orient[2] = {"0", "1"};
+              orientation_nonconvertie = orient[rand()% 2];
+            }while( (orientation_nonconvertie != "0") && (orientation_nonconvertie !="1") );
+            (orientation_nonconvertie[0]=='0') ? orientation = 0 : orientation =1;
+            coord = this->RenseignerCoordonnee();
+          }while( this->VerifierConflitBateaux(coord,true) ==true );
+          
+          //Grace a l'orientation, le type de bateau et la première coordonnee initialisée on genère les coordonées restantees qui composent le bateau
+          liste_coord = this->DefinirListeCoord(tableau_bateau_const[i], coord,orientation);
+          
+        }while(this->VerifierConflitPlateau(liste_coord) == true);
+        
+      }while(this->VerifierConflitBateaux(liste_coord) == true);
+      
+      //tout est bon on ajoute alors le bateau construit a notre liste de bateau
+      liste_bateau.push_back( Bateau(tableau_bateau_const[i],liste_coord,orientation) );
+    }
+    //on affiche la map joueur
+    // this->AfficherJoueur();
+    this->is_a_bot = false;
 }
 
 
 /**
-  * <li>Déclaration du construsteur de la classe Joueur
+  * <li>Définition de la DefinirListeCoord
   */
 vector<Coordonnee> Joueur::DefinirListeCoord(string nom, Coordonnee coord, bool orientation) {
     int taille =0;
@@ -71,7 +147,6 @@ vector<Coordonnee> Joueur::DefinirListeCoord(string nom, Coordonnee coord, bool 
     }
     return liste_coord;
 }
-
 
 
 bool Joueur::JoueurVivant(){
@@ -121,24 +196,24 @@ bool Joueur::VerifierConflitBateaux(vector<Coordonnee> liste_coord){
 
 
 Coordonnee Joueur::RenseignerCoordonnee(){
-    string coord_abs;
-    int coord_ord;
+  string coord_abs;
+  int    coord_ord;
   
-    /** Recupération de l'abscisse
-      * Boucles jusqu'à avoir une valeur autorisée
-      */
+  if (this->is_a_bot == true) {
+    coord_abs[0] = TAB_ABSCISSE[rand()% TAILLE_PLATEAU];
+    coord_ord    = TAB_ORDONNEE[rand()% TAILLE_PLATEAU];
+  } else {
     do{
       cout<< "Choisi la première coordonnée (abscisse de A à J)"<<endl;
       cin>> coord_abs;
     }while( (coord_abs[0]<'A' || coord_abs[0]>'J') || coord_abs.length()>1 );
   
-    /** Recupération de l'ordonnee 
-      * Boucles jusqu'à avoir une valeur autorisée
-      */
+    //blindage pour éviter saisie d'une valeur en dehors de l'intervalle
     do{
       cout<< "Choisi la première coordonnée (ordonnee de 1 à 10) "<<endl;
       cin>> coord_ord;
-    }while(coord_ord <1 || coord_ord>10);//blindage pour éviter saisie d'une valeur en dehors de l'intervalle
+    }while(coord_ord <1 || coord_ord>10);
+  }
   return Coordonnee(coord_abs[0],coord_ord);
 }
 
@@ -220,7 +295,4 @@ void Joueur::AfficherJoueur(){
   }
   std::cout<<"  ╚═╩═╩═╩═╩═╩═╩═╩═╩═╩═╝"<<std::endl;
 }
-
-
-
 

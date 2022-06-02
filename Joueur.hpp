@@ -9,19 +9,20 @@
  */
 
 #pragma once
-
 #include <iostream>
 #include <vector>
 #include <string>
+#include <stdlib.h>         /* srand, rand */
+#include <time.h>           /* time */
+#include <algorithm>
 #include "Coordonnee.hpp"
 #include "Bateau.hpp"
 #include "Constantes.hpp"
-#include <algorithm>
 
 // On inclut pas "Afficher.hpp" car sinon rebouclage avec les include de la classe Afficher et conflit
 class Afficher;
 
-// Permet de ne pas avoir à renseigner "std::" lors de l'appelle de fonctions de la bibliothèque
+// Permet de ne pas avoir à renseigner "std::" lors de l'appelle des fonctions de la bibliothèque
 using namespace std;
 
 /**
@@ -46,14 +47,25 @@ class Joueur {
     */
     vector<Coordonnee> liste_pion_blanc;
 
-
   public:
+    /**
+    * \brief Si le joueur est une IA mettre à vrai
+    */
+    bool is_a_bot;
+
     /**
     * \brief Constructeur de la classe Joueur
     *
     * \param name Nom que prendra le joueur durant la partie
     */
-    Joueur(string name);
+    Joueur(string name, bool _is_a_bot);
+
+    /**
+    * \brief Constructeur de la classe Joueur avec bateau par défaut pour test
+    *
+    * \param name Nom que prendra le joueur durant la partie
+    */
+    Joueur();
 
     /**
     *  <li> Définir la liste des coordonnées à partir du point arrière du bateau, de la taille et de son orientation
@@ -106,6 +118,7 @@ class Joueur {
     *  \return Retourne les coordonnées rentrées par l'utilisateur vérifié
     */
     Coordonnee RenseignerCoordonnee();
+
 
     /**
     *  <li> Interroge l'utilisateur sur un jeu de coordonnée
@@ -161,9 +174,9 @@ class Joueur {
     */  
     void AfficherJoueur();
 
+
     /**
     *  <li> Récupérer le nom du joueur
-    */  
+    */
     string GetNom(){ return this->nom; };
-
 };

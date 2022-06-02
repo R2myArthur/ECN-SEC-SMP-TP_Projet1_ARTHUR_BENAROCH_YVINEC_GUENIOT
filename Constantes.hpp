@@ -50,6 +50,11 @@ const int TAILLE_CONTRE_TORPILLEUR  = 3;
 const int TAILLE_TORPILLEUR         = 2;
 
 const string tableau_bateau_const[5] = {"Porte-avion","Croiseur","Contre-torpilleur","Contre-torpilleur","Torpilleur"};
+
+const int   TAILLE_PLATEAU = 10;
+
+const char  TAB_ABSCISSE[TAILLE_PLATEAU] = {'A','B','C','D','E','F','G','H','I','J'};
+const int   TAB_ORDONNEE[TAILLE_PLATEAU] = {1,2,3,4,5,6,7,8,9,10};
 /**
  * <\ul>
  */

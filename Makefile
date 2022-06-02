@@ -32,5 +32,5 @@ clean:
 clean-deps:
 	rm -f $(DEPS)
 
-mytest:
-	g++ $(CPP_FLAGS) -o mytest.out Afficher.o Bateau.o Constantes.o Coordonnee.o Joueur.o -lpthread $(GTEST_LIB)/libgtest.a $(GTEST_LIB)/libgtest_main.a
+mytest: main
+	g++ $(CPP_FLAGS) -o mytest.out Afficher.o Bateau.o Constantes.o Coordonnee.o Joueur.o TU_Joueur.o -lpthread $(GTEST_LIB)/libgtest.a $(GTEST_LIB)/libgtest_main.a

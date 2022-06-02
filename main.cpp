@@ -1,9 +1,12 @@
 #include "Afficher.hpp"
 
 int main(){
-  Joueur j1("Coco"), j2("Dodo");
+  // Joueur j1("Coco", false), j2("IA_pipo", true);
+  Joueur j1;
+  Joueur j2("IA_pipo", true);
   Afficher plateau;
-  bool tour = false; //false = J1 de jouer ; True= J2 de jouer
+  bool tour = false; //false = J1 de jouer ; True= J2 de joue
+
   do{
     if(tour == false){
       plateau.deroulement_joueur(j1,j2);

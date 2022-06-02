@@ -22,6 +22,14 @@ char Coordonnee::GetX(){
   return x;
 }
 
+void Coordonnee::SetY(int _y){
+  this->y = _y;
+}
+
+void Coordonnee::SetX(char _x){
+  this->y = _x;
+}
+
 bool Coordonnee::operator==( Coordonnee &second_coord) const {
     if( (this->x == second_coord.GetX()) && (this->y == second_coord.GetY()) )
         return true;

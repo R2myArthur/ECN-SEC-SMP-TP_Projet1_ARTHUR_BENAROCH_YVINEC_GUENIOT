@@ -78,26 +78,42 @@ void Afficher::afficher_plateau_bas_Joueur(Joueur &j1_a_afficher){
 void Afficher::deroulement_joueur(Joueur &joueur_qui_joue, Joueur &adversaire){
  // std::cout << "\033[2J\033[0;0H";
   std::string myString = "";
+  bool condition_rebouclage = false;
+  Coordonnee coord;
+  
   std::cout<<"Au joueur "<<joueur_qui_joue.GetNom()<<" de jouer"<<std::endl;
-  this->afficher_plateau_haut_Joueur(joueur_qui_joue,adversaire);
-  this->afficher_plateau_bas_Joueur(joueur_qui_joue);
-  std::cout<<"Choisi un point à attaquer !"<<std::endl;
-  Coordonnee coord = joueur_qui_joue.RenseignerCoordonnee();
-  if((adversaire.GetImpactCoord(coord)==false) && (joueur_qui_joue.VerifierPionBlanc(coord)==false) ) {
-      if (adversaire.Attaquer(coord)==false){
-        joueur_qui_joue.AjouterPionBlanc(coord);
-        }
-    }
-  else{
-    std::cout<<"Coordoonnée déjà tirée"<<std::endl;
-    coord = joueur_qui_joue.RenseignerCoordonnee();
+  
+  if ( joueur_qui_joue.is_a_bot == false ) {
+    this->afficher_plateau_haut_Joueur(joueur_qui_joue,adversaire);
+    this->afficher_plateau_bas_Joueur(joueur_qui_joue);
   }
-  this->afficher_plateau_haut_Joueur(joueur_qui_joue,adversaire);
-  this->afficher_plateau_bas_Joueur(joueur_qui_joue);
+  do {
+    if ( joueur_qui_joue.is_a_bot == false ) {
+      std::cout<<"Choisi un point à attaquer !"<<std::endl;
+    }
+    // coord = joueur_qui_joue.RenseignerCoordonnee();
+    coord = joueur_qui_joue.RenseignerCoordonnee();
+    if ( (adversaire.GetImpactCoord(coord) == true) || (joueur_qui_joue.VerifierPionBlanc(coord) == true) ) {
+      condition_rebouclage = true;
+      if ( joueur_qui_joue.is_a_bot == false ) {
+        std::cout<<"Coordoonnée déjà tirée, recommence"<<std::endl;
+      }
+    }
+  } while ( condition_rebouclage == true );
+  
+  if (adversaire.Attaquer(coord) == false) {
+    joueur_qui_joue.AjouterPionBlanc(coord);
+  }
+  
+  if ( joueur_qui_joue.is_a_bot == false ) {
+    this->afficher_plateau_haut_Joueur(joueur_qui_joue,adversaire);
+    this->afficher_plateau_bas_Joueur(joueur_qui_joue);
+  }
+  
   string OST;
   std::cout<<"Presse n'importe quel caractère pour passer au joueur suivant"<<std::endl;
   std::cin>>OST;
-this->ClearScrollback();
+  this->ClearScrollback();
 }
 
 void Afficher::ClearScrollback()

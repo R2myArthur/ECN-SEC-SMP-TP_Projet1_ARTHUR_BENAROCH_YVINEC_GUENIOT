@@ -9,7 +9,6 @@
  */
 
 #pragma once
-
 #include <iostream>
 #include <string>
 #include <cstdlib>
@@ -40,6 +39,5 @@ class Bateau {
         std::vector<Coordonnee> get_liste_impact_bateau();//retourne les coordonnees et leur etat (vie) du abteau
         bool verif_coord(Coordonnee coord);
         bool get_vie_bateau(){return this->en_vie;};
-
-        
+    
 };

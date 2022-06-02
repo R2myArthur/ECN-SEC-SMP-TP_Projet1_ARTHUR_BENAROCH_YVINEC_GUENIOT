@@ -13,15 +13,52 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
-
+/**
+*  Correspond à un point dans la grille avec axe des abscisse et axe des ordonnées
+*/
 class Coordonnee {
   private : 
+    /** 
+      * \brief valeur 'char' qui correspond à l'Abscisse
+      *  a:(x,y) 
+    */
     char x;
+    /** 
+      * \brief Ordonnée : valeur entière entre 1 et 10
+    */
     int y;
   public :
+    /** 
+      * \brief Constructeur par défaut de la classe avec des coordonnées
+    */
     Coordonnee(){};
-    Coordonnee(char x,int y);
-    int GetY();
+
+    /** 
+    * \brief Constructeur de coordonnée
+    * \param x: Abscisse
+    *\param y: Ordonnée
+    */
+    Coordonnee(char x,int y); 
+    /** 
+    * \brief Méthode pour récupérer l'ordonnée de la coordonnée
+    */
+    int GetY(); 
+    /** 
+    * \brief Méthode pour récupérer l'abscisse de la coordonnée
+    */
     char GetX();
-    bool operator==( Coordonnee &second_coord) const;
+    /** 
+    * \brief 
+    * \param y: Ordonnée
+    */
+    void SetY(int _y);
+    /** 
+    * \brief
+    * \param x: Abscisse
+    */
+    void SetX(char _x);
+    /** 
+    * \brief Surcharge de l'opérateur '=='
+    */
+    bool operator==( Coordonnee &second_coord) const; 
 };
