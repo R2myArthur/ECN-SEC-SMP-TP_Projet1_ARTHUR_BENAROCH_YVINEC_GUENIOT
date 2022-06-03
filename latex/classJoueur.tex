@@ -1,0 +1,269 @@
+\hypertarget{classJoueur}{}\doxysection{Joueur Class Reference}
+\label{classJoueur}\index{Joueur@{Joueur}}
+
+
+{\ttfamily \#include $<$Joueur.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classJoueur_abd47517092140e3b9644b36104ea5ed6}{Joueur}} (string name, bool \+\_\+is\+\_\+a\+\_\+bot)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe \mbox{\hyperlink{classJoueur}{Joueur}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classJoueur_add6c98be3020651d84f6d75ccc1d867e}{Joueur}} ()
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe \mbox{\hyperlink{classJoueur}{Joueur}} avec bateau par défaut pour test. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{classCoordonnee}{Coordonnee}} $>$ \mbox{\hyperlink{classJoueur_a70e7434a66ccdff9c0b5c8da6400ddf4}{Definir\+Liste\+Coord}} (string nom, \mbox{\hyperlink{classCoordonnee}{Coordonnee}} coord, bool orientation)
+\item 
+bool \mbox{\hyperlink{classJoueur_afc55bf3a1e59383736c6c1e73d665e98}{Verifier\+Conflit\+Plateau}} (vector$<$ \mbox{\hyperlink{classCoordonnee}{Coordonnee}} $>$ coordonnees)
+\item 
+bool \mbox{\hyperlink{classJoueur_a70da5aac40dbf02d9d9c17553ab4cc50}{Verifier\+Conflit\+Bateaux}} (vector$<$ \mbox{\hyperlink{classCoordonnee}{Coordonnee}} $>$ coordonnees)
+\item 
+bool \mbox{\hyperlink{classJoueur_aaf3e37469738fd4a4c18da4ec5c64cc4}{Verifier\+Conflit\+Bateaux}} (\mbox{\hyperlink{classCoordonnee}{Coordonnee}} coord, bool is\+\_\+in\+\_\+config)
+\item 
+bool \mbox{\hyperlink{classJoueur_a67581d2483da1827688b0ab4ef6969f1}{Joueur\+Vivant}} ()
+\item 
+\mbox{\hyperlink{classCoordonnee}{Coordonnee}} \mbox{\hyperlink{classJoueur_a47ef4693b06db53cb5eb4de43554cf4c}{Renseigner\+Coordonnee}} ()
+\item 
+bool \mbox{\hyperlink{classJoueur_ae21f588f00c2badcf89163dce2caebc1}{Verifier\+Pion\+Blanc}} (\mbox{\hyperlink{classCoordonnee}{Coordonnee}} coord)
+\item 
+void \mbox{\hyperlink{classJoueur_a7591823f333cdaf9223a55ed53dd9158}{Ajouter\+Pion\+Blanc}} (\mbox{\hyperlink{classCoordonnee}{Coordonnee}} \&coord)
+\item 
+bool \mbox{\hyperlink{classJoueur_a1d2077cd76511e188fcc7bf001ff39f6}{Attaquer}} (\mbox{\hyperlink{classCoordonnee}{Coordonnee}} coord)
+\item 
+vector$<$ \mbox{\hyperlink{classCoordonnee}{Coordonnee}} $>$ \mbox{\hyperlink{classJoueur_af0a85b80ca2db143c382c073af81dc97}{Get\+Liste\+Coord\+Impact\+Bateau}} ()
+\item 
+bool \mbox{\hyperlink{classJoueur_a64932aaa0fd13b2361ba8c20242c976d}{Get\+Impact\+Coord}} (\mbox{\hyperlink{classCoordonnee}{Coordonnee}} coord)
+\item 
+void \mbox{\hyperlink{classJoueur_a26913df63df3ab7c23d1ebc111bc7db3}{Afficher\+Joueur}} ()
+\item 
+string \mbox{\hyperlink{classJoueur_a14cefe0f7edc0284fa4f56bfbf524289}{Get\+Nom}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classJoueur_a890e809a8dd1492a63b19bf41f9a5ff6}\label{classJoueur_a890e809a8dd1492a63b19bf41f9a5ff6}} 
+bool \mbox{\hyperlink{classJoueur_a890e809a8dd1492a63b19bf41f9a5ff6}{is\+\_\+a\+\_\+bot}}
+\begin{DoxyCompactList}\small\item\em Si le joueur est une IA mettre à vrai. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Déclaration de la classe \mbox{\hyperlink{classJoueur}{Joueur}} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classJoueur_abd47517092140e3b9644b36104ea5ed6}\label{classJoueur_abd47517092140e3b9644b36104ea5ed6}} 
+\index{Joueur@{Joueur}!Joueur@{Joueur}}
+\index{Joueur@{Joueur}!Joueur@{Joueur}}
+\doxysubsubsection{\texorpdfstring{Joueur()}{Joueur()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Joueur\+::\+Joueur (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{bool}]{\+\_\+is\+\_\+a\+\_\+bot }\end{DoxyParamCaption})}
+
+
+
+Constructeur de la classe \mbox{\hyperlink{classJoueur}{Joueur}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Nom que prendra le joueur durant la partie \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classJoueur_add6c98be3020651d84f6d75ccc1d867e}\label{classJoueur_add6c98be3020651d84f6d75ccc1d867e}} 
+\index{Joueur@{Joueur}!Joueur@{Joueur}}
+\index{Joueur@{Joueur}!Joueur@{Joueur}}
+\doxysubsubsection{\texorpdfstring{Joueur()}{Joueur()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Joueur\+::\+Joueur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructeur de la classe \mbox{\hyperlink{classJoueur}{Joueur}} avec bateau par défaut pour test. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Nom que prendra le joueur durant la partie \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classJoueur_a26913df63df3ab7c23d1ebc111bc7db3}\label{classJoueur_a26913df63df3ab7c23d1ebc111bc7db3}} 
+\index{Joueur@{Joueur}!AfficherJoueur@{AfficherJoueur}}
+\index{AfficherJoueur@{AfficherJoueur}!Joueur@{Joueur}}
+\doxysubsubsection{\texorpdfstring{AfficherJoueur()}{AfficherJoueur()}}
+{\footnotesize\ttfamily void Joueur\+::\+Afficher\+Joueur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{classAfficher}{Afficher}} la table du jeu à l\textquotesingle{}utilisateur \mbox{\Hypertarget{classJoueur_a7591823f333cdaf9223a55ed53dd9158}\label{classJoueur_a7591823f333cdaf9223a55ed53dd9158}} 
+\index{Joueur@{Joueur}!AjouterPionBlanc@{AjouterPionBlanc}}
+\index{AjouterPionBlanc@{AjouterPionBlanc}!Joueur@{Joueur}}
+\doxysubsubsection{\texorpdfstring{AjouterPionBlanc()}{AjouterPionBlanc()}}
+{\footnotesize\ttfamily void Joueur\+::\+Ajouter\+Pion\+Blanc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCoordonnee}{Coordonnee}} \&}]{coord }\end{DoxyParamCaption})}
+
+Ajouter un pion blanc dans la liste
+
+
+\begin{DoxyParams}{Parameters}
+{\em coord} & Coordonnée à rajouter\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+La liste donné en paramètre possède un pion supplémentaire 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJoueur_a1d2077cd76511e188fcc7bf001ff39f6}\label{classJoueur_a1d2077cd76511e188fcc7bf001ff39f6}} 
+\index{Joueur@{Joueur}!Attaquer@{Attaquer}}
+\index{Attaquer@{Attaquer}!Joueur@{Joueur}}
+\doxysubsubsection{\texorpdfstring{Attaquer()}{Attaquer()}}
+{\footnotesize\ttfamily bool Joueur\+::\+Attaquer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCoordonnee}{Coordonnee}}}]{coord }\end{DoxyParamCaption})}
+
+Traiter l\textquotesingle{}attaque du joueur adverse
+
+Fonction a appeler par le joueur qui se fait attaquer avec les coordonnees souhaites de l\textquotesingle{}attaquant
+
+
+\begin{DoxyParams}{Parameters}
+{\em coord} & Coordonnée à rajouter\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Renvoie true si touché, renvoie false si loupé 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJoueur_a70e7434a66ccdff9c0b5c8da6400ddf4}\label{classJoueur_a70e7434a66ccdff9c0b5c8da6400ddf4}} 
+\index{Joueur@{Joueur}!DefinirListeCoord@{DefinirListeCoord}}
+\index{DefinirListeCoord@{DefinirListeCoord}!Joueur@{Joueur}}
+\doxysubsubsection{\texorpdfstring{DefinirListeCoord()}{DefinirListeCoord()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classCoordonnee}{Coordonnee}} $>$ Joueur\+::\+Definir\+Liste\+Coord (\begin{DoxyParamCaption}\item[{string}]{nom,  }\item[{\mbox{\hyperlink{classCoordonnee}{Coordonnee}}}]{coord,  }\item[{bool}]{orientation }\end{DoxyParamCaption})}
+
+Définir la liste des coordonnées à partir du point arrière du bateau, de la taille et de son orientation 
+\begin{DoxyParams}{Parameters}
+{\em taille} & Taille du bateau \\
+\hline
+{\em point\+\_\+coord} & Point de coordonnée de l\textquotesingle{}arrière du bateau \\
+\hline
+{\em orientation} & orientation du bateau\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retourne la liste des coordonnées qu\textquotesingle{}occupe le bateau
+\end{DoxyReturn}
+Définition de la Definir\+Liste\+Coord \mbox{\Hypertarget{classJoueur_a64932aaa0fd13b2361ba8c20242c976d}\label{classJoueur_a64932aaa0fd13b2361ba8c20242c976d}} 
+\index{Joueur@{Joueur}!GetImpactCoord@{GetImpactCoord}}
+\index{GetImpactCoord@{GetImpactCoord}!Joueur@{Joueur}}
+\doxysubsubsection{\texorpdfstring{GetImpactCoord()}{GetImpactCoord()}}
+{\footnotesize\ttfamily bool Joueur\+::\+Get\+Impact\+Coord (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCoordonnee}{Coordonnee}}}]{coord }\end{DoxyParamCaption})}
+
+Est-\/ce que un bateau est touché
+
+
+\begin{DoxyParams}{Parameters}
+{\em coord} & Coordonnée à vérifier\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retourne true si un bateau du joueur est touché 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJoueur_af0a85b80ca2db143c382c073af81dc97}\label{classJoueur_af0a85b80ca2db143c382c073af81dc97}} 
+\index{Joueur@{Joueur}!GetListeCoordImpactBateau@{GetListeCoordImpactBateau}}
+\index{GetListeCoordImpactBateau@{GetListeCoordImpactBateau}!Joueur@{Joueur}}
+\doxysubsubsection{\texorpdfstring{GetListeCoordImpactBateau()}{GetListeCoordImpactBateau()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classCoordonnee}{Coordonnee}} $>$ Joueur\+::\+Get\+Liste\+Coord\+Impact\+Bateau (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Récupérer la liste des impacts pour chaque bateau
+
+\begin{DoxyReturn}{Returns}
+Retourne une liste de bateaux avec les coordonnées touchées 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJoueur_a14cefe0f7edc0284fa4f56bfbf524289}\label{classJoueur_a14cefe0f7edc0284fa4f56bfbf524289}} 
+\index{Joueur@{Joueur}!GetNom@{GetNom}}
+\index{GetNom@{GetNom}!Joueur@{Joueur}}
+\doxysubsubsection{\texorpdfstring{GetNom()}{GetNom()}}
+{\footnotesize\ttfamily string Joueur\+::\+Get\+Nom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Récupérer le nom du joueur \mbox{\Hypertarget{classJoueur_a67581d2483da1827688b0ab4ef6969f1}\label{classJoueur_a67581d2483da1827688b0ab4ef6969f1}} 
+\index{Joueur@{Joueur}!JoueurVivant@{JoueurVivant}}
+\index{JoueurVivant@{JoueurVivant}!Joueur@{Joueur}}
+\doxysubsubsection{\texorpdfstring{JoueurVivant()}{JoueurVivant()}}
+{\footnotesize\ttfamily bool Joueur\+::\+Joueur\+Vivant (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Récupérer l\textquotesingle{}état du joueur
+
+\begin{DoxyReturn}{Returns}
+Retourne l\textquotesingle{}ensemble des coordonnées touchées par l\textquotesingle{}adversaire 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJoueur_a47ef4693b06db53cb5eb4de43554cf4c}\label{classJoueur_a47ef4693b06db53cb5eb4de43554cf4c}} 
+\index{Joueur@{Joueur}!RenseignerCoordonnee@{RenseignerCoordonnee}}
+\index{RenseignerCoordonnee@{RenseignerCoordonnee}!Joueur@{Joueur}}
+\doxysubsubsection{\texorpdfstring{RenseignerCoordonnee()}{RenseignerCoordonnee()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCoordonnee}{Coordonnee}} Joueur\+::\+Renseigner\+Coordonnee (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Interroge l\textquotesingle{}utilisateur sur un jeu de coordonnée
+
+\begin{DoxyReturn}{Returns}
+Retourne les coordonnées rentrées par l\textquotesingle{}utilisateur vérifié 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJoueur_aaf3e37469738fd4a4c18da4ec5c64cc4}\label{classJoueur_aaf3e37469738fd4a4c18da4ec5c64cc4}} 
+\index{Joueur@{Joueur}!VerifierConflitBateaux@{VerifierConflitBateaux}}
+\index{VerifierConflitBateaux@{VerifierConflitBateaux}!Joueur@{Joueur}}
+\doxysubsubsection{\texorpdfstring{VerifierConflitBateaux()}{VerifierConflitBateaux()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Joueur\+::\+Verifier\+Conflit\+Bateaux (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCoordonnee}{Coordonnee}}}]{coord,  }\item[{bool}]{is\+\_\+in\+\_\+config }\end{DoxyParamCaption})}
+
+Vérifier les conflits entre les coordonnées et les autres bateaux du joueur
+
+
+\begin{DoxyParams}{Parameters}
+{\em coord} & Coordonnées du bateau à vérifier \\
+\hline
+{\em is\+\_\+in\+\_\+config} & permet de définir si l\textquotesingle{}on est configuration ou pas pour afficher ou non un message à l\textquotesingle{}utilisateur\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retourne un booléen qui indique si il y a au moins un conflit 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJoueur_a70da5aac40dbf02d9d9c17553ab4cc50}\label{classJoueur_a70da5aac40dbf02d9d9c17553ab4cc50}} 
+\index{Joueur@{Joueur}!VerifierConflitBateaux@{VerifierConflitBateaux}}
+\index{VerifierConflitBateaux@{VerifierConflitBateaux}!Joueur@{Joueur}}
+\doxysubsubsection{\texorpdfstring{VerifierConflitBateaux()}{VerifierConflitBateaux()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Joueur\+::\+Verifier\+Conflit\+Bateaux (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classCoordonnee}{Coordonnee}} $>$}]{coordonnees }\end{DoxyParamCaption})}
+
+Vérifier les conflits entre les coordonnées et les autres bateaux du joueur
+
+
+\begin{DoxyParams}{Parameters}
+{\em coordonnees} & Coordonnées du bateau à vérifier\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retourne un booléen qui indique si il y a au moins un conflit 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJoueur_afc55bf3a1e59383736c6c1e73d665e98}\label{classJoueur_afc55bf3a1e59383736c6c1e73d665e98}} 
+\index{Joueur@{Joueur}!VerifierConflitPlateau@{VerifierConflitPlateau}}
+\index{VerifierConflitPlateau@{VerifierConflitPlateau}!Joueur@{Joueur}}
+\doxysubsubsection{\texorpdfstring{VerifierConflitPlateau()}{VerifierConflitPlateau()}}
+{\footnotesize\ttfamily bool Joueur\+::\+Verifier\+Conflit\+Plateau (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classCoordonnee}{Coordonnee}} $>$}]{coordonnees }\end{DoxyParamCaption})}
+
+Vérifier les conflits entre les coordonnées et les limites du plateau
+
+
+\begin{DoxyParams}{Parameters}
+{\em coordonnees} & Coordonnées du bateau à vérifier\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retourne un booléen qui indique si il y a au moins un conflit 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJoueur_ae21f588f00c2badcf89163dce2caebc1}\label{classJoueur_ae21f588f00c2badcf89163dce2caebc1}} 
+\index{Joueur@{Joueur}!VerifierPionBlanc@{VerifierPionBlanc}}
+\index{VerifierPionBlanc@{VerifierPionBlanc}!Joueur@{Joueur}}
+\doxysubsubsection{\texorpdfstring{VerifierPionBlanc()}{VerifierPionBlanc()}}
+{\footnotesize\ttfamily bool Joueur\+::\+Verifier\+Pion\+Blanc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCoordonnee}{Coordonnee}}}]{coord }\end{DoxyParamCaption})}
+
+Interroge l\textquotesingle{}utilisateur sur un jeu de coordonnée
+
+
+\begin{DoxyParams}{Parameters}
+{\em coord} & Coordonnées à vérifier\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retourne vrai si pion blanc deja present dans la liste\+\_\+pion\+\_\+blanc 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Joueur_8hpp}{Joueur.\+hpp}}\item 
+\mbox{\hyperlink{Joueur_8cpp}{Joueur.\+cpp}}\end{DoxyCompactItemize}

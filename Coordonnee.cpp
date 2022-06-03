@@ -8,6 +8,7 @@
  * Contient l'ensemble des déclarations de la classe Coordonnee du projet bataille navale
  */
 #include "Coordonnee.hpp"
+#include "Constantes.hpp"
 
 Coordonnee::Coordonnee(char x, int y){
   this->x = x;
@@ -35,4 +36,8 @@ bool Coordonnee::operator==( Coordonnee &second_coord) const {
         return true;
     else
         return false;
+}
+
+Coordonnee Coordonnee::TirageAleatoireCoordonnee(){
+  return Coordonnee(TAB_ABSCISSE[rand()% TAILLE_PLATEAU], TAB_ORDONNEE[rand()% TAILLE_PLATEAU]);
 }

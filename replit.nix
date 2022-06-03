@@ -5,5 +5,6 @@
 		pkgs.gdb
 		pkgs.gnumake
     pkgs.cmake
+    pkgs.doxygen
 	];
 }

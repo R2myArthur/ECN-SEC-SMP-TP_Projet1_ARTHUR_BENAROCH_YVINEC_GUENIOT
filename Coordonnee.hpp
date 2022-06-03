@@ -61,4 +61,6 @@ class Coordonnee {
     * \brief Surcharge de l'opérateur '=='
     */
     bool operator==( Coordonnee &second_coord) const; 
+    
+    Coordonnee TirageAleatoireCoordonnee();
 };

@@ -37,6 +37,11 @@ typedef enum {
   ORDONNEE  = 1,
 } e_axe_t;
 
+typedef enum {
+  FACILE    = 0,
+  MOYEN     = 1,
+  DIFFICILE = 2,
+} e_level_IA_t;
 /**
  * <\ul>
  */

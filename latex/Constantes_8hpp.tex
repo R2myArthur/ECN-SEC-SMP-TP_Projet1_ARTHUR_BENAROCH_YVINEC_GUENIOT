@@ -1,0 +1,94 @@
+\hypertarget{Constantes_8hpp}{}\doxysection{Constantes.\+hpp File Reference}
+\label{Constantes_8hpp}\index{Constantes.hpp@{Constantes.hpp}}
+
+
+Constantes et typedef du projet de bataille navale.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$array$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{Constantes_8hpp_ac3752e6841e352dbd44e4c72f0135240}{e\+\_\+orientation\+\_\+t}} \{ {\bfseries O\+R\+I\+E\+N\+T\+A\+T\+I\+O\+N\+\_\+\+U\+N\+D\+E\+F\+I\+N\+ED} = 0, 
+{\bfseries O\+R\+I\+E\+N\+T\+A\+T\+I\+O\+N\+\_\+\+H\+O\+R\+I\+Z\+O\+N\+T\+A\+LE} = 1, 
+{\bfseries O\+R\+I\+E\+N\+T\+A\+T\+I\+O\+N\+\_\+\+V\+E\+R\+T\+I\+C\+A\+LE} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em Constantes d\textquotesingle{}orientation du bateau sur le plateau de jeu. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{Constantes_8hpp_ab34b7f47fe990f1c5d4784d9860dd1f5}\label{Constantes_8hpp_ab34b7f47fe990f1c5d4784d9860dd1f5}} 
+enum {\bfseries e\+\_\+axe\+\_\+t} \{ {\bfseries A\+B\+S\+C\+I\+S\+SE} = 0, 
+{\bfseries O\+R\+D\+O\+N\+N\+EE} = 1
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{Constantes_8hpp_af3c706a4b6504543bcb045c1b29e8810}{T\+A\+I\+L\+L\+E\+\_\+\+P\+O\+R\+T\+E\+\_\+\+A\+V\+I\+ON}} = 5
+\item 
+\mbox{\Hypertarget{Constantes_8hpp_ab4971c514e10bb9e05e1ad107724c914}\label{Constantes_8hpp_ab4971c514e10bb9e05e1ad107724c914}} 
+const int {\bfseries T\+A\+I\+L\+L\+E\+\_\+\+C\+R\+O\+I\+S\+E\+UR} = 4
+\item 
+\mbox{\Hypertarget{Constantes_8hpp_adf9dfd579ec3df7147c2cb1f26fad1a3}\label{Constantes_8hpp_adf9dfd579ec3df7147c2cb1f26fad1a3}} 
+const int {\bfseries T\+A\+I\+L\+L\+E\+\_\+\+C\+O\+N\+T\+R\+E\+\_\+\+T\+O\+R\+P\+I\+L\+L\+E\+UR} = 3
+\item 
+\mbox{\Hypertarget{Constantes_8hpp_ac5985254e2f1abb8eaaec480754af50e}\label{Constantes_8hpp_ac5985254e2f1abb8eaaec480754af50e}} 
+const int {\bfseries T\+A\+I\+L\+L\+E\+\_\+\+T\+O\+R\+P\+I\+L\+L\+E\+UR} = 2
+\item 
+\mbox{\Hypertarget{Constantes_8hpp_a4df716df1e7cc02eb168a9119509942d}\label{Constantes_8hpp_a4df716df1e7cc02eb168a9119509942d}} 
+const string {\bfseries tableau\+\_\+bateau\+\_\+const} \mbox{[}5\mbox{]} = \{\char`\"{}Porte-\/avion\char`\"{},\char`\"{}Croiseur\char`\"{},\char`\"{}Contre-\/torpilleur\char`\"{},\char`\"{}Contre-\/torpilleur\char`\"{},\char`\"{}Torpilleur\char`\"{}\}
+\item 
+\mbox{\Hypertarget{Constantes_8hpp_a81e8c0e9da27c36c0b8e33001f045ca8}\label{Constantes_8hpp_a81e8c0e9da27c36c0b8e33001f045ca8}} 
+const int {\bfseries T\+A\+I\+L\+L\+E\+\_\+\+P\+L\+A\+T\+E\+AU} = 10
+\item 
+\mbox{\Hypertarget{Constantes_8hpp_a8289987d8b7a723c429aa8bad2ded1da}\label{Constantes_8hpp_a8289987d8b7a723c429aa8bad2ded1da}} 
+const char {\bfseries T\+A\+B\+\_\+\+A\+B\+S\+C\+I\+S\+SE} \mbox{[}T\+A\+I\+L\+L\+E\+\_\+\+P\+L\+A\+T\+E\+AU\mbox{]} = \{\textquotesingle{}A\textquotesingle{},\textquotesingle{}B\textquotesingle{},\textquotesingle{}C\textquotesingle{},\textquotesingle{}D\textquotesingle{},\textquotesingle{}E\textquotesingle{},\textquotesingle{}F\textquotesingle{},\textquotesingle{}G\textquotesingle{},\textquotesingle{}H\textquotesingle{},\textquotesingle{}I\textquotesingle{},\textquotesingle{}J\textquotesingle{}\}
+\item 
+\mbox{\Hypertarget{Constantes_8hpp_afb9789bbe64cfbae06d15cac68f7f836}\label{Constantes_8hpp_afb9789bbe64cfbae06d15cac68f7f836}} 
+const int {\bfseries T\+A\+B\+\_\+\+O\+R\+D\+O\+N\+N\+EE} \mbox{[}T\+A\+I\+L\+L\+E\+\_\+\+P\+L\+A\+T\+E\+AU\mbox{]} = \{1,2,3,4,5,6,7,8,9,10\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Constantes et typedef du projet de bataille navale. 
+
+\begin{DoxyAuthor}{Author}
+Arthur, Benaroch, Gueniot, Yvinec 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+20 Mai 2022
+\end{DoxyDate}
+Contient l\textquotesingle{}ensemble des constantes et typedef du projet bataille navale 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{Constantes_8hpp_ac3752e6841e352dbd44e4c72f0135240}\label{Constantes_8hpp_ac3752e6841e352dbd44e4c72f0135240}} 
+\index{Constantes.hpp@{Constantes.hpp}!e\_orientation\_t@{e\_orientation\_t}}
+\index{e\_orientation\_t@{e\_orientation\_t}!Constantes.hpp@{Constantes.hpp}}
+\doxysubsubsection{\texorpdfstring{e\_orientation\_t}{e\_orientation\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{Constantes_8hpp_ac3752e6841e352dbd44e4c72f0135240}{e\+\_\+orientation\+\_\+t}}}
+
+
+
+Constantes d\textquotesingle{}orientation du bateau sur le plateau de jeu. 
+
+
+\begin{DoxyItemize}
+\item 
+\end{DoxyItemize}D\+EF
+
+e\+\_\+orientation\+\_\+t est une série de constantes prédéfinie pour définir l\textquotesingle{}orientation du bateau sur le plateau de jeu 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{Constantes_8hpp_af3c706a4b6504543bcb045c1b29e8810}\label{Constantes_8hpp_af3c706a4b6504543bcb045c1b29e8810}} 
+\index{Constantes.hpp@{Constantes.hpp}!TAILLE\_PORTE\_AVION@{TAILLE\_PORTE\_AVION}}
+\index{TAILLE\_PORTE\_AVION@{TAILLE\_PORTE\_AVION}!Constantes.hpp@{Constantes.hpp}}
+\doxysubsubsection{\texorpdfstring{TAILLE\_PORTE\_AVION}{TAILLE\_PORTE\_AVION}}
+{\footnotesize\ttfamily const int T\+A\+I\+L\+L\+E\+\_\+\+P\+O\+R\+T\+E\+\_\+\+A\+V\+I\+ON = 5}
+
+$<$\textbackslash{}ul$>$ 
+\begin{DoxyItemize}
+\item 
+\end{DoxyItemize}

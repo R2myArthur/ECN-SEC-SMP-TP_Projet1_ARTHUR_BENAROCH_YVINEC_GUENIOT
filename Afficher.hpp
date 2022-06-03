@@ -10,7 +10,8 @@
 
 #pragma once
 
-#include "Joueur.hpp"
+#include "JoueurReel.hpp"
+#include "JoueurIA.hpp"
 #include <thread>
 #include <chrono>
 
@@ -43,5 +44,9 @@ class Afficher{
     void deroulement_joueur(Joueur &joueur_qui_joue, Joueur &adversaire);
     void affichage_bateau_selection(bool orientation, std::string nom_bateau);
     void ClearScrollback();
+    void SelectionMenu();
+    void InitialisationJoueurVsJoueur(JoueurReel &j1, JoueurReel &j2);
+    void InitialisationJoueurVsIA(JoueurReel &j1, JoueurIA &jIA);
+    void DeroulementJoueurIA(JoueurIA &joueur_qui_joue, JoueurReel &adversaire);
 
 };
