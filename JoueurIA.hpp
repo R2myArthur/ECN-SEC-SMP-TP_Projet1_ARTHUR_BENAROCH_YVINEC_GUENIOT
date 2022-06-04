@@ -27,11 +27,10 @@ class JoueurIA : public Joueur{
     */
     e_level_IA_t difficulte_ia;
 
-
   public:
-
-    Coordonnee historique_tir_touche;
-
+    /**
+    * \brief Liste des coordonnées à tirer dans les tours suivants
+    */
     vector<Coordonnee> coordonnees_a_tirer;
 
     /**
@@ -42,21 +41,32 @@ class JoueurIA : public Joueur{
     JoueurIA(e_level_IA_t level);
 
     /**
-    *  Interroge l'utilisateur sur un jeu de coordonnée
+    *  Interroge l'utilisateur sur un jeu de coordonnée (plus utilisé pour IA)
     *
-    *  \detail C'est une méthode virtuelle
+    *  \detail Non utilisé pour l'IA car pas de coordonnées utilisateur à récupérer
     *
-    *  \return Retourne les coordonnées rentrées par l'utilisateur vérifié
+    *  \return Ne fait rien
     */
     Coordonnee RenseignerCoordonnee() {};
 
     /**
     *  Afficher la table du jeu à l'utilisateur
-    *  Utilisé pour le DEBUG
+    *  
+    *  \detail Utilisé pour le DEBUG uniquement
     */  
     void AfficherJoueur();
 
+    /**
+    *  Getter de la variable de difficulté de l'IA
+    *  
+    *  \return Valeur de #difficulte_ia
+    */  
     e_level_IA_t GetDifficulte();
 
+    /**
+    *  Vérifier que les coordonnées en paramètre sont bien dans la plage de jeu du plateau
+    *  
+    *  \return Vrai si en dehors et Faux si dedans
+    */  
     bool VerifierConflitPlateauAttaque(Coordonnee coordonnees);
 };

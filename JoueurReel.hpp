@@ -37,19 +37,23 @@ class JoueurReel : public Joueur{
     * \param name Nom que prendra le joueur durant la partie
     */
     JoueurReel(string name);
+
+    /**
+    * \brief Constructeur de la classe Joueur qui génère automatiquement les bateaux
+    */
     JoueurReel();
 
     /**
-    *  <li> Interroge l'utilisateur sur un jeu de coordonnée
+    *  Interroge l'utilisateur sur un jeu de coordonnée
     *
-    *  \detail C'est une méthode virtuelle
+    *  \detail les coordonnées renseignées sont vérifier par la méthode
     *
-    *  \return Retourne les coordonnées rentrées par l'utilisateur vérifié
+    *  \return Retourne les coordonnées rentrées par l'utilisateur
     */
     virtual Coordonnee RenseignerCoordonnee();
 
     /**
-    *  <li> Afficher la table du jeu à l'utilisateur
+    *  Afficher la table du jeu à l'utilisateur avec les bateaux du Joueur
     */  
     void AfficherJoueur();
 

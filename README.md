@@ -17,7 +17,7 @@ Executer la ligne de commande suivante :
 
 
 ### Générer la documentation Doxygen
-Executer la ligne de commande suivante :
+Le fichier de config utilisé est `config_doxy`. Pour générer la documenation Doxygen, executer la ligne de commande suivante dans la console :
 > `doxygen config_doxy`
 
 ### Makefile pour test

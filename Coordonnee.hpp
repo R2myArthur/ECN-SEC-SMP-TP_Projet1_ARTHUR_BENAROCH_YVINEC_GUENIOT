@@ -13,55 +13,73 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+
 /**
-*  Correspond à un point dans la grille avec axe des abscisse et axe des ordonnées
+* \class Coordonnee
+* Correspond à un point dans la grille avec axe des abscisse et axe des ordonnées
+* P:(x,y)
 */
 class Coordonnee {
   private : 
     /** 
-      * \brief valeur 'char' qui correspond à l'Abscisse
-      *  a:(x,y) 
+    * Valeur de l'Abscisse
     */
     char x;
+
     /** 
-      * \brief Ordonnée : valeur entière entre 1 et 10
+    * Valeur de l'ordonnée
     */
     int y;
+
   public :
     /** 
-      * \brief Constructeur par défaut de la classe avec des coordonnées
+    * \brief Constructeur par défaut de la classe avec des coordonnées
     */
     Coordonnee(){};
 
     /** 
-    * \brief Constructeur de coordonnée
-    * \param x: Abscisse
-    *\param y: Ordonnée
+    * \brief Constructeur de coordonnée avec définition des axes
+    * \param x Abscisse
+    * \param y Ordonnée
     */
     Coordonnee(char x,int y); 
+      
     /** 
-    * \brief Méthode pour récupérer l'ordonnée de la coordonnée
+    * \brief Getter de la valeur de l'ordonnée
+    *
+    * \return valeur de l'ordonnée 
     */
     int GetY(); 
+      
     /** 
-    * \brief Méthode pour récupérer l'abscisse de la coordonnée
+    * \brief Getter de la valeur de l'abscisse
+    *
+    * \return valeur de l'abscisse 
     */
     char GetX();
+      
     /** 
-    * \brief 
+    * \brief Setter de la valeur de l'ordonnée
     * \param y: Ordonnée
     */
     void SetY(int _y);
+      
     /** 
-    * \brief
+    * \brief Setter de la valeur de l'abscisse
     * \param x: Abscisse
     */
     void SetX(char _x);
+      
     /** 
     * \brief Surcharge de l'opérateur '=='
     */
     bool operator==( Coordonnee &second_coord) const; 
     
+    /** 
+    * \brief Générer un valeur aléatire de coordonnée dans la plage du plateau
+    *
+    * \return Retourne un jeu de coordonnée (x,y)
+    */
     Coordonnee TirageAleatoireCoordonnee();
       
     /** 

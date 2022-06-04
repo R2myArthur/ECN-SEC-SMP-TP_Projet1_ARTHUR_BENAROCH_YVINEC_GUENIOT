@@ -10,7 +10,7 @@
 #include "JoueurIA.hpp"
 
 /**
-  * <li>Définition du construsteur de la classe Joueur
+  * Définition du construsteur de la classe Joueur
   */
 JoueurIA::JoueurIA(e_level_IA_t level){
   Coordonnee coord;
@@ -48,6 +48,9 @@ JoueurIA::JoueurIA(e_level_IA_t level){
   this->AfficherJoueur();
 }
 
+/**
+*  Afficher la table du jeu à l'utilisateur de l'IA pour le DEBUG SEULEMENT
+*/  
 void JoueurIA::AfficherJoueur(){
   std::string current_case;
   
@@ -81,11 +84,18 @@ void JoueurIA::AfficherJoueur(){
 }
 
 
+/**
+*  Getter de la variable de difficulté de l'IA
+*/
 e_level_IA_t JoueurIA::GetDifficulte() {
   return this->difficulte_ia;
 }
 
+/**
+*  Vérifier que les coordonnées en paramètre sont bien dans la plage de jeu du plateau
+*/  
 bool JoueurIA::VerifierConflitPlateauAttaque(Coordonnee coordonnees){
+  /** Vérifier sur l'axe des abscisse et des ordonnées*/
   if( (coordonnees.GetY() < 1)   || (coordonnees.GetY() > 10) || 
       (coordonnees.GetX() < 'A') || (coordonnees.GetX() > 'J') ){
     return true;

@@ -10,7 +10,7 @@
 #include "Joueur.hpp"
 
 /**
-  * <li>Définition de la DefinirListeCoord
+  * Définir la liste des coordonnées à partir du point arrière du bateau, de la taille et de son orientation
   */
 vector<Coordonnee> Joueur::DefinirListeCoord(string nom, Coordonnee coord, bool orientation) {
     int taille =0;
@@ -38,16 +38,25 @@ vector<Coordonnee> Joueur::DefinirListeCoord(string nom, Coordonnee coord, bool 
 }
 
 
+/**
+*  Récupérer l'état du joueur
+*/
 bool Joueur::JoueurVivant(){
   bool vivant = false;
   for(auto &it : liste_bateau){
-    if(it.get_vie_bateau()==true)
+    if(it.get_vie_bateau()==true) {
       vivant = true;
+      /* On a pas besoin de continuer à boucler car on sait qu'il est vivant */
+      break;
+    }
   }
   return vivant;
 }
 
 
+/**
+  * Vérifier les conflits entre les coordonnées en paramètre et les limites du plateau
+  */
 bool Joueur::VerifierConflitPlateau(vector<Coordonnee> coordonnees){
   if( (coordonnees[coordonnees.size()-1].GetY() > 10) || (coordonnees[coordonnees.size()-1].GetX() > 'J') ){
     if ( this->afficher_message == true ) {
@@ -60,6 +69,10 @@ bool Joueur::VerifierConflitPlateau(vector<Coordonnee> coordonnees){
   }
 }
 
+
+/**
+  * Vérifier les conflits entre les coordonnées et les autres bateaux du joueur
+  */
 bool Joueur::VerifierConflitBateaux(Coordonnee coord, bool is_in_config){
     for(auto &it : liste_bateau){
       if(it.verif_coord(coord)==true){
@@ -75,6 +88,9 @@ bool Joueur::VerifierConflitBateaux(Coordonnee coord, bool is_in_config){
   }
 
 
+/**
+  * Vérifier les conflits entre les coordonnées en paramètre et les autres bateaux du joueur
+  */
 bool Joueur::VerifierConflitBateaux(vector<Coordonnee> liste_coord){
     for(auto &bateau_it : liste_bateau){
         for(auto &coord_it : liste_coord){
@@ -90,6 +106,9 @@ bool Joueur::VerifierConflitBateaux(vector<Coordonnee> liste_coord){
 }
 
 
+/**
+  * Vérifier si les coordonnées en paramètres sont dans la liste des tirs qui n'ont pa touchés de bateau
+  */
 bool Joueur::VerifierPionBlanc(Coordonnee coord){
     for(auto &it : liste_pion_blanc){
       if(it == coord)
@@ -99,12 +118,18 @@ bool Joueur::VerifierPionBlanc(Coordonnee coord){
 }
 
 
+/**
+  * Ajouter un pion blanc dans la liste et afficher que le tire est 'loupé'
+  */
 void Joueur::AjouterPionBlanc(Coordonnee &coord){
         liste_pion_blanc.push_back(coord);
         std::cout<<"Loupé !!!!"<<std::endl;
 }
 
 
+/**
+  * Traiter l'attaque du joueur adverse
+  */
 bool Joueur::Attaquer(Coordonnee &coord){
   bool cible_toucher = false;
   for(auto &it : liste_bateau){
@@ -116,6 +141,10 @@ bool Joueur::Attaquer(Coordonnee &coord){
   return cible_toucher;
 }
 
+
+/**
+  * Récupérer la liste des impacts pour chaque bateau
+  */
 std::vector<Coordonnee> Joueur::GetListeCoordImpactBateau(){
   std::vector<Coordonnee> liste_impact_coord;
   for(auto &it : liste_bateau){
@@ -126,6 +155,10 @@ std::vector<Coordonnee> Joueur::GetListeCoordImpactBateau(){
   return liste_impact_coord;
 }
 
+
+/**
+  * Permet de savoir si les coordonnées en paramètre correspondent à une case où le bateau est présent
+  */
 bool Joueur::GetImpactCoord(Coordonnee coord){
   std::vector<Coordonnee> liste = this->GetListeCoordImpactBateau();
   for(auto &it : liste){
@@ -136,6 +169,10 @@ bool Joueur::GetImpactCoord(Coordonnee coord){
   return false;
 }
 
+
+/**
+  * Vérifier que le bateau n'est pas adjacent à un autre bateau
+  */
 bool Joueur::VerifAdjacentBateau(std::vector<Coordonnee> coord){
   for(int i=0; i<coord.size(); i++){
     if(i==0){

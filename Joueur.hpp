@@ -49,7 +49,7 @@ class Joueur {
       vector<Coordonnee> liste_pion_blanc;
 
       /**
-      * \brief Liste de coordonnées des pions blanc (raté)
+      * \brief Variable permettant de gérer l'affichage des message dans les méthodes de Joueur, notemment pour eviter les affichage avec l'IA
       */
       bool afficher_message;
 
@@ -72,7 +72,7 @@ class Joueur {
       vector<Coordonnee> DefinirListeCoord(string nom, Coordonnee coord, bool orientation);
   
       /**
-      *  Vérifier les conflits entre les coordonnées et les limites du plateau
+      *  Vérifier les conflits entre les coordonnées en paramètre et les limites du plateau
       *
       *  \param coordonnees Coordonnées du bateau à vérifier
       *
@@ -81,7 +81,7 @@ class Joueur {
       bool VerifierConflitPlateau(vector<Coordonnee> coordonnees);
   
       /**
-      *  Vérifier les conflits entre les coordonnées et les autres bateaux du joueur
+      *  Vérifier les conflits entre les coordonnées en paramètre et les autres bateaux du joueur
       *
       *  \param coordonnees Coordonnées du bateau à vérifier
       *
@@ -102,34 +102,33 @@ class Joueur {
       /**
       *  Récupérer l'état du joueur
       *
-      *  \return Retourne l'ensemble des coordonnées touchées par l'adversaire
+      *  \return Vrai si vivant, Faux si mort
       */
       bool JoueurVivant();
   
       /**
       *  Interroge l'utilisateur sur un jeu de coordonnée
       *
-      *  \detail C'est une méthode virtuelle
+      *  \detail C'est une méthode virtuelle à redéfinir dans les sous-classe
+      *  Les entrées de l'utilisateurs seront vérifiées
       *
-      *  \return Retourne les coordonnées rentrées par l'utilisateur vérifié
+      *  \return Retourne les coordonnées rentrées par l'utilisateur
       */
       virtual Coordonnee RenseignerCoordonnee() = 0;
   
       /**
-      *  Interroge l'utilisateur sur un jeu de coordonnée
+      *  Vérifier si les coordonnées en paramètres sont dans la liste des tirs qui n'ont pa touchés de bateau
       *
       *  \param coord Coordonnées à vérifier
       *
-      *  \return Retourne vrai si pion blanc deja present dans la liste_pion_blanc
+      *  \return Retourne vrai si pion blanc deja present dans la #liste_pion_blanc sinon Faux
       */
       bool VerifierPionBlanc(Coordonnee coord);
   
       /**
-      *  Ajouter un pion blanc dans la liste
+      *  Ajouter un pion blanc dans la liste et afficher que le tire est 'loupé'
       *
       *  \param coord Coordonnée à rajouter
-      *
-      *  \return La liste donné en paramètre possède un pion supplémentaire
       */
       void AjouterPionBlanc(Coordonnee &coord);
   
@@ -137,9 +136,9 @@ class Joueur {
       /**
       *  Traiter l'attaque du joueur adverse
       *
-      *  \details Fonction a appeler par le joueur qui se fait attaquer avec les coordonnees souhaites de l'attaquant
+      *  \details Fonction a appeler par le joueur qui se fait attaquer avec les coordonnees souhaitées de l'attaquant
       *
-      *  \param coord Coordonnée à rajouter
+      *  \param coord Coordonnée à attaquer sur le joueur
       *
       *  \return Renvoie true si touché, renvoie false si loupé
       */
@@ -154,19 +153,27 @@ class Joueur {
       vector<Coordonnee> GetListeCoordImpactBateau();
   
       /**
-      *  Est-ce que un bateau est touché
+      *  Permet de savoir si les coordonnées en paramètre correspondent à une case où le bateau est présent
       *
       *  \param coord Coordonnée à vérifier
       *
-      *  \return Retourne true si un bateau du joueur est touché
+      *  \return Retourne Vrai si un bateau du joueur est touché sinon Faux
       */
       bool GetImpactCoord(Coordonnee coord);
  
+
+      /**
+      *  Vérifier que le bateau n'est pas adjacent à un autre bateau
+      *  
+      * \return Retourne Vrai si il est adjacent, sinon Faux
+      */  
+      bool VerifAdjacentBateau(std::vector<Coordonnee> coord);
+
+
       /**
       *  Récupérer le nom du joueur
+      *  
+      * \return Retourne le nom du joueur
       */  
       string GetNom(){ return this->nom; };
-
-
-      bool VerifAdjacentBateau(std::vector<Coordonnee> coord);
 };
