@@ -32,6 +32,7 @@ class JoueurIA : public Joueur{
 
     Coordonnee historique_tir_touche;
 
+    vector<Coordonnee> coordonnees_a_tirer;
 
     /**
     * \brief Constructeur de la classe Joueur IA

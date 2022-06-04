@@ -7,11 +7,6 @@ SRCS = $(shell find . -name '.ccls-cache' -type d -prune -o -type f -name '*.cpp
 OBJS = $(SRCS:.cpp=.o)
 DEPS = $(SRCS:.cpp=.d)
 
-GTEST_DIR = ./googletest
-GTEST_LIB = ./googletest/lib
-
-CPP_FLAGS = -isystem $(GTEST_DIR)/include  -g -Wall -Wextra -pthread -std=c++11
-
 %.d: %.cpp
 	@set -e; rm -f "$@"; \
 	$(CXX) -MM $(CXXFLAGS) "$<" > "$@.$$$$"; \
@@ -23,14 +18,26 @@ CPP_FLAGS = -isystem $(GTEST_DIR)/include  -g -Wall -Wextra -pthread -std=c++11
 
 include $(DEPS)
 
-main: $(OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) -o "$@"
+main: Joueur.o JoueurIA.o JoueurReel.o Bateau.o Coordonnee.o main.o Afficher.o
+	g++ -o main Joueur.o JoueurIA.o JoueurReel.o Bateau.o Coordonnee.o main.o Afficher.o
+
+main.o: main.cpp
+	g++ -c main.cpp
+Joueur.o: Joueur.cpp
+	g++ -c Joueur.cpp
+JoueurIA.o: JoueurIA.cpp
+	g++ -c JoueurIA.cpp
+JoueurReel.o: JoueurReel.cpp
+	g++ -c JoueurReel.cpp
+Bateau.o: Bateau.cpp
+	g++ -c Bateau.cpp
+Coordonnee.o: Coordonnee.cpp
+	g++ -c Coordonnee.cpp
+Afficher.o: Afficher.cpp
+	g++ -c Afficher.cpp
 
 clean:
 	rm -f $(OBJS) $(DEPS) main
 
 clean-deps:
 	rm -f $(DEPS)
-
-mytest: main
-	g++ $(CPP_FLAGS) -o mytest.out Afficher.o Bateau.o Constantes.o Coordonnee.o Joueur.o TU_Joueur.o -lpthread $(GTEST_LIB)/libgtest.a $(GTEST_LIB)/libgtest_main.a

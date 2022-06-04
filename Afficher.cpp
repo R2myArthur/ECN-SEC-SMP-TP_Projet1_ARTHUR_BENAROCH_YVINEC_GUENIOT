@@ -11,10 +11,11 @@
 #include "Afficher.hpp"
 
 void Afficher::afficher_plateau_haut_Joueur(Joueur &j1_a_afficher, Joueur &j2_info_recup){
+ unsigned char jonction = 199;
   std::string current_case;
-    std::cout<<"   PLATEAU ATTAQUE "<<std::endl;
-  std::cout<<"   A B C D E F G H I J "<<std::endl;
-  std::cout<<"  ╔═╦═╦═╦═╦═╦═╦═╦═╦═╦═╗"<<std::endl;
+    std::cout<<"              PLATEAU ATTAQUE "<<std::endl;
+  std::cout<<"     A   B   C   D   E   F   G   H   I   J "<<std::endl;
+  std::cout<<"   |---|---|---|---|---|---|---|---|---|---|"<<std::endl;
   for(int i=1; i< 11; i++){
     for(char c='A'; c<'K';c++){
       if(c == 'A'){
@@ -23,10 +24,12 @@ void Afficher::afficher_plateau_haut_Joueur(Joueur &j1_a_afficher, Joueur &j2_in
         else
           std::cout<<i<<" ";
         }
-      std::cout<<"║";
+      std::cout<<" | ";
       current_case = " ";
-      if(j2_info_recup.GetImpactCoord( Coordonnee(c,i) )==true)
+      if(j2_info_recup.GetImpactCoord( Coordonnee(c,i) )==true){
         current_case = "X";
+        std::cout << "\033[31m";
+        }
       else if(j1_a_afficher.VerifierPionBlanc( Coordonnee(c,i) )==true){
                 current_case = "O";
                 std::cout << "\033[34m";
@@ -34,19 +37,19 @@ void Afficher::afficher_plateau_haut_Joueur(Joueur &j1_a_afficher, Joueur &j2_in
       std::cout<<current_case;
       std::cout << "\033[0m";
     }
-    std::cout<<"║"<<std::endl;
+    std::cout<<" |"<<std::endl;
     if(i!=10)
-      std::cout<<"  ╠═╬═╬═╬═╬═╬═╬═╬═╬═╬═╣"<<std::endl;
+      std::cout<<"   |---|---|---|---|---|---|---|---|---|---|"<<std::endl;
 
   }
-  std::cout<<"  ╚═╩═╩═╩═╩═╩═╩═╩═╩═╩═╝"<<std::endl;
+        std::cout<<"   |---|---|---|---|---|---|---|---|---|---|"<<std::endl;
 }
 
 void Afficher::afficher_plateau_bas_Joueur(Joueur &j1_a_afficher){
   std::string current_case;
-  std::cout<<"   PLATEAU DEFENSE "<<std::endl;
-  std::cout<<"   A B C D E F G H I J "<<std::endl;
-  std::cout<<"  ╔═╦═╦═╦═╦═╦═╦═╦═╦═╦═╗"<<std::endl;
+  std::cout<<"                 PLATEAU DEFENSE "<<std::endl;
+  std::cout<<"     A   B   C   D   E   F   G   H   I   J "<<std::endl;
+  std::cout<<"   |---|---|---|---|---|---|---|---|---|---|"<<std::endl;
   for(int i=1; i< 11; i++){
     for(char c='A'; c<'K';c++){
       if(c == 'A'){
@@ -55,7 +58,7 @@ void Afficher::afficher_plateau_bas_Joueur(Joueur &j1_a_afficher){
         else
           std::cout<<i<<" ";
         }
-      std::cout<<"║";
+      std::cout<<" | ";
       current_case = " ";
       if(j1_a_afficher.VerifierConflitBateaux( Coordonnee(c,i), false )==true)
         current_case = "X";
@@ -66,12 +69,12 @@ void Afficher::afficher_plateau_bas_Joueur(Joueur &j1_a_afficher){
       std::cout<<current_case;
       std::cout << "\033[0m";
     }
-    std::cout<<"║"<<std::endl;
+    std::cout<<" |"<<std::endl;
     if(i!=10)
-      std::cout<<"  ╠═╬═╬═╬═╬═╬═╬═╬═╬═╬═╣"<<std::endl;
+        std::cout<<"   |---|---|---|---|---|---|---|---|---|---|"<<std::endl;
 
   }
-  std::cout<<"  ╚═╩═╩═╩═╩═╩═╩═╩═╩═╩═╝"<<std::endl;
+  std::cout<<"   |---|---|---|---|---|---|---|---|---|---|"<<std::endl;
   std::cout<<"Legende : "<<std::endl<<"X: Bateau"<<std::endl << "\033[34m"<<"O"<< "\033[0m"<<" : Tir loupé"<<std::endl<<"\033[31m"<<"X"<< "\033[0m" <<": Tir touché"<<std::endl;
 }
 
@@ -85,6 +88,7 @@ void Afficher::deroulement_joueur(Joueur &joueur_qui_joue, Joueur &adversaire){
   this->afficher_plateau_haut_Joueur(joueur_qui_joue,adversaire);
   this->afficher_plateau_bas_Joueur(joueur_qui_joue);
   do {
+      condition_rebouclage = false;
       std::cout<<"Choisi un point à attaquer !"<<std::endl;
       coord = joueur_qui_joue.RenseignerCoordonnee();
       if ( (adversaire.GetImpactCoord(coord) == true) || (joueur_qui_joue.VerifierPionBlanc(coord) == true) ) {
@@ -141,39 +145,70 @@ void Afficher::affichage_bateau_selection(bool orientation, std::string nom_bate
 }
 
 void Afficher::SelectionMenu() {
-  string choix, nom_j1, nom_j2, choix_gen_auto;
+  string choix, nom_j1, nom_j2, choix_gen_auto, choix_difficulte_ia;
+
+  /** Demander le choix de jeu du joueur entre Joueur vs Joueur ou Joueur vs IA */
   do{
   std::cout<<"Choisi ton combat"<<std::endl<<"1. Combat contre un joueur"<<std::endl<<"2. Combat contre l'IA"<<std::endl;
     std::cin >> choix;
   }while(choix[0]!='1' && choix[0]!='2');
+
+  /** Demander si l'utilisateur veut créer lui même les bateaux ou pas */
+  do{
+    std::cout<<"Voulez-vous générer automatiquement les bateaux du Joueur de jeux? (0 : NON ; 1 : OUI)"<<std::endl;
+    std::cin >> choix_gen_auto;
+  } while(choix_gen_auto[0]!='0' && choix_gen_auto[0]!='1');
+  
   switch(std::stoi(choix)){
     case 1 : {
-        std::cout<<"Joueur 1 entre ton nom :";
-        std::cin>> nom_j1;
-        std::cout <<"Joueur 2 entre ton nom :";
-        std::cin>> nom_j2;
+      /** Demander les noms des joueurs */
+      std::cout<<"Joueur 1 entre ton nom :";
+      std::cin>> nom_j1;
+      std::cout <<"Joueur 2 entre ton nom :";
+      std::cin>> nom_j2;
+    
+      /** Créer les Joueurs en fonction de la génération automatique ou non */
+      // if ( std::stoi(choix_gen_auto) == 1 ){
         JoueurReel j1,j2;
-        this->InitialisationJoueurVsJoueur(j1, j2);
+      // } else {
+      //   JoueurReel j1(nom_j1);
+      //   JoueurReel j2(nom_j2);
+      // }
+      
+      /** Lancer la partie */
+      this->InitialisationJoueurVsJoueur(j1, j2);
       break;
     }
     case 2 :{
-        std::cout<<"Joueur 1 entre ton nom :";
-        std::cin>> nom_j1;
-        // JoueurReel joueur(nom_j1);
+      /** Demander le nom du joueur à l'utilisateur */
+      std::cout<<"Joueur 1 entre ton nom :";
+      std::cin>> nom_j1;
+      
+      /** Demander au joueur difficulté IA */
+      do{
+        std::cout<<"Quel dfficulté d'IA voulez vous? (0 : FACILE ; 1 : MOYEN)"<<std::endl;
+        std::cin >> choix_difficulte_ia;
+      } while(choix_difficulte_ia[0]!='0' && choix_difficulte_ia[0]!='1');
+      
+      afficher_message_construction();
+      
+      /** Créer les Joueurs */
+      // if ( std::stoi(choix_gen_auto) == 1 ){
         JoueurReel joueur;
-        JoueurIA iA(FACILE);
-        this->InitialisationJoueurVsIA(joueur, iA);
-        break;
+      // } else {
+      //   JoueurReel joueur(nom_j1);
+      // }
+      // JoueurReel joueur(nom_j1);
+      JoueurIA ia((e_level_IA_t)std::stoi(choix_difficulte_ia));
+      
+      /** Lancer la partie */
+      this->InitialisationJoueurVsIA(joueur, ia);
+      break;
     }
     default : {
         break;
     }
   }
-  
-  // do{
-  //   std::cout<<"Voulez-vous générer automatiquement le plateau de jeux"<<std::endl;
-  //   std::cin >> choix_gen_auto;
-  // } while(choix_gen_auto[0]!='0' && choix_gen_auto[0]!='1');
 }
 
 void Afficher::InitialisationJoueurVsJoueur(JoueurReel &j1, JoueurReel &j2) {
@@ -212,70 +247,136 @@ void Afficher::InitialisationJoueurVsIA(JoueurReel &j1, JoueurIA &jIA) {
   
 
 void Afficher::DeroulementJoueurIA(JoueurIA &joueur_qui_joue, JoueurReel &adversaire){
+  srand(time(0));
   static bool is_precedent_tir_touche = false;
   this->ClearScrollback();
   std::string myString = "";
   bool condition_rebouclage = false;
   Coordonnee coord;
+  Coordonnee coord_future;
   
+  /* Indication utilisateur de qui joue */
   std::cout << "Au joueur "<< joueur_qui_joue.GetNom() << " de jouer" << std::endl;
-    switch ( joueur_qui_joue.GetDifficulte() ) {
-      /* IA SIMPLE */
-      case FACILE: {
+  
+  switch ( joueur_qui_joue.GetDifficulte() ) {
+    /* IA SIMPLE */
+    case FACILE: {      
+      do {
+        condition_rebouclage = false;
+        coord = coord.TirageAleatoireCoordonnee();
+        if ( (adversaire.GetImpactCoord(coord) == true) || (joueur_qui_joue.VerifierPionBlanc(coord) == true) ) {
+          condition_rebouclage = true;
+        }
+      } while ( condition_rebouclage == true );
+      break;
+    }
+    /* IA MOYENNE */
+    case MOYEN: {
+      //SI table a tirer est vide ALORS Tirage aléatoire
+      // SINON tirer les coordonnées du tableau
+      for(auto &it : joueur_qui_joue.coordonnees_a_tirer){
+      }
+      if ( joueur_qui_joue.coordonnees_a_tirer.empty() == true ){
         do {
+          condition_rebouclage = false;
           coord = coord.TirageAleatoireCoordonnee();
           if ( (adversaire.GetImpactCoord(coord) == true) || (joueur_qui_joue.VerifierPionBlanc(coord) == true) ) {
             condition_rebouclage = true;
           }
         } while ( condition_rebouclage == true );
-        break;
       }
-      /* IA MOYENNE */
-      case MOYEN: {
-        do {
-          if ( is_precedent_tir_touche == false ){
-            coord = coord.TirageAleatoireCoordonnee();
-          } else {
-            do {
-              switch( rand()% 4 ) {
-                case 0: {
-                  coord.SetX(joueur_qui_joue.historique_tir_touche.GetX() + 1);
-                  break;
-                }
-                case 1: {
-                  coord.SetX(joueur_qui_joue.historique_tir_touche.GetX() - 1);
-                  break;
-                }
-                case 2: {
-                  coord.SetY(joueur_qui_joue.historique_tir_touche.GetY() + 1);
-                  break;
-                }
-                case 3: {
-                  coord.SetY(joueur_qui_joue.historique_tir_touche.GetY() - 1);
-                  break;
-                }
-              }
-            } while ( joueur_qui_joue.VerifierConflitPlateauAttaque(coord) == true );
-          }
-          if ( (adversaire.GetImpactCoord(coord) == true) || (joueur_qui_joue.VerifierPionBlanc(coord) == true) ) {
-            condition_rebouclage = true;
-          }
-        } while ( condition_rebouclage == true );
-        break;
+      else {
+        coord = joueur_qui_joue.coordonnees_a_tirer.back();
+        joueur_qui_joue.coordonnees_a_tirer.pop_back();
       }
-      /* IA DIFFICILE */
-      case DIFFICILE:{
-        break;
-      }
+      break;
     }
+    /* IA DIFFICILE */
+    case DIFFICILE:{
+      // TBD
+      break;
+    }
+    default : {
+      break;
+    }
+  }
   
   this->ClearScrollback();
   
   if (adversaire.Attaquer(coord) == false) {
+    // Tir n'a pas touché de bateau
     joueur_qui_joue.AjouterPionBlanc(coord);
-    is_precedent_tir_touche = false;
   } else {
-    joueur_qui_joue.historique_tir_touche = coord;
-    is_precedent_tir_touche = true;
+    // Tir a touché un bateau
+    // On réinitialise le tableau d'attaque future
+    joueur_qui_joue.coordonnees_a_tirer.erase(joueur_qui_joue.coordonnees_a_tirer.begin(), joueur_qui_joue.coordonnees_a_tirer.end());
+    // Check des 4 case autour
+    for (int i = 0 ; i < 4 ; i++) {
+      switch( i ) {
+        case 0: {
+          coord_future.SetX(coord.GetX() + 1);
+          coord_future.SetY(coord.GetY());
+          break;
+        }
+        case 1: {
+          coord_future.SetX(coord.GetX() - 1);
+          coord_future.SetY(coord.GetY());
+          break;
+        }
+        case 2: {
+          coord_future.SetX(coord.GetX());
+          coord_future.SetY(coord.GetY() + 1);
+          break;
+        }
+        case 3: {
+          coord_future.SetX(coord.GetX());
+          coord_future.SetY(coord.GetY() - 1);
+          break;
+        }
+        default : {
+          break;
+        }
+      } 
+      // Si case non déja jouée par le joueur ET dans le plateau, Ce sera une case à attaquer ensuite          
+      if ( (joueur_qui_joue.VerifierConflitPlateauAttaque(coord_future) == false) 
+                && (adversaire.GetImpactCoord(coord_future) == false) 
+                && (joueur_qui_joue.VerifierPionBlanc(coord_future) == false) ) {
+        joueur_qui_joue.coordonnees_a_tirer.push_back(coord_future);
+      }
+    }
   }
+}
+
+void Afficher::afficher_message_construction(){
+  
+  /* Afficher message utilisateur */
+cout << "                             *************************************** " << endl;
+cout << "                           *                                         * " << endl;
+cout << "     *****     ***        *                                           * " << endl;
+cout << "    **     ****   ***     *                                           * " << endl;
+cout << "   ***   Q         **    *        Création du plateau en cours        * " << endl;
+cout << "  *****            *    *                                             * " << endl;
+cout << " ******    *******    *                                               * " << endl;
+cout << " ******   *             *            ...Merci de patienter...         * " << endl;
+cout << " ******   *       **     *                                            * " << endl;
+cout << " *****     ****  *  *     *                                           * " << endl;
+cout << "  ****        * *   *     *                                           * " << endl;
+cout << "   ** *    * * *  **       *                                         * " << endl;
+cout << "       *   *  *  *           *************************************** " << endl;
+cout << "       *     *  * " << endl;
+cout << "      *         * " << endl;
+cout << "      *          * " << endl;
+cout << "     *            * " << endl;
+cout << "     *  *          * " << endl;
+cout << "     *  *           * " << endl;
+cout << "     *  *           * " << endl;
+cout << "     *  *          * " << endl;
+cout << "     *   *        * " << endl;
+cout << "      ***        * " << endl;
+cout << "        *   *  ** " << endl;
+cout << "         *  *  * " << endl;
+cout << "         *  *  ***** " << endl;
+cout << "        *  **** *   * " << endl;
+cout << "        *        *** " << endl;
+cout << "         ******** " << endl;
 }

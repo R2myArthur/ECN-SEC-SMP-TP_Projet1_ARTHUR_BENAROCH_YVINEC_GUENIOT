@@ -1,3 +1,4 @@
+audio = true
 compile = ["make", "-s"]
 run = "./main"
 entrypoint = "main.cpp"

@@ -19,6 +19,7 @@ JoueurReel::JoueurReel(std::string nom){
     Afficher affichage_bateau;
     std::vector<Coordonnee> liste_coord;
     this->nom = nom;
+    this->afficher_message = true;
     std::string coord_abs, orientation_nonconvertie;
     int coord_ord;
     bool orientation;
@@ -59,36 +60,38 @@ JoueurReel::JoueurReel(std::string nom){
   * Définition du construsteur de la classe Joueur avec création des bateau auto
   */
 JoueurReel::JoueurReel(){
-    Coordonnee coord;
-    std::vector<Coordonnee> liste_coord;
-    this->nom = "Test";
-    bool orientation;
+  Coordonnee coord;
+  std::vector<Coordonnee> liste_coord;
+  this->nom = "Test";
+  this->afficher_message = false;
+  bool orientation;
 
-    /* Initialiser le random sur la base du temps */
-    srand (time(NULL));
-  
-    // Parcourir le tableau de type de bateaux
-    for(int i =0; i<5; i++){
-      //on verifie qu'il n'y a pas de conflit avec d'autres bateaux deja placés
+  /* Initialiser le random sur la base du temps */
+  srand (time(NULL));
+
+  // Parcourir le tableau de type de bateaux
+  for(int i =0; i<5; i++){
+    //on verifie qu'il n'y a pas de conflit avec d'autres bateaux deja placés
+    do{
+      //verifie en premier que les coordonnées ne depasse pas du jeu
       do{
-        //verifie en premier que les coordonnées ne depasse pas du jeu
+        //on verifie que la coordonnee choisie n'est pas en conflit avec une deja occupée, si c'est le cas alors on reboucle sur la aprtie precedente jusqu'a en trouver une qui convient
         do{
-          //on verifie que la coordonnee choisie n'est pas en conflit avec une deja occupée, si c'est le cas alors on reboucle sur la aprtie precedente jusqu'a en trouver une qui convient
-          do{
-            // Définir l'orientation
-            orientation = rand()% 2;
-            coord = coord.TirageAleatoireCoordonnee();
-          }while( this->VerifierConflitBateaux(coord,true) ==true );
-          //Grace a l'orientation, le type de bateau et la première coordonnee initialiser on genère les coordonées restantees qui composent le bateau
-          liste_coord = this->DefinirListeCoord(tableau_bateau_const[i], coord, orientation);
-          
-        }while(this->VerifierConflitPlateau(liste_coord) == true);
+          // Définir l'orientation
+          orientation = rand()% 2;
+          coord = coord.TirageAleatoireCoordonnee();
+        }while( this->VerifierConflitBateaux(coord,true) ==true );
+        //Grace a l'orientation, le type de bateau et la première coordonnee initialiser on genère les coordonées restantees qui composent le bateau
+        liste_coord = this->DefinirListeCoord(tableau_bateau_const[i], coord, orientation);
         
-      }while(this->VerifierConflitBateaux(liste_coord) == true);
+      }while(this->VerifierConflitPlateau(liste_coord) == true);
       
-      //tout est bon on ajoute alors le bateau construit a notre liste de bateau
-      liste_bateau.push_back( Bateau(tableau_bateau_const[i],liste_coord,orientation) );
-    }
+    }while(this->VerifierConflitBateaux(liste_coord) == true);
+    
+    //tout est bon on ajoute alors le bateau construit a notre liste de bateau
+    liste_bateau.push_back( Bateau(tableau_bateau_const[i],liste_coord,orientation) );
+  }
+  this->afficher_message = true;
 }
 
 /**
@@ -113,14 +116,14 @@ Coordonnee JoueurReel::RenseignerCoordonnee(){
       cout<< "Choisi la première coordonnée (ordonnee de 1 à 10) "<<endl;
       scanf("%d", &coord_ord); /* utilisation d'un scanf plutot qu'un cin exceptionnelement afin de blinder la saisie d'un caractere a la place d'un nombre */
       getchar(); /* car scanf laisse un '\n' */
-    }while(coord_ord <1 || coord_ord>9);//blindage pour éviter saisie d'une valeur en dehors de l'intervalle
+    }while(coord_ord <1 || coord_ord>10);//blindage pour éviter saisie d'une valeur en dehors de l'intervalle
   return Coordonnee(coord_abs[0],coord_ord);
 }
 
 void JoueurReel::AfficherJoueur(){
   std::string current_case;
-  std::cout<<"   A B C D E F G H I J "<<std::endl;
-  std::cout<<"  ╔═╦═╦═╦═╦═╦═╦═╦═╦═╦═╗"<<std::endl;
+  std::cout<<"     A   B   C   D   E   F   G   H   I   J "<<std::endl;
+  std::cout<<"   |---|---|---|---|---|---|---|---|---|---|"<<std::endl;
   for(int i=1; i< 11; i++){
     for(char c='A'; c<'K';c++){
       if(c == 'A'){
@@ -129,7 +132,7 @@ void JoueurReel::AfficherJoueur(){
         else
           std::cout<<i<<" ";
         }
-      std::cout<<"║";
+      std::cout<<" | ";
       current_case = " ";
       if( this->VerifierConflitBateaux( Coordonnee(c,i), false ) == true )
         current_case = "X";
@@ -139,10 +142,10 @@ void JoueurReel::AfficherJoueur(){
         }
       std::cout<<current_case;
     }
-    std::cout<<"║"<<std::endl;
+    std::cout<<" |"<<std::endl;
     if(i!=10)
-      std::cout<<"  ╠═╬═╬═╬═╬═╬═╬═╬═╬═╬═╣"<<std::endl;
+        std::cout<<"   |---|---|---|---|---|---|---|---|---|---|"<<std::endl;
 
   }
-  std::cout<<"  ╚═╩═╩═╩═╩═╩═╩═╩═╩═╩═╝"<<std::endl;
+    std::cout<<"   |---|---|---|---|---|---|---|---|---|---|"<<std::endl;
 }

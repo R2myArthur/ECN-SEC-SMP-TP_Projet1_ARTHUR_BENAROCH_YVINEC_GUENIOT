@@ -48,6 +48,11 @@ class Joueur {
       */
       vector<Coordonnee> liste_pion_blanc;
 
+      /**
+      * \brief Liste de coordonnées des pions blanc (raté)
+      */
+      bool afficher_message;
+
   public:
       /**
       * \brief Constructeur de la classe Joueur
@@ -138,7 +143,7 @@ class Joueur {
       *
       *  \return Renvoie true si touché, renvoie false si loupé
       */
-      bool Attaquer(Coordonnee coord);
+      bool Attaquer(Coordonnee &coord);
   
   
       /**
@@ -161,4 +166,7 @@ class Joueur {
       *  Récupérer le nom du joueur
       */  
       string GetNom(){ return this->nom; };
+
+
+      bool VerifAdjacentBateau(std::vector<Coordonnee> coord);
 };

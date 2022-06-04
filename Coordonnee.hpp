@@ -63,4 +63,9 @@ class Coordonnee {
     bool operator==( Coordonnee &second_coord) const; 
     
     Coordonnee TirageAleatoireCoordonnee();
+      
+    /** 
+    * \brief Redéfinition de l'operateur << pour afficher les coordonnées mises en formes
+    */
+    // ostream& operator<<(ostream& os, const Coordonnee& c);
 };

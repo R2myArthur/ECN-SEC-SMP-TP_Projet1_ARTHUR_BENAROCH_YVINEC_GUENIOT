@@ -28,7 +28,7 @@ void Coordonnee::SetY(int _y){
 }
 
 void Coordonnee::SetX(char _x){
-  this->y = _x;
+  this->x = _x;
 }
 
 bool Coordonnee::operator==( Coordonnee &second_coord) const {
@@ -39,5 +39,12 @@ bool Coordonnee::operator==( Coordonnee &second_coord) const {
 }
 
 Coordonnee Coordonnee::TirageAleatoireCoordonnee(){
+  srand(time(0));
   return Coordonnee(TAB_ABSCISSE[rand()% TAILLE_PLATEAU], TAB_ORDONNEE[rand()% TAILLE_PLATEAU]);
 }
+
+/** Surcharge de l'opérateur << */
+// ostream& operator<<(ostream& os, const Coordonnee& c){
+//      os << "Coordonnées : " << c.x << c.y;
+//     return os;
+// }

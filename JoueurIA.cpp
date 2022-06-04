@@ -17,8 +17,9 @@ JoueurIA::JoueurIA(e_level_IA_t level){
   std::vector<Coordonnee> liste_coord;
   this->nom = "IA";
   this->difficulte_ia = level;
+  this->afficher_message = false;
   bool orientation;
-
+  
   /* Initialiser le random sur la base du temps */
   srand (time(NULL));
 

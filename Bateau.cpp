@@ -42,7 +42,7 @@ void Bateau::bateau_exploser(){
     std::cout<<"Le bateau "<<this->nom<<" a été coulé !"<<std::endl;
 }
 
-bool Bateau::set_tir_touche(Coordonnee coord){
+bool Bateau::set_tir_touche(Coordonnee &coord){
     bool toucher = false;
     bool etat_en_vie=false;/*on demarre l'etat de la vie du bateau à faux, et lorsqu'on verra qu'au moins 
     une des cases est en vie, alors on passe la variable en true*/

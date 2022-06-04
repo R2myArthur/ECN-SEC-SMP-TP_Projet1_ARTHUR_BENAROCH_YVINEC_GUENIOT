@@ -35,7 +35,7 @@ class Bateau {
         la méthode set_tir_touche appelle cette méthode lorsque tout le bateau a été touché */
         void bateau_exploser();
         /* On envoit une coordonnee VERIFIER qui n'a pas encore été touché pour qu'elle soit déclarer en touché */
-        bool set_tir_touche(Coordonnee coord);
+        bool set_tir_touche(Coordonnee &coord);
         std::vector<Coordonnee> get_liste_impact_bateau();//retourne les coordonnees et leur etat (vie) du abteau
         bool verif_coord(Coordonnee coord);
         bool get_vie_bateau(){return this->en_vie;};

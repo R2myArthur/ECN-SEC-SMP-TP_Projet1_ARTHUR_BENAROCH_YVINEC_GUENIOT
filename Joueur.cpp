@@ -50,7 +50,9 @@ bool Joueur::JoueurVivant(){
 
 bool Joueur::VerifierConflitPlateau(vector<Coordonnee> coordonnees){
   if( (coordonnees[coordonnees.size()-1].GetY() > 10) || (coordonnees[coordonnees.size()-1].GetX() > 'J') ){
-    std::cout<<"Une partie du bateau est en dehors du jeu, changez vos coordonnees !"<<std::endl;
+    if ( this->afficher_message == true ) {
+      std::cout<<"Une partie du bateau est en dehors du jeu, changez vos coordonnees !"<<std::endl;
+    }
     return true;
   }
   else {
@@ -62,7 +64,9 @@ bool Joueur::VerifierConflitBateaux(Coordonnee coord, bool is_in_config){
     for(auto &it : liste_bateau){
       if(it.verif_coord(coord)==true){
       		if ( is_in_config == true ){
-      			std::cout<<"erreur : un bateau se trouve deja sur la coordonnee souhaitee. Choisissez-en une autre !"<<std::endl;
+            if ( this->afficher_message == true ) {
+      			  std::cout<<"erreur : un bateau se trouve deja sur la coordonnee souhaitee. Choisissez-en une autre !"<<std::endl;
+            }
       		}
         return true;
         }
@@ -75,7 +79,9 @@ bool Joueur::VerifierConflitBateaux(vector<Coordonnee> liste_coord){
     for(auto &bateau_it : liste_bateau){
         for(auto &coord_it : liste_coord){
             if(bateau_it.verif_coord(coord_it)==true){
-              std::cout<<"erreur : un bateau se trouve deja sur les coordonnees souhaitees pour votre bateau. Choisissez-en des autres !"<<std::endl;
+              if ( this->afficher_message == true ) {
+                std::cout<<"erreur : un bateau se trouve deja sur les coordonnees souhaitees pour votre bateau. Choisissez-en des autres !"<<std::endl;
+              }
               return true;
             }
         }
@@ -99,7 +105,7 @@ void Joueur::AjouterPionBlanc(Coordonnee &coord){
 }
 
 
-bool Joueur::Attaquer(Coordonnee coord){
+bool Joueur::Attaquer(Coordonnee &coord){
   bool cible_toucher = false;
   for(auto &it : liste_bateau){
     if(it.get_vie_bateau() == true){//si bateau toujours en vie alors on regarde ses coordonnées
@@ -123,8 +129,17 @@ std::vector<Coordonnee> Joueur::GetListeCoordImpactBateau(){
 bool Joueur::GetImpactCoord(Coordonnee coord){
   std::vector<Coordonnee> liste = this->GetListeCoordImpactBateau();
   for(auto &it : liste){
-    if(it == coord)
+    if(it == coord) {
       return true;
+    }
   }
   return false;
+}
+
+bool Joueur::VerifAdjacentBateau(std::vector<Coordonnee> coord){
+  for(int i=0; i<coord.size(); i++){
+    if(i==0){
+      std::vector<Coordonnee> liste_coord_haut = {Coordonnee()};
+    }
+  }
 }

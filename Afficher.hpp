@@ -12,6 +12,7 @@
 
 #include "JoueurReel.hpp"
 #include "JoueurIA.hpp"
+#include "Coordonnee.hpp"
 #include <thread>
 #include <chrono>
 
@@ -48,5 +49,6 @@ class Afficher{
     void InitialisationJoueurVsJoueur(JoueurReel &j1, JoueurReel &j2);
     void InitialisationJoueurVsIA(JoueurReel &j1, JoueurIA &jIA);
     void DeroulementJoueurIA(JoueurIA &joueur_qui_joue, JoueurReel &adversaire);
+    void afficher_message_construction();
 
 };
