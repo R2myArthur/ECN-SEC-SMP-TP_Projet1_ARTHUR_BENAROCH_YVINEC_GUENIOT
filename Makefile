@@ -1,22 +1,19 @@
-all: main clean-deps
+GTEST_DIR = ./googletest/googletest
+GTEST_LIB = ./googletest/lib
 
-CXX = clang++
-override CXXFLAGS += -g -Wno-everything
+OBJS = $(.cpp=.o)
+DEPS = $(.cpp=.d)
 
-SRCS = $(shell find . -name '.ccls-cache' -type d -prune -o -type f -name '*.cpp' -print | sed -e 's/ /\\ /g')
-OBJS = $(SRCS:.cpp=.o)
-DEPS = $(SRCS:.cpp=.d)
+CPP_FLAGS = -isystem $(GTEST_DIR)/include  -g -Wall -Wextra -pthread -std=c++11
 
-%.d: %.cpp
-	@set -e; rm -f "$@"; \
-	$(CXX) -MM $(CXXFLAGS) "$<" > "$@.$$$$"; \
-	sed 's,\([^:]*\)\.o[ :]*,\1.o \1.d : ,g' < "$@.$$$$" > "$@"; \
-	rm -f "$@.$$$$"
+GTEST_HEADERS = $(GTEST_DIR)/include/gtest/*.h \
+                $(GTEST_DIR)/include/gtest/internal/*.h
 
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c "$<" -o "$@"
+Coordonnee_Gtest.out: Coordonnee_Gtest.o Coordonnee.o
+	g++ $(CPP_FLAGS) -o Coordonnee_Gtest.out Coordonnee_Gtest.o Coordonnee.o -lpthread $(GTEST_LIB)/libgtest.a $(GTEST_LIB)/libgtest_main.a
 
-include $(DEPS)
+Bateau_Gtest.out: Bateau_Gtest.o Bateau.o  Coordonnee.o
+	g++ $(CPP_FLAGS) -o Bateau_Gtest.out Bateau_Gtest.o Bateau.o Coordonnee.o -lpthread $(GTEST_LIB)/libgtest.a $(GTEST_LIB)/libgtest_main.a
 
 main: Joueur.o JoueurIA.o JoueurReel.o Bateau.o Coordonnee.o main.o Afficher.o
 	g++ -o main Joueur.o JoueurIA.o JoueurReel.o Bateau.o Coordonnee.o main.o Afficher.o
@@ -35,9 +32,13 @@ Coordonnee.o: Coordonnee.cpp
 	g++ -c Coordonnee.cpp
 Afficher.o: Afficher.cpp
 	g++ -c Afficher.cpp
+Coordonnee_Gtest.o: Coordonnee_Gtest.cpp
+	g++ -c $(CPP_FLAGS) Coordonnee_Gtest.cpp
+Bateau_Gtest.o: Bateau_Gtest.cpp
+	g++ -c $(CPP_FLAGS) Bateau_Gtest.cpp
 
 clean:
-	rm -f $(OBJS) $(DEPS) main
-
-clean-deps:
-	rm -f $(DEPS)
+	rm -f *.o
+	rm -f *.out
+	rm -f *.d
+	rm -f main

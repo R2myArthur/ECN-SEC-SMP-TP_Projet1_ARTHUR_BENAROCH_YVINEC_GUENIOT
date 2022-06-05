@@ -59,9 +59,10 @@ bool Coordonnee::operator==( Coordonnee &second_coord) const {
 /** 
 * Générer une valeur aléatiore de coordonnée dans la plage du plateau
 */
-Coordonnee Coordonnee::TirageAleatoireCoordonnee(){
+void Coordonnee::TirageAleatoireCoordonnee(){
   srand(time(0));
-  return Coordonnee(TAB_ABSCISSE[rand()% TAILLE_PLATEAU], TAB_ORDONNEE[rand()% TAILLE_PLATEAU]);
+  this->x = TAB_ABSCISSE[rand()% TAILLE_PLATEAU];
+  this->y = TAB_ORDONNEE[rand()% TAILLE_PLATEAU];
 }
 
 /** Surcharge de l'opérateur << */

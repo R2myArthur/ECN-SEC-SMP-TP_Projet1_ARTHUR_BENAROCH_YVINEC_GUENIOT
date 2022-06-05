@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['initialisationjoueurvsia_38',['InitialisationJoueurVsIA',['../classAfficher.html#a383c749c8d313f813c9569710e49493d',1,'Afficher']]],
-  ['initialisationjoueurvsjoueur_39',['InitialisationJoueurVsJoueur',['../classAfficher.html#a57164503e3613c1bedc953cee870e500',1,'Afficher']]]
+  ['initialisationjoueurvsia_39',['InitialisationJoueurVsIA',['../classAfficher.html#a383c749c8d313f813c9569710e49493d',1,'Afficher']]],
+  ['initialisationjoueurvsjoueur_40',['InitialisationJoueurVsJoueur',['../classAfficher.html#a57164503e3613c1bedc953cee870e500',1,'Afficher']]]
 ];

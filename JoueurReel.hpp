@@ -50,7 +50,7 @@ class JoueurReel : public Joueur{
     *
     *  \return Retourne les coordonnées rentrées par l'utilisateur
     */
-    virtual Coordonnee RenseignerCoordonnee();
+    Coordonnee RenseignerCoordonnee();
 
     /**
     *  Afficher la table du jeu à l'utilisateur avec les bateaux du Joueur

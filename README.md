@@ -13,7 +13,8 @@ Utiliser le bouton '**Run**'
 
 ### Executer les Tests Unitaires
 Executer la ligne de commande suivante :
-> `make mytest`
+> `make`
+> ./gtest
 
 
 ### Générer la documentation Doxygen

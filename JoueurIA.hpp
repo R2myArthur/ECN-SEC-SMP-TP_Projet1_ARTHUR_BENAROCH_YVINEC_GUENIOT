@@ -73,7 +73,7 @@ class JoueurIA : public Joueur{
 
 
     /**
-    *  Retourner une coorodnnée à attaquer en fonction de la difficulté de l'IA. Fonctionnement est détaillé dans la méthode
+    *  Retourner une coordonnée à attaquer en fonction de la difficulté de l'IA. Fonctionnement est détaillé dans la méthode
     *  
     *  La fonction met à jour le paramètre coord
     *

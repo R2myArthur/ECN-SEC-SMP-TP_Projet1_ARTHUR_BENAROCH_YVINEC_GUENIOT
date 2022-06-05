@@ -79,7 +79,7 @@ JoueurReel::JoueurReel(){
         do{
           // Définir l'orientation
           orientation = rand()% 2;
-          coord = coord.TirageAleatoireCoordonnee();
+          coord.TirageAleatoireCoordonnee();
         }while( this->VerifierConflitBateaux(coord,true) ==true );
         //Grace a l'orientation, le type de bateau et la première coordonnee initialiser on genère les coordonées restantees qui composent le bateau
         liste_coord = this->DefinirListeCoord(tableau_bateau_const[i], coord, orientation);

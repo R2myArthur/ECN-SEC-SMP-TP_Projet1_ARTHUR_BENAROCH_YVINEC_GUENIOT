@@ -35,7 +35,7 @@ JoueurIA::JoueurIA(e_level_IA_t level){
         do{
           // Définir l'orientation
           orientation = rand()% 2;
-          coord = coord.TirageAleatoireCoordonnee();
+          coord.TirageAleatoireCoordonnee();
         }while( this->VerifierConflitBateaux(coord,true) ==true );
         //Grace a l'orientation, le type de bateau et la première coordonnee initialiser on genère les coordonées restantees qui composent le bateau
         liste_coord = this->DefinirListeCoord(tableau_bateau_const[i], coord, orientation);
@@ -110,7 +110,8 @@ bool JoueurIA::VerifierConflitPlateauAttaque(Coordonnee coordonnees){
 
 Coordonnee JoueurIA::RenseignerCoordonnee(){
   Coordonnee coord;
-  return coord.TirageAleatoireCoordonnee();
+  coord.TirageAleatoireCoordonnee();
+  return coord;
 }
 
 void JoueurIA::GestionCoordonneeAttaque(JoueurReel &adversaire, Coordonnee &coord) {
@@ -122,7 +123,7 @@ void JoueurIA::GestionCoordonneeAttaque(JoueurReel &adversaire, Coordonnee &coor
     case FACILE: { 
       do {
         condition_rebouclage = false;
-        coord = coord.TirageAleatoireCoordonnee();
+        coord.TirageAleatoireCoordonnee();
         if ( (adversaire.GetImpactCoord(coord) == true) || (this->VerifierPionBlanc(coord) == true) ) {
           condition_rebouclage = true;
         }
@@ -145,7 +146,7 @@ void JoueurIA::GestionCoordonneeAttaque(JoueurReel &adversaire, Coordonnee &coor
           // Remettre la condition de rebouclage a faux pour éviter de boucler indéfiniment
           condition_rebouclage = false;
           // Choisir un point aléatoirement du plateau
-          coord = coord.TirageAleatoireCoordonnee();
+          coord.TirageAleatoireCoordonnee();
           if ( (adversaire.GetImpactCoord(coord) == true) || (this->VerifierPionBlanc(coord) == true) ) {
             condition_rebouclage = true;
           }

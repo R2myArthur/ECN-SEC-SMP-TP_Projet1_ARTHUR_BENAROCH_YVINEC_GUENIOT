@@ -80,7 +80,7 @@ class Coordonnee {
     *
     * \return Retourne un jeu de coordonnée (x,y)
     */
-    Coordonnee TirageAleatoireCoordonnee();
+    void TirageAleatoireCoordonnee();
       
     /** 
     * \brief Redéfinition de l'operateur << pour afficher les coordonnées mises en formes
