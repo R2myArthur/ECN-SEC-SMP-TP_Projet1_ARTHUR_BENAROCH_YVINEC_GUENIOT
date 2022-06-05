@@ -10,6 +10,7 @@
 #pragma once
 
 #include "Joueur.hpp"
+#include "JoueurReel.hpp"
 
 // On inclut pas "Afficher.hpp" car sinon rebouclage avec les include de la classe Afficher et conflit
 class Afficher;
@@ -36,23 +37,23 @@ class JoueurIA : public Joueur{
     /**
     * \brief Constructeur de la classe Joueur IA
     *
-    * \param name Nom que prendra le joueur durant la partie
+    * \param level Niveau de difficulté souhaité
     */
     JoueurIA(e_level_IA_t level);
 
     /**
     *  Interroge l'utilisateur sur un jeu de coordonnée (plus utilisé pour IA)
     *
-    *  \detail Non utilisé pour l'IA car pas de coordonnées utilisateur à récupérer
+    *  \details Non utilisé pour l'IA car pas de coordonnées utilisateur à récupérer
     *
     *  \return Ne fait rien
     */
-    Coordonnee RenseignerCoordonnee() {};
+    Coordonnee RenseignerCoordonnee();
 
     /**
     *  Afficher la table du jeu à l'utilisateur
     *  
-    *  \detail Utilisé pour le DEBUG uniquement
+    *  \details Utilisé pour le DEBUG uniquement
     */  
     void AfficherJoueur();
 
@@ -69,4 +70,24 @@ class JoueurIA : public Joueur{
     *  \return Vrai si en dehors et Faux si dedans
     */  
     bool VerifierConflitPlateauAttaque(Coordonnee coordonnees);
+
+
+    /**
+    *  Retourner une coorodnnée à attaquer en fonction de la difficulté de l'IA. Fonctionnement est détaillé dans la méthode
+    *  
+    *  La fonction met à jour le paramètre coord
+    *
+    *  \param adversaire Joueur réel contre qui l'IA joue
+    *  \param coord Les coordonnées à attaquer à ce tour
+    */ 
+    void GestionCoordonneeAttaque(JoueurReel &adversaire, Coordonnee &coord);
+
+    /**
+    *  Gérer la suite d'une attaque qui a touché, définir les futures coordonnées à attaquer
+    *  
+    *  \param adversaire Joueur réel contre qui l'IA joue
+    *  \param coord Les coordonnées qui ont été touchées
+    */ 
+    void GestionAttaqueTouchee(JoueurReel &adversaire, Coordonnee &coord);
+
 };

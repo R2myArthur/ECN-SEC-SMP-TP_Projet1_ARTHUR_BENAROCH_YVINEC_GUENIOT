@@ -71,28 +71,41 @@ $(function() {
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classCoordonnee.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCoordonnee.html">Coordonnee</a> {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  private : </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">char</span> x;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">int</span> y;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  public :</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classCoordonnee.html#a5a93503c9e5aa5c0ed443d086027c181">   34</a></span>&#160;    <a class="code" href="classCoordonnee.html#a5a93503c9e5aa5c0ed443d086027c181">Coordonnee</a>(){};</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="classCoordonnee.html#a5a93503c9e5aa5c0ed443d086027c181">Coordonnee</a>(<span class="keywordtype">char</span> x,<span class="keywordtype">int</span> y); </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classCoordonnee.html#a0d389f60eb752342e22cbb730b475d97">GetY</a>(); </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">char</span> <a class="code" href="classCoordonnee.html#a690cf6d8b31e09934a1fa6f82986af75">GetX</a>();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCoordonnee.html#a95ad54f1ec13323ccb15a511b38ece7f">SetY</a>(<span class="keywordtype">int</span> _y);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCoordonnee.html#a8591285c75ab4ca70fca9797fe67fcc4">SetX</a>(<span class="keywordtype">char</span> _x);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classCoordonnee.html#af532bd34c6edea5216d6c9640f22ff4b">operator==</a>( <a class="code" href="classCoordonnee.html">Coordonnee</a> &amp;second_coord) <span class="keyword">const</span>; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classCoordonnee.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCoordonnee.html">Coordonnee</a> {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  private : </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">char</span> x;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">int</span> y;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  public :</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classCoordonnee.html#a5a93503c9e5aa5c0ed443d086027c181">   38</a></span>&#160;    <a class="code" href="classCoordonnee.html#a5a93503c9e5aa5c0ed443d086027c181">Coordonnee</a>(){};</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="classCoordonnee.html#a5a93503c9e5aa5c0ed443d086027c181">Coordonnee</a>(<span class="keywordtype">char</span> x,<span class="keywordtype">int</span> y); </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classCoordonnee.html#a0d389f60eb752342e22cbb730b475d97">GetY</a>(); </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">char</span> <a class="code" href="classCoordonnee.html#a690cf6d8b31e09934a1fa6f82986af75">GetX</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCoordonnee.html#a95ad54f1ec13323ccb15a511b38ece7f">SetY</a>(<span class="keywordtype">int</span> _y);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCoordonnee.html#a8591285c75ab4ca70fca9797fe67fcc4">SetX</a>(<span class="keywordtype">char</span> _x);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classCoordonnee.html#af532bd34c6edea5216d6c9640f22ff4b">operator==</a>( <a class="code" href="classCoordonnee.html">Coordonnee</a> &amp;second_coord) <span class="keyword">const</span>; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="classCoordonnee.html">Coordonnee</a> <a class="code" href="classCoordonnee.html#a220c9f05f6de0a25981cf0b5e2a463ac">TirageAleatoireCoordonnee</a>();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">// ostream&amp; operator&lt;&lt;(ostream&amp; os, const Coordonnee&amp; c);</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassCoordonnee_html_a8591285c75ab4ca70fca9797fe67fcc4"><div class="ttname"><a href="classCoordonnee.html#a8591285c75ab4ca70fca9797fe67fcc4">Coordonnee::SetX</a></div><div class="ttdeci">void SetX(char _x)</div><div class="ttdef"><b>Definition:</b> Coordonnee.cpp:29</div></div>
-<div class="ttc" id="aclassCoordonnee_html"><div class="ttname"><a href="classCoordonnee.html">Coordonnee</a></div><div class="ttdef"><b>Definition:</b> Coordonnee.hpp:19</div></div>
-<div class="ttc" id="aclassCoordonnee_html_a0d389f60eb752342e22cbb730b475d97"><div class="ttname"><a href="classCoordonnee.html#a0d389f60eb752342e22cbb730b475d97">Coordonnee::GetY</a></div><div class="ttdeci">int GetY()</div><div class="ttdoc">Méthode pour récupérer l'ordonnée de la coordonnée.</div><div class="ttdef"><b>Definition:</b> Coordonnee.cpp:17</div></div>
-<div class="ttc" id="aclassCoordonnee_html_a95ad54f1ec13323ccb15a511b38ece7f"><div class="ttname"><a href="classCoordonnee.html#a95ad54f1ec13323ccb15a511b38ece7f">Coordonnee::SetY</a></div><div class="ttdeci">void SetY(int _y)</div><div class="ttdef"><b>Definition:</b> Coordonnee.cpp:25</div></div>
-<div class="ttc" id="aclassCoordonnee_html_a5a93503c9e5aa5c0ed443d086027c181"><div class="ttname"><a href="classCoordonnee.html#a5a93503c9e5aa5c0ed443d086027c181">Coordonnee::Coordonnee</a></div><div class="ttdeci">Coordonnee()</div><div class="ttdoc">Constructeur par défaut de la classe avec des coordonnées.</div><div class="ttdef"><b>Definition:</b> Coordonnee.hpp:34</div></div>
-<div class="ttc" id="aclassCoordonnee_html_af532bd34c6edea5216d6c9640f22ff4b"><div class="ttname"><a href="classCoordonnee.html#af532bd34c6edea5216d6c9640f22ff4b">Coordonnee::operator==</a></div><div class="ttdeci">bool operator==(Coordonnee &amp;second_coord) const</div><div class="ttdoc">Surcharge de l'opérateur '=='.</div><div class="ttdef"><b>Definition:</b> Coordonnee.cpp:33</div></div>
-<div class="ttc" id="aclassCoordonnee_html_a690cf6d8b31e09934a1fa6f82986af75"><div class="ttname"><a href="classCoordonnee.html#a690cf6d8b31e09934a1fa6f82986af75">Coordonnee::GetX</a></div><div class="ttdeci">char GetX()</div><div class="ttdoc">Méthode pour récupérer l'abscisse de la coordonnée.</div><div class="ttdef"><b>Definition:</b> Coordonnee.cpp:21</div></div>
+<div class="ttc" id="aclassCoordonnee_html_a220c9f05f6de0a25981cf0b5e2a463ac"><div class="ttname"><a href="classCoordonnee.html#a220c9f05f6de0a25981cf0b5e2a463ac">Coordonnee::TirageAleatoireCoordonnee</a></div><div class="ttdeci">Coordonnee TirageAleatoireCoordonnee()</div><div class="ttdoc">Générer un valeur aléatire de coordonnée dans la plage du plateau.</div><div class="ttdef"><b>Definition:</b> Coordonnee.cpp:62</div></div>
+<div class="ttc" id="aclassCoordonnee_html_a8591285c75ab4ca70fca9797fe67fcc4"><div class="ttname"><a href="classCoordonnee.html#a8591285c75ab4ca70fca9797fe67fcc4">Coordonnee::SetX</a></div><div class="ttdeci">void SetX(char _x)</div><div class="ttdoc">Setter de la valeur de l'abscisse.</div><div class="ttdef"><b>Definition:</b> Coordonnee.cpp:45</div></div>
+<div class="ttc" id="aclassCoordonnee_html"><div class="ttname"><a href="classCoordonnee.html">Coordonnee</a></div><div class="ttdef"><b>Definition:</b> Coordonnee.hpp:22</div></div>
+<div class="ttc" id="aclassCoordonnee_html_a0d389f60eb752342e22cbb730b475d97"><div class="ttname"><a href="classCoordonnee.html#a0d389f60eb752342e22cbb730b475d97">Coordonnee::GetY</a></div><div class="ttdeci">int GetY()</div><div class="ttdoc">Getter de la valeur de l'ordonnée.</div><div class="ttdef"><b>Definition:</b> Coordonnee.cpp:24</div></div>
+<div class="ttc" id="aclassCoordonnee_html_a95ad54f1ec13323ccb15a511b38ece7f"><div class="ttname"><a href="classCoordonnee.html#a95ad54f1ec13323ccb15a511b38ece7f">Coordonnee::SetY</a></div><div class="ttdeci">void SetY(int _y)</div><div class="ttdoc">Setter de la valeur de l'ordonnée.</div><div class="ttdef"><b>Definition:</b> Coordonnee.cpp:38</div></div>
+<div class="ttc" id="aclassCoordonnee_html_a5a93503c9e5aa5c0ed443d086027c181"><div class="ttname"><a href="classCoordonnee.html#a5a93503c9e5aa5c0ed443d086027c181">Coordonnee::Coordonnee</a></div><div class="ttdeci">Coordonnee()</div><div class="ttdoc">Constructeur par défaut de la classe avec des coordonnées.</div><div class="ttdef"><b>Definition:</b> Coordonnee.hpp:38</div></div>
+<div class="ttc" id="aclassCoordonnee_html_af532bd34c6edea5216d6c9640f22ff4b"><div class="ttname"><a href="classCoordonnee.html#af532bd34c6edea5216d6c9640f22ff4b">Coordonnee::operator==</a></div><div class="ttdeci">bool operator==(Coordonnee &amp;second_coord) const</div><div class="ttdoc">Surcharge de l'opérateur '=='.</div><div class="ttdef"><b>Definition:</b> Coordonnee.cpp:52</div></div>
+<div class="ttc" id="aclassCoordonnee_html_a690cf6d8b31e09934a1fa6f82986af75"><div class="ttname"><a href="classCoordonnee.html#a690cf6d8b31e09934a1fa6f82986af75">Coordonnee::GetX</a></div><div class="ttdeci">char GetX()</div><div class="ttdoc">Getter de la valeur de l'abscisse.</div><div class="ttdef"><b>Definition:</b> Coordonnee.cpp:31</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

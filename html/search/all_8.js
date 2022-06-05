@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['operator_3d_3d_27',['operator==',['../classCoordonnee.html#af532bd34c6edea5216d6c9640f22ff4b',1,'Coordonnee']]]
+  ['liste_5fbateau_49',['liste_bateau',['../classJoueur.html#aafc943fcb057f7b923a39f9fb0ec66b3',1,'Joueur']]],
+  ['liste_5fpion_5fblanc_50',['liste_pion_blanc',['../classJoueur.html#af391335ea617abd1b255ac5338a2d3d0',1,'Joueur']]]
 ];

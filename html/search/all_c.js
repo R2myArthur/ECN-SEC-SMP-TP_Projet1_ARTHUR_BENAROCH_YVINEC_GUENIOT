@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['verifierconflitbateaux_33',['VerifierConflitBateaux',['../classJoueur.html#a70da5aac40dbf02d9d9c17553ab4cc50',1,'Joueur::VerifierConflitBateaux(vector&lt; Coordonnee &gt; coordonnees)'],['../classJoueur.html#aaf3e37469738fd4a4c18da4ec5c64cc4',1,'Joueur::VerifierConflitBateaux(Coordonnee coord, bool is_in_config)']]],
-  ['verifierconflitplateau_34',['VerifierConflitPlateau',['../classJoueur.html#afc55bf3a1e59383736c6c1e73d665e98',1,'Joueur']]],
-  ['verifierpionblanc_35',['VerifierPionBlanc',['../classJoueur.html#ae21f588f00c2badcf89163dce2caebc1',1,'Joueur']]]
+  ['selectionmenu_54',['SelectionMenu',['../classAfficher.html#ac450c9a81929ad82c7fc19b0dc4c754e',1,'Afficher']]],
+  ['set_5ftir_5ftouche_55',['set_tir_touche',['../classBateau.html#ab35c50f3aabcdb20a0be23a6a4049e2c',1,'Bateau']]],
+  ['setx_56',['SetX',['../classCoordonnee.html#a8591285c75ab4ca70fca9797fe67fcc4',1,'Coordonnee']]],
+  ['sety_57',['SetY',['../classCoordonnee.html#a95ad54f1ec13323ccb15a511b38ece7f',1,'Coordonnee']]]
 ];

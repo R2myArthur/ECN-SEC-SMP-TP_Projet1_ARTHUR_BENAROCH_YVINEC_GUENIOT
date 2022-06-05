@@ -78,7 +78,7 @@ bool Joueur::VerifierConflitBateaux(Coordonnee coord, bool is_in_config){
       if(it.verif_coord(coord)==true){
       		if ( is_in_config == true ){
             if ( this->afficher_message == true ) {
-      			  std::cout<<"erreur : un bateau se trouve deja sur la coordonnee souhaitee. Choisissez-en une autre !"<<std::endl;
+      			  std::cout<<"erreur : un bateau se trouve deja sur la coordonnee souhaitee ou dans les cases adjacentes et cela est interdit par les règles du jeu. Choisissez-en une autre !"<<std::endl;
             }
       		}
         return true;
@@ -173,10 +173,64 @@ bool Joueur::GetImpactCoord(Coordonnee coord){
 /**
   * Vérifier que le bateau n'est pas adjacent à un autre bateau
   */
-bool Joueur::VerifAdjacentBateau(std::vector<Coordonnee> coord){
-  for(int i=0; i<coord.size(); i++){
-    if(i==0){
-      std::vector<Coordonnee> liste_coord_haut = {Coordonnee()};
+bool Joueur::VerifAdjacentBateauConflit(std::vector<Coordonnee> coord, bool orientation){
+  std::vector<Coordonnee> liste_coord_adjacent;
+  if(orientation == false){
+      for(int i=0; i<coord.size(); i++){
+        liste_coord_adjacent.clear();
+        if(i==0){
+          liste_coord_adjacent = {
+    Coordonnee(coord[i].GetX(),coord[i].GetY()-1), 
+    Coordonnee(coord[i].GetX()-1,coord[i].GetY()-1), 
+    Coordonnee(coord[i].GetX()-1,coord[i].GetY()), 
+    Coordonnee(coord[i].GetX()-1,coord[i].GetY()+1), 
+    Coordonnee(coord[i].GetX(),coord[i].GetY()+1) };
+        }
+        else if (i== (coord.size()-1)){
+            liste_coord_adjacent = {
+    Coordonnee(coord[i].GetX(),coord[i].GetY()-1), 
+    Coordonnee(coord[i].GetX()+1,coord[i].GetY()-1), 
+    Coordonnee(coord[i].GetX()+1,coord[i].GetY()), 
+    Coordonnee(coord[i].GetX()+1,coord[i].GetY()+1), 
+    Coordonnee(coord[i].GetX(),coord[i].GetY()+1) };
+        }
+        else{
+            liste_coord_adjacent = {
+    Coordonnee(coord[i].GetX(),coord[i].GetY()-1), 
+    Coordonnee(coord[i].GetX(),coord[i].GetY()+1) };
+        }
+        if(this->VerifierConflitBateaux(liste_coord_adjacent)==true)
+          return true; 
+      }
+    return false;
     }
+  else{
+    for(int i=0; i<coord.size(); i++){
+        liste_coord_adjacent.clear();
+        if(i==0){
+          liste_coord_adjacent = {
+    Coordonnee(coord[i].GetX()-1,coord[i].GetY()), 
+    Coordonnee(coord[i].GetX()-1,coord[i].GetY()-1), 
+    Coordonnee(coord[i].GetX(),coord[i].GetY()-1), 
+    Coordonnee(coord[i].GetX()+1,coord[i].GetY()-1),       
+    Coordonnee(coord[i].GetX()+1,coord[i].GetY()) };
+        }
+        else if (i== (coord.size()-1)){
+            liste_coord_adjacent = {
+    Coordonnee(coord[i].GetX()+1,coord[i].GetY()), 
+    Coordonnee(coord[i].GetX()+1,coord[i].GetY()+1), 
+    Coordonnee(coord[i].GetX(),coord[i].GetY()+1), 
+    Coordonnee(coord[i].GetX()-1,coord[i].GetY()+1), 
+    Coordonnee(coord[i].GetX()-1,coord[i].GetY()) };
+        }
+        else{
+            liste_coord_adjacent = {
+    Coordonnee(coord[i].GetX()-1,coord[i].GetY()), 
+    Coordonnee(coord[i].GetX()+1,coord[i].GetY()) };
+        }
+        if(this->VerifierConflitBateaux(liste_coord_adjacent)==true)
+          return true; 
+      }
+    return false;
   }
 }

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['setx_29',['SetX',['../classCoordonnee.html#a8591285c75ab4ca70fca9797fe67fcc4',1,'Coordonnee']]],
-  ['sety_30',['SetY',['../classCoordonnee.html#a95ad54f1ec13323ccb15a511b38ece7f',1,'Coordonnee']]]
+  ['operator_3d_3d_52',['operator==',['../classCoordonnee.html#af532bd34c6edea5216d6c9640f22ff4b',1,'Coordonnee']]]
 ];

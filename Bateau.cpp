@@ -11,6 +11,9 @@
 #include "Bateau.hpp"
 //en vie =1 ; touché =0
 
+/**
+* Constructeur de la classe Bateau
+*/
 Bateau::Bateau(std::string nom, std::vector<Coordonnee> &liste_coord, bool orientation){
   
   if(nom=="Porte-avion")
@@ -30,6 +33,9 @@ Bateau::Bateau(std::string nom, std::vector<Coordonnee> &liste_coord, bool orien
   }
 }
 
+/**
+* Retourne toute la liste de coordonnees du bateau sous un vecteur de coordonnee
+*/
 std::vector<Coordonnee> Bateau::get_liste_coord(){
    std::vector<Coordonnee> liste_coord_envoi;
    for(auto &it : liste_coord_vie_bateau){
@@ -37,11 +43,18 @@ std::vector<Coordonnee> Bateau::get_liste_coord(){
    }
    return liste_coord_envoi;
 }
+
+/**
+* Identifier un bateau comme coulé
+*/
 void Bateau::bateau_exploser(){
     this->en_vie = false;
     std::cout<<"Le bateau "<<this->nom<<" a été coulé !"<<std::endl;
 }
 
+/**
+* Envoyer une coordonnee VERIFIER qui n'a pas encore été touché pour qu'elle soit déclarer en touché
+*/
 bool Bateau::set_tir_touche(Coordonnee &coord){
     bool toucher = false;
     bool etat_en_vie=false;/*on demarre l'etat de la vie du bateau à faux, et lorsqu'on verra qu'au moins 
@@ -65,6 +78,9 @@ bool Bateau::set_tir_touche(Coordonnee &coord){
   return toucher;
 }
 
+/**
+* Retourne les coordonnees des bateaux qui ont été touché (detectable grâce au first du std::pair qui est à l'état false lorsque touché et true sinon)
+*/
 std::vector<Coordonnee> Bateau::get_liste_impact_bateau(){
     std::vector<Coordonnee> liste_impact_bateau;
     for(auto &it : liste_coord_vie_bateau){
@@ -74,6 +90,9 @@ std::vector<Coordonnee> Bateau::get_liste_impact_bateau(){
   return liste_impact_bateau;
 }
 
+/**
+* Vérifier la correspondance des cordonnées en paramètre parmi celle du bateau actuel
+*/
  bool Bateau::verif_coord(Coordonnee coord){
         for(auto &it : liste_coord_vie_bateau){
             if(it.second == coord)//si on trouve la coordonnee passé en paramètre dans notre liste coord du bateau alors on return true

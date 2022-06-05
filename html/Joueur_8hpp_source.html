@@ -67,79 +67,80 @@ $(function() {
 <div class="contents">
 <a href="Joueur_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span>         <span class="comment">/* srand, rand */</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span>           <span class="comment">/* time */</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Coordonnee_8hpp.html">Coordonnee.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Bateau_8hpp.html">Bateau.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Constantes_8hpp.html">Constantes.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// On inclut pas &quot;Afficher.hpp&quot; car sinon rebouclage avec les include de la classe Afficher et conflit</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">class </span><a class="code" href="classAfficher.html">Afficher</a>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// Permet de ne pas avoir à renseigner &quot;std::&quot; lors de l&#39;appelle des fonctions de la bibliothèque</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classJoueur.html">   31</a></span>&#160;<span class="keyword">class </span><a class="code" href="classJoueur.html">Joueur</a> {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">string</span> nom;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    vector&lt;Bateau&gt; liste_bateau;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    vector&lt;Coordonnee&gt; liste_pion_blanc;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classJoueur.html#a890e809a8dd1492a63b19bf41f9a5ff6">   54</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classJoueur.html#a890e809a8dd1492a63b19bf41f9a5ff6">is_a_bot</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span>         <span class="comment">/* srand, rand */</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span>           <span class="comment">/* time */</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Coordonnee_8hpp.html">Coordonnee.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Bateau_8hpp.html">Bateau.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Constantes_8hpp.html">Constantes.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// On inclut pas &quot;Afficher.hpp&quot; car sinon rebouclage avec les include de la classe Afficher et conflit</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">class </span><a class="code" href="classAfficher.html">Afficher</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// Permet de ne pas avoir à renseigner &quot;std::&quot; lors de l&#39;appelle de fonctions de la bibliothèque</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classJoueur.html">   32</a></span>&#160;<span class="keyword">class </span><a class="code" href="classJoueur.html">Joueur</a> {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classJoueur.html#a251a7192f61dae541f80cbff3914f208">   37</a></span>&#160;      <span class="keywordtype">string</span> <a class="code" href="classJoueur.html#a251a7192f61dae541f80cbff3914f208">nom</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classJoueur.html#aafc943fcb057f7b923a39f9fb0ec66b3">   44</a></span>&#160;      vector&lt;Bateau&gt; <a class="code" href="classJoueur.html#aafc943fcb057f7b923a39f9fb0ec66b3">liste_bateau</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classJoueur.html#af391335ea617abd1b255ac5338a2d3d0">   49</a></span>&#160;      vector&lt;Coordonnee&gt; <a class="code" href="classJoueur.html#af391335ea617abd1b255ac5338a2d3d0">liste_pion_blanc</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classJoueur.html#a52307bbc6343c3f3aee030f7bc56debd">   54</a></span>&#160;      <span class="keywordtype">bool</span> <a class="code" href="classJoueur.html#a52307bbc6343c3f3aee030f7bc56debd">afficher_message</a>;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classJoueur.html#abd47517092140e3b9644b36104ea5ed6">   61</a></span>&#160;    <a class="code" href="classJoueur.html#abd47517092140e3b9644b36104ea5ed6">Joueur</a>(<span class="keywordtype">string</span> name, <span class="keywordtype">bool</span> _is_a_bot);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="classJoueur.html">Joueur</a>();</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    vector&lt;Coordonnee&gt; DefinirListeCoord(<span class="keywordtype">string</span> nom, <a class="code" href="classCoordonnee.html">Coordonnee</a> coord, <span class="keywordtype">bool</span> orientation);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">bool</span> VerifierConflitPlateau(vector&lt;Coordonnee&gt; coordonnees);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">bool</span> VerifierConflitBateaux(vector&lt;Coordonnee&gt; coordonnees);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">bool</span> VerifierConflitBateaux(<a class="code" href="classCoordonnee.html">Coordonnee</a> coord, <span class="keywordtype">bool</span> is_in_config);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordtype">bool</span> JoueurVivant();</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <a class="code" href="classCoordonnee.html">Coordonnee</a> RenseignerCoordonnee();</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordtype">bool</span> VerifierPionBlanc(<a class="code" href="classCoordonnee.html">Coordonnee</a> coord);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordtype">void</span> AjouterPionBlanc(<a class="code" href="classCoordonnee.html">Coordonnee</a> &amp;coord);</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordtype">bool</span> Attaquer(<a class="code" href="classCoordonnee.html">Coordonnee</a> coord);</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    vector&lt;Coordonnee&gt; GetListeCoordImpactBateau();</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordtype">bool</span> GetImpactCoord(<a class="code" href="classCoordonnee.html">Coordonnee</a> coord);</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordtype">void</span> AfficherJoueur();</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
-<div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="classJoueur.html#a14cefe0f7edc0284fa4f56bfbf524289">  181</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="classJoueur.html#a14cefe0f7edc0284fa4f56bfbf524289">GetNom</a>(){ <span class="keywordflow">return</span> this-&gt;nom; };</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classJoueur.html#add6c98be3020651d84f6d75ccc1d867e">   62</a></span>&#160;      <a class="code" href="classJoueur.html#add6c98be3020651d84f6d75ccc1d867e">Joueur</a>(){};</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      vector&lt;Coordonnee&gt; DefinirListeCoord(<span class="keywordtype">string</span> nom, <a class="code" href="classCoordonnee.html">Coordonnee</a> coord, <span class="keywordtype">bool</span> orientation);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      <span class="keywordtype">bool</span> VerifierConflitPlateau(vector&lt;Coordonnee&gt; coordonnees);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      <span class="keywordtype">bool</span> VerifierConflitBateaux(vector&lt;Coordonnee&gt; coordonnees);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;      <span class="keywordtype">bool</span> VerifierConflitBateaux(<a class="code" href="classCoordonnee.html">Coordonnee</a> coord, <span class="keywordtype">bool</span> is_in_config);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      <span class="keywordtype">bool</span> JoueurVivant();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  </div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="classJoueur.html#a35e450dd0d1d0fabc6e7843ead0b806d">  117</a></span>&#160;      <span class="keyword">virtual</span> <a class="code" href="classCoordonnee.html">Coordonnee</a> <a class="code" href="classJoueur.html#a35e450dd0d1d0fabc6e7843ead0b806d">RenseignerCoordonnee</a>() = 0;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;      <span class="keywordtype">bool</span> VerifierPionBlanc(<a class="code" href="classCoordonnee.html">Coordonnee</a> coord);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;      <span class="keywordtype">void</span> AjouterPionBlanc(<a class="code" href="classCoordonnee.html">Coordonnee</a> &amp;coord);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  </div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;      <span class="keywordtype">bool</span> Attaquer(<a class="code" href="classCoordonnee.html">Coordonnee</a> &amp;coord);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;      vector&lt;Coordonnee&gt; GetListeCoordImpactBateau();</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  </div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;      <span class="keywordtype">bool</span> GetImpactCoord(<a class="code" href="classCoordonnee.html">Coordonnee</a> coord);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;      <span class="keywordtype">bool</span> VerifAdjacentBateauConflit(std::vector&lt;Coordonnee&gt; coord, <span class="keywordtype">bool</span> orientation);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
+<div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="classJoueur.html#a14cefe0f7edc0284fa4f56bfbf524289">  181</a></span>&#160;      <span class="keywordtype">string</span> <a class="code" href="classJoueur.html#a14cefe0f7edc0284fa4f56bfbf524289">GetNom</a>(){ <span class="keywordflow">return</span> this-&gt;nom; };</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassJoueur_html_a35e450dd0d1d0fabc6e7843ead0b806d"><div class="ttname"><a href="classJoueur.html#a35e450dd0d1d0fabc6e7843ead0b806d">Joueur::RenseignerCoordonnee</a></div><div class="ttdeci">virtual Coordonnee RenseignerCoordonnee()=0</div></div>
 <div class="ttc" id="aConstantes_8hpp_html"><div class="ttname"><a href="Constantes_8hpp.html">Constantes.hpp</a></div><div class="ttdoc">Constantes et typedef du projet de bataille navale.</div></div>
+<div class="ttc" id="aclassJoueur_html_a52307bbc6343c3f3aee030f7bc56debd"><div class="ttname"><a href="classJoueur.html#a52307bbc6343c3f3aee030f7bc56debd">Joueur::afficher_message</a></div><div class="ttdeci">bool afficher_message</div><div class="ttdoc">Variable permettant de gérer l'affichage des message dans les méthodes de Joueur, notemment pour evit...</div><div class="ttdef"><b>Definition:</b> Joueur.hpp:54</div></div>
 <div class="ttc" id="aCoordonnee_8hpp_html"><div class="ttname"><a href="Coordonnee_8hpp.html">Coordonnee.hpp</a></div><div class="ttdoc">Fichier Header de la classe Coordonnee.</div></div>
-<div class="ttc" id="aclassJoueur_html_abd47517092140e3b9644b36104ea5ed6"><div class="ttname"><a href="classJoueur.html#abd47517092140e3b9644b36104ea5ed6">Joueur::Joueur</a></div><div class="ttdeci">Joueur(string name, bool _is_a_bot)</div><div class="ttdoc">Constructeur de la classe Joueur.</div></div>
-<div class="ttc" id="aclassCoordonnee_html"><div class="ttname"><a href="classCoordonnee.html">Coordonnee</a></div><div class="ttdef"><b>Definition:</b> Coordonnee.hpp:19</div></div>
+<div class="ttc" id="aclassCoordonnee_html"><div class="ttname"><a href="classCoordonnee.html">Coordonnee</a></div><div class="ttdef"><b>Definition:</b> Coordonnee.hpp:22</div></div>
 <div class="ttc" id="aBateau_8hpp_html"><div class="ttname"><a href="Bateau_8hpp.html">Bateau.hpp</a></div><div class="ttdoc">Fichier Header de la classe Bateau.</div></div>
 <div class="ttc" id="aclassJoueur_html_a14cefe0f7edc0284fa4f56bfbf524289"><div class="ttname"><a href="classJoueur.html#a14cefe0f7edc0284fa4f56bfbf524289">Joueur::GetNom</a></div><div class="ttdeci">string GetNom()</div><div class="ttdef"><b>Definition:</b> Joueur.hpp:181</div></div>
-<div class="ttc" id="aclassJoueur_html_a890e809a8dd1492a63b19bf41f9a5ff6"><div class="ttname"><a href="classJoueur.html#a890e809a8dd1492a63b19bf41f9a5ff6">Joueur::is_a_bot</a></div><div class="ttdeci">bool is_a_bot</div><div class="ttdoc">Si le joueur est une IA mettre à vrai.</div><div class="ttdef"><b>Definition:</b> Joueur.hpp:54</div></div>
-<div class="ttc" id="aclassJoueur_html"><div class="ttname"><a href="classJoueur.html">Joueur</a></div><div class="ttdef"><b>Definition:</b> Joueur.hpp:31</div></div>
-<div class="ttc" id="aclassAfficher_html"><div class="ttname"><a href="classAfficher.html">Afficher</a></div><div class="ttdef"><b>Definition:</b> Afficher.hpp:17</div></div>
+<div class="ttc" id="aclassJoueur_html_add6c98be3020651d84f6d75ccc1d867e"><div class="ttname"><a href="classJoueur.html#add6c98be3020651d84f6d75ccc1d867e">Joueur::Joueur</a></div><div class="ttdeci">Joueur()</div><div class="ttdoc">Constructeur de la classe Joueur.</div><div class="ttdef"><b>Definition:</b> Joueur.hpp:62</div></div>
+<div class="ttc" id="aclassJoueur_html"><div class="ttname"><a href="classJoueur.html">Joueur</a></div><div class="ttdef"><b>Definition:</b> Joueur.hpp:32</div></div>
+<div class="ttc" id="aclassJoueur_html_a251a7192f61dae541f80cbff3914f208"><div class="ttname"><a href="classJoueur.html#a251a7192f61dae541f80cbff3914f208">Joueur::nom</a></div><div class="ttdeci">string nom</div><div class="ttdoc">Nom du joueur.</div><div class="ttdef"><b>Definition:</b> Joueur.hpp:37</div></div>
+<div class="ttc" id="aclassJoueur_html_af391335ea617abd1b255ac5338a2d3d0"><div class="ttname"><a href="classJoueur.html#af391335ea617abd1b255ac5338a2d3d0">Joueur::liste_pion_blanc</a></div><div class="ttdeci">vector&lt; Coordonnee &gt; liste_pion_blanc</div><div class="ttdoc">Liste de coordonnées des pions blanc (raté)</div><div class="ttdef"><b>Definition:</b> Joueur.hpp:49</div></div>
+<div class="ttc" id="aclassAfficher_html"><div class="ttname"><a href="classAfficher.html">Afficher</a></div><div class="ttdef"><b>Definition:</b> Afficher.hpp:19</div></div>
+<div class="ttc" id="aclassJoueur_html_aafc943fcb057f7b923a39f9fb0ec66b3"><div class="ttname"><a href="classJoueur.html#aafc943fcb057f7b923a39f9fb0ec66b3">Joueur::liste_bateau</a></div><div class="ttdeci">vector&lt; Bateau &gt; liste_bateau</div><div class="ttdoc">Liste contenant les bateaux du joueur.</div><div class="ttdef"><b>Definition:</b> Joueur.hpp:44</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

@@ -49,7 +49,7 @@ JoueurReel::JoueurReel(std::string nom){
           
         }while(this->VerifierConflitPlateau(liste_coord) == true);
         
-      }while(this->VerifierConflitBateaux(liste_coord) == true);
+      }while(this->VerifierConflitBateaux(liste_coord) == true || this->VerifAdjacentBateauConflit(liste_coord,orientation)==true);
       
       //tout est bon on ajoute alors le bateau construit a notre liste de bateau
       liste_bateau.push_back( Bateau(tableau_bateau_const[i],liste_coord,orientation) );
@@ -86,7 +86,7 @@ JoueurReel::JoueurReel(){
         
       }while(this->VerifierConflitPlateau(liste_coord) == true);
       
-    }while(this->VerifierConflitBateaux(liste_coord) == true);
+    }while(this->VerifierConflitBateaux(liste_coord) == true|| this->VerifAdjacentBateauConflit(liste_coord,orientation)==true);
     
     //tout est bon on ajoute alors le bateau construit a notre liste de bateau
     liste_bateau.push_back( Bateau(tableau_bateau_const[i],liste_coord,orientation) );
@@ -95,7 +95,7 @@ JoueurReel::JoueurReel(){
 }
 
 /**
-  * <li>Définition de la DefinirListeCoord
+  * Définition de la DefinirListeCoord
   */
 
 Coordonnee JoueurReel::RenseignerCoordonnee(){

@@ -11,6 +11,8 @@
 
 /**
   * Définition du construsteur de la classe Joueur
+  *
+  * \param level Niveau de difficulté souhaité
   */
 JoueurIA::JoueurIA(e_level_IA_t level){
   Coordonnee coord;
@@ -40,12 +42,13 @@ JoueurIA::JoueurIA(e_level_IA_t level){
         
       }while(this->VerifierConflitPlateau(liste_coord) == true);
       
-    }while(this->VerifierConflitBateaux(liste_coord) == true);
+    }while(this->VerifierConflitBateaux(liste_coord) == true || this->VerifAdjacentBateauConflit(liste_coord,orientation)==true);
     
     //tout est bon on ajoute alors le bateau construit a notre liste de bateau
     liste_bateau.push_back( Bateau(tableau_bateau_const[i],liste_coord,orientation) );
   }
-  this->AfficherJoueur();
+  // Affichage des bateaux de l'IA pour le DEBUG
+  // this->AfficherJoueur();
 }
 
 /**
@@ -102,5 +105,117 @@ bool JoueurIA::VerifierConflitPlateauAttaque(Coordonnee coordonnees){
   }
   else {
     return false;
+  }
+}
+
+Coordonnee JoueurIA::RenseignerCoordonnee(){
+  Coordonnee coord;
+  return coord.TirageAleatoireCoordonnee();
+}
+
+void JoueurIA::GestionCoordonneeAttaque(JoueurReel &adversaire, Coordonnee &coord) {
+  bool condition_rebouclage = false;
+  
+  /** Stratégie en fonction de la difficulté */
+  switch ( this->GetDifficulte() ) {
+    /** IA SIMPLE : Tirage aléatoire sur toute la partie */
+    case FACILE: { 
+      do {
+        condition_rebouclage = false;
+        coord = coord.TirageAleatoireCoordonnee();
+        if ( (adversaire.GetImpactCoord(coord) == true) || (this->VerifierPionBlanc(coord) == true) ) {
+          condition_rebouclage = true;
+        }
+      } while ( condition_rebouclage == true );
+      break;
+    }
+    /** IA MOYENNE :
+    * 1 - Tire aléatoire jusqu'à toucher un bateau
+    * 2 - Tirer sur les case adjacentes dans les prochains tours (x+1, x-1, y+1, y-1) Vérifier que les cases soient dans le plateau et pas encore jouée ne coule pas forcément le bateau
+    */
+    case MOYEN: {
+      /** SI table a tirer est vide ALORS Tirage aléatoire */
+      /** SINON tirer les coordonnées du tableau #coordonnees_a_tirer
+      */
+      for(auto &it : this->coordonnees_a_tirer){
+      }
+      /** La liste peut contenir des éléments si un l'IA a touché un bateau au tour précédent */
+      if ( this->coordonnees_a_tirer.empty() == true ){
+        do {
+          // Remettre la condition de rebouclage a faux pour éviter de boucler indéfiniment
+          condition_rebouclage = false;
+          // Choisir un point aléatoirement du plateau
+          coord = coord.TirageAleatoireCoordonnee();
+          if ( (adversaire.GetImpactCoord(coord) == true) || (this->VerifierPionBlanc(coord) == true) ) {
+            condition_rebouclage = true;
+          }
+        } while ( condition_rebouclage == true );
+      }
+      else {
+        /** récupérer la valeur à tirer en commencant par la dernière rentrée */
+        coord = this->coordonnees_a_tirer.back();
+        /** Supprimer le dernier élément du tableau */
+        this->coordonnees_a_tirer.pop_back();
+      }
+      break;
+    }
+    
+    /** IA DIFFICILE :
+    * 1 - Tire aléatoire jusqu'à toucher un bateau
+    * 2 - Tirer sur les case adjacentes dans les prochains tours (x+1, x-1, y+1, y-1) jusqu'à couler le bateau
+    *  Pas encore définis
+    */
+    case DIFFICILE:{
+      // TBD
+      break;
+    }
+    default : {
+      break;
+    }
+  }
+}
+
+void JoueurIA::GestionAttaqueTouchee(JoueurReel &adversaire, Coordonnee &coord) {
+  Coordonnee coord_future;
+  /** On réinitialise le tableau d'attaque future */
+  this->coordonnees_a_tirer.erase(this->coordonnees_a_tirer.begin(), this->coordonnees_a_tirer.end());
+  
+  /** Check des 4 case autour, pour chaque case adjacente (x+1, x-1, y+1, y-1) :
+  *  - Vérifier que les coordonnées sont dans le plateau
+  *  - Vérifier que la case n'a pas encore été jouée (tir raté et tir touché)
+  *  Si les vérifications sont OK alors ajouter la case dans une liste de coordonnées à tirer
+  */
+  for (int i = 0 ; i < 4 ; i++) {
+    switch( i ) {
+      case 0: {
+        coord_future.SetX(coord.GetX() + 1);
+        coord_future.SetY(coord.GetY());
+        break;
+      }
+      case 1: {
+        coord_future.SetX(coord.GetX() - 1);
+        coord_future.SetY(coord.GetY());
+        break;
+      }
+      case 2: {
+        coord_future.SetX(coord.GetX());
+        coord_future.SetY(coord.GetY() + 1);
+        break;
+      }
+      case 3: {
+        coord_future.SetX(coord.GetX());
+        coord_future.SetY(coord.GetY() - 1);
+        break;
+      }
+      default : {
+        break;
+      }
+    } 
+    /** Si case non déja jouée par le joueur ET dans le plateau, Ce sera une case à attaquer ensuite */
+    if ( (this->VerifierConflitPlateauAttaque(coord_future) == false) 
+              && (adversaire.GetImpactCoord(coord_future) == false) 
+              && (this->VerifierPionBlanc(coord_future) == false) ) {
+      this->coordonnees_a_tirer.push_back(coord_future);
+    }
   }
 }

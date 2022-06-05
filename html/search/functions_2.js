@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['definirlistecoord_56',['DefinirListeCoord',['../classJoueur.html#a70e7434a66ccdff9c0b5c8da6400ddf4',1,'Joueur']]]
+  ['clearscrollback_103',['ClearScrollback',['../classAfficher.html#abe72fedb84771cadec1edc5569601fcc',1,'Afficher']]],
+  ['coordonnee_104',['Coordonnee',['../classCoordonnee.html#a5a93503c9e5aa5c0ed443d086027c181',1,'Coordonnee::Coordonnee()'],['../classCoordonnee.html#a228c64265ac1a6fd399e7a8c7f4148d9',1,'Coordonnee::Coordonnee(char x, int y)']]]
 ];

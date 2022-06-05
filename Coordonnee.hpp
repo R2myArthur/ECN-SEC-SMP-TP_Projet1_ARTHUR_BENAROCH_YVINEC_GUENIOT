@@ -60,13 +60,13 @@ class Coordonnee {
       
     /** 
     * \brief Setter de la valeur de l'ordonnée
-    * \param y: Ordonnée
+    * \param _y: Ordonnée
     */
     void SetY(int _y);
       
     /** 
     * \brief Setter de la valeur de l'abscisse
-    * \param x: Abscisse
+    * \param _x: Abscisse
     */
     void SetX(char _x);
       

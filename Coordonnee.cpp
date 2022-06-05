@@ -57,7 +57,7 @@ bool Coordonnee::operator==( Coordonnee &second_coord) const {
 }
 
 /** 
-* Générer un valeur aléatire de coordonnée dans la plage du plateau
+* Générer une valeur aléatiore de coordonnée dans la plage du plateau
 */
 Coordonnee Coordonnee::TirageAleatoireCoordonnee(){
   srand(time(0));

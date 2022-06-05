@@ -9,14 +9,21 @@ void \mbox{\hyperlink{classAfficher_ae5a37ff95930544f15c5796c0e360f10}{afficher\
 \item 
 void \mbox{\hyperlink{classAfficher_ad715f794001f41db7ad2eb005c418390}{afficher\+\_\+plateau\+\_\+bas\+\_\+\+Joueur}} (\mbox{\hyperlink{classJoueur}{Joueur}} \&j1\+\_\+a\+\_\+afficher)
 \item 
-\mbox{\Hypertarget{classAfficher_ad102213155d673a883a36ea38eec9069}\label{classAfficher_ad102213155d673a883a36ea38eec9069}} 
-void {\bfseries deroulement\+\_\+joueur} (\mbox{\hyperlink{classJoueur}{Joueur}} \&joueur\+\_\+qui\+\_\+joue, \mbox{\hyperlink{classJoueur}{Joueur}} \&adversaire)
+void \mbox{\hyperlink{classAfficher_ad102213155d673a883a36ea38eec9069}{deroulement\+\_\+joueur}} (\mbox{\hyperlink{classJoueur}{Joueur}} \&joueur\+\_\+qui\+\_\+joue, \mbox{\hyperlink{classJoueur}{Joueur}} \&adversaire)
 \item 
-\mbox{\Hypertarget{classAfficher_ae9860b0cbd6b4c3966dbda3fd2bbd592}\label{classAfficher_ae9860b0cbd6b4c3966dbda3fd2bbd592}} 
-void {\bfseries affichage\+\_\+bateau\+\_\+selection} (bool orientation, std\+::string nom\+\_\+bateau)
+void \mbox{\hyperlink{classAfficher_ae9860b0cbd6b4c3966dbda3fd2bbd592}{affichage\+\_\+bateau\+\_\+selection}} (bool orientation, std\+::string nom\+\_\+bateau)
 \item 
-\mbox{\Hypertarget{classAfficher_abe72fedb84771cadec1edc5569601fcc}\label{classAfficher_abe72fedb84771cadec1edc5569601fcc}} 
-void {\bfseries Clear\+Scrollback} ()
+void \mbox{\hyperlink{classAfficher_abe72fedb84771cadec1edc5569601fcc}{Clear\+Scrollback}} ()
+\item 
+void \mbox{\hyperlink{classAfficher_ac450c9a81929ad82c7fc19b0dc4c754e}{Selection\+Menu}} ()
+\item 
+void \mbox{\hyperlink{classAfficher_a57164503e3613c1bedc953cee870e500}{Initialisation\+Joueur\+Vs\+Joueur}} (\mbox{\hyperlink{classJoueurReel}{Joueur\+Reel}} \&j1, \mbox{\hyperlink{classJoueurReel}{Joueur\+Reel}} \&j2)
+\item 
+void \mbox{\hyperlink{classAfficher_a383c749c8d313f813c9569710e49493d}{Initialisation\+Joueur\+Vs\+IA}} (\mbox{\hyperlink{classJoueurReel}{Joueur\+Reel}} \&j1, \mbox{\hyperlink{classJoueurIA}{Joueur\+IA}} \&j\+IA)
+\item 
+void \mbox{\hyperlink{classAfficher_a7c4514f663d308c7d35ee7bae1cc7225}{Deroulement\+Joueur\+IA}} (\mbox{\hyperlink{classJoueurIA}{Joueur\+IA}} \&joueur\+\_\+qui\+\_\+joue, \mbox{\hyperlink{classJoueurReel}{Joueur\+Reel}} \&adversaire)
+\item 
+void \mbox{\hyperlink{classAfficher_a8eab096a856a98a4b9e436cdf499607f}{afficher\+\_\+message\+\_\+construction}} ()
 \end{DoxyCompactItemize}
 
 
@@ -30,7 +37,33 @@ void {\bfseries Clear\+Scrollback} ()
 Constructeur de la classe \mbox{\hyperlink{classAfficher}{Afficher}} 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classAfficher_ad715f794001f41db7ad2eb005c418390}\label{classAfficher_ad715f794001f41db7ad2eb005c418390}} 
+\mbox{\Hypertarget{classAfficher_ae9860b0cbd6b4c3966dbda3fd2bbd592}\label{classAfficher_ae9860b0cbd6b4c3966dbda3fd2bbd592}} 
+\index{Afficher@{Afficher}!affichage\_bateau\_selection@{affichage\_bateau\_selection}}
+\index{affichage\_bateau\_selection@{affichage\_bateau\_selection}!Afficher@{Afficher}}
+\doxysubsubsection{\texorpdfstring{affichage\_bateau\_selection()}{affichage\_bateau\_selection()}}
+{\footnotesize\ttfamily void Afficher\+::affichage\+\_\+bateau\+\_\+selection (\begin{DoxyParamCaption}\item[{bool}]{orientation,  }\item[{std\+::string}]{nom\+\_\+bateau }\end{DoxyParamCaption})}
+
+Permet de donner un visuel en format A\+S\+C\+II du bateau qu\textquotesingle{}il faut actuellement placer
+
+
+\begin{DoxyParams}{Parameters}
+{\em orientation} & Orientation du bateau à placer \\
+\hline
+{\em nom\+\_\+bateau} & Le nom du bateau\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vide
+\end{DoxyReturn}
+\mbox{\hyperlink{classAfficher}{Afficher}} visuellement les bateaux selon le nom (aide à la selection et pose des bateaux sur le jeu en début de partie) \mbox{\Hypertarget{classAfficher_a8eab096a856a98a4b9e436cdf499607f}\label{classAfficher_a8eab096a856a98a4b9e436cdf499607f}} 
+\index{Afficher@{Afficher}!afficher\_message\_construction@{afficher\_message\_construction}}
+\index{afficher\_message\_construction@{afficher\_message\_construction}!Afficher@{Afficher}}
+\doxysubsubsection{\texorpdfstring{afficher\_message\_construction()}{afficher\_message\_construction()}}
+{\footnotesize\ttfamily void Afficher\+::afficher\+\_\+message\+\_\+construction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Message émis lors de la génération du plateau par l\textquotesingle{}ordinateur.
+
+\mbox{\hyperlink{classAfficher}{Afficher}} message utilisateur à la construction du plateau \mbox{\Hypertarget{classAfficher_ad715f794001f41db7ad2eb005c418390}\label{classAfficher_ad715f794001f41db7ad2eb005c418390}} 
 \index{Afficher@{Afficher}!afficher\_plateau\_bas\_Joueur@{afficher\_plateau\_bas\_Joueur}}
 \index{afficher\_plateau\_bas\_Joueur@{afficher\_plateau\_bas\_Joueur}!Afficher@{Afficher}}
 \doxysubsubsection{\texorpdfstring{afficher\_plateau\_bas\_Joueur()}{afficher\_plateau\_bas\_Joueur()}}
@@ -43,7 +76,9 @@ Constructeur de la classe \mbox{\hyperlink{classAfficher}{Afficher}}
 {\em j1\+\_\+a\+\_\+afficher} & Taille du bateau\\
 \hline
 \end{DoxyParams}
-\textbackslash{}detail Affiche le plateau du j1\+\_\+a\+\_\+afficher avec ses bateaux \mbox{\Hypertarget{classAfficher_ae5a37ff95930544f15c5796c0e360f10}\label{classAfficher_ae5a37ff95930544f15c5796c0e360f10}} 
+Affiche le plateau du j1\+\_\+a\+\_\+afficher avec ses bateaux
+
+Affiche le plateau bas du joueur 1 (passer en premier paramètre), c\textquotesingle{}est à dire que ça affiche ses bateaux, tout en faisant la distinction des coordonnées des bateaux qui ont été touchées(\+X rouge) et pas touchées(\+X blanc). \mbox{\Hypertarget{classAfficher_ae5a37ff95930544f15c5796c0e360f10}\label{classAfficher_ae5a37ff95930544f15c5796c0e360f10}} 
 \index{Afficher@{Afficher}!afficher\_plateau\_haut\_Joueur@{afficher\_plateau\_haut\_Joueur}}
 \index{afficher\_plateau\_haut\_Joueur@{afficher\_plateau\_haut\_Joueur}!Afficher@{Afficher}}
 \doxysubsubsection{\texorpdfstring{afficher\_plateau\_haut\_Joueur()}{afficher\_plateau\_haut\_Joueur()}}
@@ -58,7 +93,130 @@ Constructeur de la classe \mbox{\hyperlink{classAfficher}{Afficher}}
 {\em j2\+\_\+info\+\_\+recup} & \mbox{\hyperlink{classJoueur}{Joueur}} adverse\\
 \hline
 \end{DoxyParams}
-\textbackslash{}detail Affiche le plateau du j1\+\_\+a\+\_\+afficher en fonction des attaques envoyées sur j2\+\_\+info\+\_\+recup 
+Affiche le plateau du j1\+\_\+a\+\_\+afficher en fonction des attaques envoyées sur j2\+\_\+info\+\_\+recup
+
+Affiche le plateau haut du joueur 1 (passer en premier paramètre), liste pion blanc récupéré chez le J1 et la liste pion rouge est récupérée chez J2. \mbox{\Hypertarget{classAfficher_abe72fedb84771cadec1edc5569601fcc}\label{classAfficher_abe72fedb84771cadec1edc5569601fcc}} 
+\index{Afficher@{Afficher}!ClearScrollback@{ClearScrollback}}
+\index{ClearScrollback@{ClearScrollback}!Afficher@{Afficher}}
+\doxysubsubsection{\texorpdfstring{ClearScrollback()}{ClearScrollback()}}
+{\footnotesize\ttfamily void Afficher\+::\+Clear\+Scrollback (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Permet de nettoyer la console pour ne pas voir le plateau du joueur précédent
+
+\begin{DoxyReturn}{Returns}
+vide
+\end{DoxyReturn}
+Clean ineterface de jeu \mbox{\Hypertarget{classAfficher_ad102213155d673a883a36ea38eec9069}\label{classAfficher_ad102213155d673a883a36ea38eec9069}} 
+\index{Afficher@{Afficher}!deroulement\_joueur@{deroulement\_joueur}}
+\index{deroulement\_joueur@{deroulement\_joueur}!Afficher@{Afficher}}
+\doxysubsubsection{\texorpdfstring{deroulement\_joueur()}{deroulement\_joueur()}}
+{\footnotesize\ttfamily void Afficher\+::deroulement\+\_\+joueur (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classJoueur}{Joueur}} \&}]{joueur\+\_\+qui\+\_\+joue,  }\item[{\mbox{\hyperlink{classJoueur}{Joueur}} \&}]{adversaire }\end{DoxyParamCaption})}
+
+Maitre du jeu de la partie entre deux joueurs reels
+
+
+\begin{DoxyParams}{Parameters}
+{\em joueur\+\_\+qui\+\_\+joue} & joueur jouant actuellement \\
+\hline
+{\em adversaire} & adversaire du joueur\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vide
+\end{DoxyReturn}
+Deroule la partie du joueur 1 et joueur 2, maitre du jeu. \mbox{\Hypertarget{classAfficher_a7c4514f663d308c7d35ee7bae1cc7225}\label{classAfficher_a7c4514f663d308c7d35ee7bae1cc7225}} 
+\index{Afficher@{Afficher}!DeroulementJoueurIA@{DeroulementJoueurIA}}
+\index{DeroulementJoueurIA@{DeroulementJoueurIA}!Afficher@{Afficher}}
+\doxysubsubsection{\texorpdfstring{DeroulementJoueurIA()}{DeroulementJoueurIA()}}
+{\footnotesize\ttfamily void Afficher\+::\+Deroulement\+Joueur\+IA (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classJoueurIA}{Joueur\+IA}} \&}]{joueur\+\_\+qui\+\_\+joue,  }\item[{\mbox{\hyperlink{classJoueurReel}{Joueur\+Reel}} \&}]{adversaire }\end{DoxyParamCaption})}
+
+Maitre du jeu de la partie entre un joueur reel et une IA
+
+
+\begin{DoxyParams}{Parameters}
+{\em joueur\+\_\+qui\+\_\+joue} & IA \\
+\hline
+{\em adversaire} & \mbox{\hyperlink{classJoueur}{Joueur}} réel\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vide
+\end{DoxyReturn}
+Maitre du jeu de la partie entre un joueur reel et une IA
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000001}{Todo}}]Il faudra reprendre la fonction et la découper pour la rendre plus lisible et factoriser le tirage aléatoire. \end{DoxyRefDesc}
+Effacer la console
+
+Indication utilisateur de qui joue
+
+Récupérer la prochaien coordonnée à attaquer
+
+Effacer la console
+
+Envoyer l\textquotesingle{}action d\textquotesingle{}attaque =$>$ Vérifier si la case est touchée ou pas ~\newline
+
+
+Tir n\textquotesingle{}a pas touché de bateau \+: stockage dans la liste de tir raté
+
+Tir a touché un bateau
+
+Récupérer la prochaien coordonnée à attaquer\mbox{\Hypertarget{classAfficher_a383c749c8d313f813c9569710e49493d}\label{classAfficher_a383c749c8d313f813c9569710e49493d}} 
+\index{Afficher@{Afficher}!InitialisationJoueurVsIA@{InitialisationJoueurVsIA}}
+\index{InitialisationJoueurVsIA@{InitialisationJoueurVsIA}!Afficher@{Afficher}}
+\doxysubsubsection{\texorpdfstring{InitialisationJoueurVsIA()}{InitialisationJoueurVsIA()}}
+{\footnotesize\ttfamily void Afficher\+::\+Initialisation\+Joueur\+Vs\+IA (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classJoueurReel}{Joueur\+Reel}} \&}]{j1,  }\item[{\mbox{\hyperlink{classJoueurIA}{Joueur\+IA}} \&}]{j\+IA }\end{DoxyParamCaption})}
+
+Initialise la partie et le roulement de tour entre les 2 joueurs, l\textquotesingle{}un réel et l\textquotesingle{}autre IA
+
+
+\begin{DoxyParams}{Parameters}
+{\em j1} & \mbox{\hyperlink{classJoueur}{Joueur}} 1 \\
+\hline
+{\em j\+IA} & IA\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vide
+\end{DoxyReturn}
+Initialise la partie et le roulement de tour entre les 2 joueurs, l\textquotesingle{}un réel et l\textquotesingle{}autre IA \mbox{\Hypertarget{classAfficher_a57164503e3613c1bedc953cee870e500}\label{classAfficher_a57164503e3613c1bedc953cee870e500}} 
+\index{Afficher@{Afficher}!InitialisationJoueurVsJoueur@{InitialisationJoueurVsJoueur}}
+\index{InitialisationJoueurVsJoueur@{InitialisationJoueurVsJoueur}!Afficher@{Afficher}}
+\doxysubsubsection{\texorpdfstring{InitialisationJoueurVsJoueur()}{InitialisationJoueurVsJoueur()}}
+{\footnotesize\ttfamily void Afficher\+::\+Initialisation\+Joueur\+Vs\+Joueur (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classJoueurReel}{Joueur\+Reel}} \&}]{j1,  }\item[{\mbox{\hyperlink{classJoueurReel}{Joueur\+Reel}} \&}]{j2 }\end{DoxyParamCaption})}
+
+Initialise la partie et le roulement de tour entre les 2 joueurs
+
+
+\begin{DoxyParams}{Parameters}
+{\em j1} & joueur 1 \\
+\hline
+{\em j2} & joueur 2\\
+\hline
+\end{DoxyParams}
+Initialise la partie et le roulement de tour entre les 2 joueurs \mbox{\Hypertarget{classAfficher_ac450c9a81929ad82c7fc19b0dc4c754e}\label{classAfficher_ac450c9a81929ad82c7fc19b0dc4c754e}} 
+\index{Afficher@{Afficher}!SelectionMenu@{SelectionMenu}}
+\index{SelectionMenu@{SelectionMenu}!Afficher@{Afficher}}
+\doxysubsubsection{\texorpdfstring{SelectionMenu()}{SelectionMenu()}}
+{\footnotesize\ttfamily void Afficher\+::\+Selection\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Permettra de choisir entre se battre contre une IA ou un joueur, puis de faire générer ou pas son plateau aléatoirement, puis choisir un niveau de difficulté de l\textquotesingle{}IA (si le combat est contre elle) Demander le choix de jeu du joueur entre \mbox{\hyperlink{classJoueur}{Joueur}} vs \mbox{\hyperlink{classJoueur}{Joueur}} ou \mbox{\hyperlink{classJoueur}{Joueur}} vs IA
+
+Demander si l\textquotesingle{}utilisateur veut créer lui même les bateaux ou pas
+
+Demander les noms des joueurs
+
+Créer les Joueurs en fonction de la génération automatique ou non
+
+Lancer la partie
+
+Demander le nom du joueur à l\textquotesingle{}utilisateur
+
+Demander au joueur difficulté IA
+
+Créer les Joueurs
+
+Lancer la partie
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

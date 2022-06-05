@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['is_5fa_5fbot_22',['is_a_bot',['../classJoueur.html#a890e809a8dd1492a63b19bf41f9a5ff6',1,'Joueur']]]
+  ['initialisationjoueurvsia_38',['InitialisationJoueurVsIA',['../classAfficher.html#a383c749c8d313f813c9569710e49493d',1,'Afficher']]],
+  ['initialisationjoueurvsjoueur_39',['InitialisationJoueurVsJoueur',['../classAfficher.html#a57164503e3613c1bedc953cee870e500',1,'Afficher']]]
 ];

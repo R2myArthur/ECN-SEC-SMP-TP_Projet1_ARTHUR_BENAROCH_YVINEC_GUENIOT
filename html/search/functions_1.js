@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['coordonnee_55',['Coordonnee',['../classCoordonnee.html#a5a93503c9e5aa5c0ed443d086027c181',1,'Coordonnee::Coordonnee()'],['../classCoordonnee.html#a228c64265ac1a6fd399e7a8c7f4148d9',1,'Coordonnee::Coordonnee(char x, int y)']]]
+  ['bateau_101',['Bateau',['../classBateau.html#a3d534cea00fbc2354081e28aa59102f4',1,'Bateau']]],
+  ['bateau_5fexploser_102',['bateau_exploser',['../classBateau.html#ab97905b8417b0096c18d9c2c7dd451f7',1,'Bateau']]]
 ];

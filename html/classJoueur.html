@@ -63,24 +63,31 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classJoueur-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Joueur Class Reference</div>  </div>
+<div class="title">Joueur Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="Joueur_8hpp_source.html">Joueur.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for Joueur:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classJoueur.png" usemap="#Joueur_map" alt=""/>
+  <map id="Joueur_map" name="Joueur_map">
+<area href="classJoueurIA.html" alt="JoueurIA" shape="rect" coords="0,56,77,80"/>
+<area href="classJoueurReel.html" alt="JoueurReel" shape="rect" coords="87,56,164,80"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:abd47517092140e3b9644b36104ea5ed6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJoueur.html#abd47517092140e3b9644b36104ea5ed6">Joueur</a> (string name, bool _is_a_bot)</td></tr>
-<tr class="memdesc:abd47517092140e3b9644b36104ea5ed6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur de la classe <a class="el" href="classJoueur.html">Joueur</a>.  <a href="classJoueur.html#abd47517092140e3b9644b36104ea5ed6">More...</a><br /></td></tr>
-<tr class="separator:abd47517092140e3b9644b36104ea5ed6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add6c98be3020651d84f6d75ccc1d867e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJoueur.html#add6c98be3020651d84f6d75ccc1d867e">Joueur</a> ()</td></tr>
-<tr class="memdesc:add6c98be3020651d84f6d75ccc1d867e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur de la classe <a class="el" href="classJoueur.html">Joueur</a> avec bateau par défaut pour test.  <a href="classJoueur.html#add6c98be3020651d84f6d75ccc1d867e">More...</a><br /></td></tr>
+<tr class="memdesc:add6c98be3020651d84f6d75ccc1d867e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur de la classe <a class="el" href="classJoueur.html">Joueur</a>.  <a href="classJoueur.html#add6c98be3020651d84f6d75ccc1d867e">More...</a><br /></td></tr>
 <tr class="separator:add6c98be3020651d84f6d75ccc1d867e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70e7434a66ccdff9c0b5c8da6400ddf4"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classCoordonnee.html">Coordonnee</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJoueur.html#a70e7434a66ccdff9c0b5c8da6400ddf4">DefinirListeCoord</a> (string nom, <a class="el" href="classCoordonnee.html">Coordonnee</a> coord, bool orientation)</td></tr>
+<tr class="memitem:a70e7434a66ccdff9c0b5c8da6400ddf4"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classCoordonnee.html">Coordonnee</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJoueur.html#a70e7434a66ccdff9c0b5c8da6400ddf4">DefinirListeCoord</a> (string <a class="el" href="classJoueur.html#a251a7192f61dae541f80cbff3914f208">nom</a>, <a class="el" href="classCoordonnee.html">Coordonnee</a> coord, bool orientation)</td></tr>
 <tr class="separator:a70e7434a66ccdff9c0b5c8da6400ddf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc55bf3a1e59383736c6c1e73d665e98"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJoueur.html#afc55bf3a1e59383736c6c1e73d665e98">VerifierConflitPlateau</a> (vector&lt; <a class="el" href="classCoordonnee.html">Coordonnee</a> &gt; coordonnees)</td></tr>
 <tr class="separator:afc55bf3a1e59383736c6c1e73d665e98"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -90,57 +97,65 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aaf3e37469738fd4a4c18da4ec5c64cc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67581d2483da1827688b0ab4ef6969f1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJoueur.html#a67581d2483da1827688b0ab4ef6969f1">JoueurVivant</a> ()</td></tr>
 <tr class="separator:a67581d2483da1827688b0ab4ef6969f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47ef4693b06db53cb5eb4de43554cf4c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCoordonnee.html">Coordonnee</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJoueur.html#a47ef4693b06db53cb5eb4de43554cf4c">RenseignerCoordonnee</a> ()</td></tr>
-<tr class="separator:a47ef4693b06db53cb5eb4de43554cf4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35e450dd0d1d0fabc6e7843ead0b806d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classCoordonnee.html">Coordonnee</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJoueur.html#a35e450dd0d1d0fabc6e7843ead0b806d">RenseignerCoordonnee</a> ()=0</td></tr>
+<tr class="separator:a35e450dd0d1d0fabc6e7843ead0b806d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae21f588f00c2badcf89163dce2caebc1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJoueur.html#ae21f588f00c2badcf89163dce2caebc1">VerifierPionBlanc</a> (<a class="el" href="classCoordonnee.html">Coordonnee</a> coord)</td></tr>
 <tr class="separator:ae21f588f00c2badcf89163dce2caebc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7591823f333cdaf9223a55ed53dd9158"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJoueur.html#a7591823f333cdaf9223a55ed53dd9158">AjouterPionBlanc</a> (<a class="el" href="classCoordonnee.html">Coordonnee</a> &amp;coord)</td></tr>
 <tr class="separator:a7591823f333cdaf9223a55ed53dd9158"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d2077cd76511e188fcc7bf001ff39f6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJoueur.html#a1d2077cd76511e188fcc7bf001ff39f6">Attaquer</a> (<a class="el" href="classCoordonnee.html">Coordonnee</a> coord)</td></tr>
-<tr class="separator:a1d2077cd76511e188fcc7bf001ff39f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a093d25aeb3995b28de58a54f8e55116b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJoueur.html#a093d25aeb3995b28de58a54f8e55116b">Attaquer</a> (<a class="el" href="classCoordonnee.html">Coordonnee</a> &amp;coord)</td></tr>
+<tr class="separator:a093d25aeb3995b28de58a54f8e55116b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0a85b80ca2db143c382c073af81dc97"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classCoordonnee.html">Coordonnee</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJoueur.html#af0a85b80ca2db143c382c073af81dc97">GetListeCoordImpactBateau</a> ()</td></tr>
 <tr class="separator:af0a85b80ca2db143c382c073af81dc97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64932aaa0fd13b2361ba8c20242c976d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJoueur.html#a64932aaa0fd13b2361ba8c20242c976d">GetImpactCoord</a> (<a class="el" href="classCoordonnee.html">Coordonnee</a> coord)</td></tr>
 <tr class="separator:a64932aaa0fd13b2361ba8c20242c976d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26913df63df3ab7c23d1ebc111bc7db3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJoueur.html#a26913df63df3ab7c23d1ebc111bc7db3">AfficherJoueur</a> ()</td></tr>
-<tr class="separator:a26913df63df3ab7c23d1ebc111bc7db3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf15d047a24870f9654d68cb62cb0e7f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJoueur.html#abf15d047a24870f9654d68cb62cb0e7f">VerifAdjacentBateauConflit</a> (std::vector&lt; <a class="el" href="classCoordonnee.html">Coordonnee</a> &gt; coord, bool orientation)</td></tr>
+<tr class="separator:abf15d047a24870f9654d68cb62cb0e7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14cefe0f7edc0284fa4f56bfbf524289"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJoueur.html#a14cefe0f7edc0284fa4f56bfbf524289">GetNom</a> ()</td></tr>
 <tr class="separator:a14cefe0f7edc0284fa4f56bfbf524289"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a890e809a8dd1492a63b19bf41f9a5ff6"><td class="memItemLeft" align="right" valign="top"><a id="a890e809a8dd1492a63b19bf41f9a5ff6"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJoueur.html#a890e809a8dd1492a63b19bf41f9a5ff6">is_a_bot</a></td></tr>
-<tr class="memdesc:a890e809a8dd1492a63b19bf41f9a5ff6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Si le joueur est une IA mettre à vrai. <br /></td></tr>
-<tr class="separator:a890e809a8dd1492a63b19bf41f9a5ff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a251a7192f61dae541f80cbff3914f208"><td class="memItemLeft" align="right" valign="top"><a id="a251a7192f61dae541f80cbff3914f208"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJoueur.html#a251a7192f61dae541f80cbff3914f208">nom</a></td></tr>
+<tr class="memdesc:a251a7192f61dae541f80cbff3914f208"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nom du joueur. <br /></td></tr>
+<tr class="separator:a251a7192f61dae541f80cbff3914f208"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafc943fcb057f7b923a39f9fb0ec66b3"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classBateau.html">Bateau</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJoueur.html#aafc943fcb057f7b923a39f9fb0ec66b3">liste_bateau</a></td></tr>
+<tr class="memdesc:aafc943fcb057f7b923a39f9fb0ec66b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liste contenant les bateaux du joueur.  <a href="classJoueur.html#aafc943fcb057f7b923a39f9fb0ec66b3">More...</a><br /></td></tr>
+<tr class="separator:aafc943fcb057f7b923a39f9fb0ec66b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af391335ea617abd1b255ac5338a2d3d0"><td class="memItemLeft" align="right" valign="top"><a id="af391335ea617abd1b255ac5338a2d3d0"></a>
+vector&lt; <a class="el" href="classCoordonnee.html">Coordonnee</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJoueur.html#af391335ea617abd1b255ac5338a2d3d0">liste_pion_blanc</a></td></tr>
+<tr class="memdesc:af391335ea617abd1b255ac5338a2d3d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liste de coordonnées des pions blanc (raté) <br /></td></tr>
+<tr class="separator:af391335ea617abd1b255ac5338a2d3d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52307bbc6343c3f3aee030f7bc56debd"><td class="memItemLeft" align="right" valign="top"><a id="a52307bbc6343c3f3aee030f7bc56debd"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJoueur.html#a52307bbc6343c3f3aee030f7bc56debd">afficher_message</a></td></tr>
+<tr class="memdesc:a52307bbc6343c3f3aee030f7bc56debd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable permettant de gérer l'affichage des message dans les méthodes de <a class="el" href="classJoueur.html">Joueur</a>, notemment pour eviter les affichage avec l'IA. <br /></td></tr>
+<tr class="separator:a52307bbc6343c3f3aee030f7bc56debd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Déclaration de la classe <a class="el" href="classJoueur.html">Joueur</a> </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="abd47517092140e3b9644b36104ea5ed6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abd47517092140e3b9644b36104ea5ed6">&#9670;&nbsp;</a></span>Joueur() <span class="overload">[1/2]</span></h2>
+<a id="add6c98be3020651d84f6d75ccc1d867e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add6c98be3020651d84f6d75ccc1d867e">&#9670;&nbsp;</a></span>Joueur()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">Joueur::Joueur </td>
           <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>_is_a_bot</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Constructeur de la classe <a class="el" href="classJoueur.html">Joueur</a>. </p>
@@ -153,50 +168,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
-<a id="add6c98be3020651d84f6d75ccc1d867e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#add6c98be3020651d84f6d75ccc1d867e">&#9670;&nbsp;</a></span>Joueur() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Joueur::Joueur </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Constructeur de la classe <a class="el" href="classJoueur.html">Joueur</a> avec bateau par défaut pour test. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">name</td><td>Nom que prendra le joueur durant la partie </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a26913df63df3ab7c23d1ebc111bc7db3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a26913df63df3ab7c23d1ebc111bc7db3">&#9670;&nbsp;</a></span>AfficherJoueur()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Joueur::AfficherJoueur </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p><a class="el" href="classAfficher.html">Afficher</a> la table du jeu à l'utilisateur </p>
-
-</div>
-</div>
 <a id="a7591823f333cdaf9223a55ed53dd9158"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7591823f333cdaf9223a55ed53dd9158">&#9670;&nbsp;</a></span>AjouterPionBlanc()</h2>
 
@@ -212,19 +184,19 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Ajouter un pion blanc dans la liste</p>
+<p>Ajouter un pion blanc dans la liste et afficher que le tire est 'loupé'</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">coord</td><td>Coordonnée à rajouter</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>La liste donné en paramètre possède un pion supplémentaire </dd></dl>
+<p>Ajouter un pion blanc dans la liste et afficher que le tire est 'loupé' </p>
 
 </div>
 </div>
-<a id="a1d2077cd76511e188fcc7bf001ff39f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d2077cd76511e188fcc7bf001ff39f6">&#9670;&nbsp;</a></span>Attaquer()</h2>
+<a id="a093d25aeb3995b28de58a54f8e55116b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a093d25aeb3995b28de58a54f8e55116b">&#9670;&nbsp;</a></span>Attaquer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -232,21 +204,22 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
         <tr>
           <td class="memname">bool Joueur::Attaquer </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classCoordonnee.html">Coordonnee</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classCoordonnee.html">Coordonnee</a> &amp;&#160;</td>
           <td class="paramname"><em>coord</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Traiter l'attaque du joueur adverse</p>
-<p>Fonction a appeler par le joueur qui se fait attaquer avec les coordonnees souhaites de l'attaquant</p>
+<p>Fonction a appeler par le joueur qui se fait attaquer avec les coordonnees souhaitées de l'attaquant</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">coord</td><td>Coordonnée à rajouter</td></tr>
+    <tr><td class="paramname">coord</td><td>Coordonnée à attaquer sur le joueur</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Renvoie true si touché, renvoie false si loupé </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Renvoie true si touché, renvoie false si loupé</dd></dl>
+<p>Traiter l'attaque du joueur adverse </p>
 
 </div>
 </div>
@@ -283,14 +256,14 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><div class="memdoc">
 <p>Définir la liste des coordonnées à partir du point arrière du bateau, de la taille et de son orientation </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">taille</td><td>Taille du bateau </td></tr>
-    <tr><td class="paramname">point_coord</td><td>Point de coordonnée de l'arrière du bateau </td></tr>
-    <tr><td class="paramname">orientation</td><td>orientation du bateau</td></tr>
+    <tr><td class="paramname">nom</td><td>Nom du bateau </td></tr>
+    <tr><td class="paramname">coord</td><td>Point de coordonnée de l'arrière du bateau </td></tr>
+    <tr><td class="paramname">orientation</td><td>Orientation du bateau</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Retourne la liste des coordonnées qu'occupe le bateau</dd></dl>
-<p>Définition de la DefinirListeCoord </p>
+<p>Définir la liste des coordonnées à partir du point arrière du bateau, de la taille et de son orientation </p>
 
 </div>
 </div>
@@ -309,14 +282,15 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Est-ce que un bateau est touché</p>
+<p>Permet de savoir si les coordonnées en paramètre correspondent à une case où le bateau est présent</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">coord</td><td>Coordonnée à vérifier</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Retourne true si un bateau du joueur est touché </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Retourne Vrai si un bateau du joueur est touché sinon Faux</dd></dl>
+<p>Permet de savoir si les coordonnées en paramètre correspondent à une case où le bateau est présent </p>
 
 </div>
 </div>
@@ -335,7 +309,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
       </table>
 </div><div class="memdoc">
 <p>Récupérer la liste des impacts pour chaque bateau</p>
-<dl class="section return"><dt>Returns</dt><dd>Retourne une liste de bateaux avec les coordonnées touchées </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Retourne une liste de bateaux avec les coordonnées touchées</dd></dl>
+<p>Récupérer la liste des impacts pour chaque bateau </p>
 
 </div>
 </div>
@@ -361,7 +336,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Récupérer le nom du joueur </p>
+<p>Récupérer le nom du joueur</p>
+<dl class="section return"><dt>Returns</dt><dd>Retourne le nom du joueur </dd></dl>
 
 </div>
 </div>
@@ -380,26 +356,76 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
       </table>
 </div><div class="memdoc">
 <p>Récupérer l'état du joueur</p>
-<dl class="section return"><dt>Returns</dt><dd>Retourne l'ensemble des coordonnées touchées par l'adversaire </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Vrai si vivant, Faux si mort</dd></dl>
+<p>Récupérer l'état du joueur </p>
 
 </div>
 </div>
-<a id="a47ef4693b06db53cb5eb4de43554cf4c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a47ef4693b06db53cb5eb4de43554cf4c">&#9670;&nbsp;</a></span>RenseignerCoordonnee()</h2>
+<a id="a35e450dd0d1d0fabc6e7843ead0b806d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35e450dd0d1d0fabc6e7843ead0b806d">&#9670;&nbsp;</a></span>RenseignerCoordonnee()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classCoordonnee.html">Coordonnee</a> Joueur::RenseignerCoordonnee </td>
+          <td class="memname">virtual <a class="el" href="classCoordonnee.html">Coordonnee</a> Joueur::RenseignerCoordonnee </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Interroge l'utilisateur sur un jeu de coordonnée</p>
-<dl class="section return"><dt>Returns</dt><dd>Retourne les coordonnées rentrées par l'utilisateur vérifié </dd></dl>
+<p>C'est une méthode virtuelle à redéfinir dans les sous-classe Les entrées de l'utilisateurs seront vérifiées</p>
+<dl class="section return"><dt>Returns</dt><dd>Retourne les coordonnées rentrées par l'utilisateur </dd></dl>
+
+<p>Implemented in <a class="el" href="classJoueurReel.html#a6d69db64edd56b18ee9a312d2c6469e8">JoueurReel</a>, and <a class="el" href="classJoueurIA.html#a88c39257004b588348fb911072879556">JoueurIA</a>.</p>
+
+</div>
+</div>
+<a id="abf15d047a24870f9654d68cb62cb0e7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf15d047a24870f9654d68cb62cb0e7f">&#9670;&nbsp;</a></span>VerifAdjacentBateauConflit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Joueur::VerifAdjacentBateauConflit </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classCoordonnee.html">Coordonnee</a> &gt;&#160;</td>
+          <td class="paramname"><em>coord</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>orientation</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Vérifier que le bateau n'est pas adjacent à un autre bateau</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">coord</td><td>Coordonnée à vérifier </td></tr>
+    <tr><td class="paramname">orientation</td><td>Orientation du bateau</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Retourne Vrai si il est adjacent, sinon Faux</dd></dl>
+<p>Vérifier que le bateau n'est pas adjacent à un autre bateau </p>
 
 </div>
 </div>
@@ -436,7 +462,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Retourne un booléen qui indique si il y a au moins un conflit </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Retourne un booléen qui indique si il y a au moins un conflit</dd></dl>
+<p>Vérifier les conflits entre les coordonnées et les autres bateaux du joueur </p>
 
 </div>
 </div>
@@ -450,19 +477,20 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td class="memname">bool Joueur::VerifierConflitBateaux </td>
           <td>(</td>
           <td class="paramtype">vector&lt; <a class="el" href="classCoordonnee.html">Coordonnee</a> &gt;&#160;</td>
-          <td class="paramname"><em>coordonnees</em></td><td>)</td>
+          <td class="paramname"><em>liste_coord</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Vérifier les conflits entre les coordonnées et les autres bateaux du joueur</p>
+<p>Vérifier les conflits entre les coordonnées en paramètre et les autres bateaux du joueur</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">coordonnees</td><td>Coordonnées du bateau à vérifier</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Retourne un booléen qui indique si il y a au moins un conflit </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Retourne un booléen qui indique si il y a au moins un conflit</dd></dl>
+<p>Vérifier les conflits entre les coordonnées en paramètre et les autres bateaux du joueur </p>
 
 </div>
 </div>
@@ -481,14 +509,15 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Vérifier les conflits entre les coordonnées et les limites du plateau</p>
+<p>Vérifier les conflits entre les coordonnées en paramètre et les limites du plateau</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">coordonnees</td><td>Coordonnées du bateau à vérifier</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Retourne un booléen qui indique si il y a au moins un conflit </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Retourne un booléen qui indique si il y a au moins un conflit</dd></dl>
+<p>Vérifier les conflits entre les coordonnées en paramètre et les limites du plateau </p>
 
 </div>
 </div>
@@ -507,14 +536,41 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Interroge l'utilisateur sur un jeu de coordonnée</p>
+<p>Vérifier si les coordonnées en paramètres sont dans la liste des tirs qui n'ont pa touchés de bateau</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">coord</td><td>Coordonnées à vérifier</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Retourne vrai si pion blanc deja present dans la liste_pion_blanc </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Retourne vrai si pion blanc deja present dans la <a class="el" href="classJoueur.html#af391335ea617abd1b255ac5338a2d3d0" title="Liste de coordonnées des pions blanc (raté)">liste_pion_blanc</a> sinon Faux</dd></dl>
+<p>Vérifier si les coordonnées en paramètres sont dans la liste des tirs qui n'ont pa touchés de bateau </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="aafc943fcb057f7b923a39f9fb0ec66b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafc943fcb057f7b923a39f9fb0ec66b3">&#9670;&nbsp;</a></span>liste_bateau</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;<a class="el" href="classBateau.html">Bateau</a>&gt; Joueur::liste_bateau</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liste contenant les bateaux du joueur. </p>
+<p>Pion blanc sont les tirs effectués par le joueur chez l'enemi qui n'ont pas touché un bateau </p>
 
 </div>
 </div>

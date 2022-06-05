@@ -1,0 +1,89 @@
+\hypertarget{classJoueurReel}{}\doxysection{Joueur\+Reel Class Reference}
+\label{classJoueurReel}\index{JoueurReel@{JoueurReel}}
+
+
+{\ttfamily \#include $<$Joueur\+Reel.\+hpp$>$}
+
+Inheritance diagram for Joueur\+Reel\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classJoueurReel}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classJoueurReel_a475655b3eaff21a6d0535da839e7d0be}{Joueur\+Reel}} (string name)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe \mbox{\hyperlink{classJoueur}{Joueur}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classJoueurReel_a12b6a9bdb9f28ac57bae18d6967f7747}{Joueur\+Reel}} ()
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe \mbox{\hyperlink{classJoueur}{Joueur}} qui génère automatiquement les bateaux. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classCoordonnee}{Coordonnee}} \mbox{\hyperlink{classJoueurReel_a6d69db64edd56b18ee9a312d2c6469e8}{Renseigner\+Coordonnee}} ()
+\item 
+void \mbox{\hyperlink{classJoueurReel_acc0e71157fd2630d94e0585f7a05b669}{Afficher\+Joueur}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Déclaration de la classe \mbox{\hyperlink{classJoueur}{Joueur}} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classJoueurReel_a475655b3eaff21a6d0535da839e7d0be}\label{classJoueurReel_a475655b3eaff21a6d0535da839e7d0be}} 
+\index{JoueurReel@{JoueurReel}!JoueurReel@{JoueurReel}}
+\index{JoueurReel@{JoueurReel}!JoueurReel@{JoueurReel}}
+\doxysubsubsection{\texorpdfstring{JoueurReel()}{JoueurReel()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Joueur\+Reel\+::\+Joueur\+Reel (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+
+Constructeur de la classe \mbox{\hyperlink{classJoueur}{Joueur}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Nom que prendra le joueur durant la partie \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classJoueurReel_a12b6a9bdb9f28ac57bae18d6967f7747}\label{classJoueurReel_a12b6a9bdb9f28ac57bae18d6967f7747}} 
+\index{JoueurReel@{JoueurReel}!JoueurReel@{JoueurReel}}
+\index{JoueurReel@{JoueurReel}!JoueurReel@{JoueurReel}}
+\doxysubsubsection{\texorpdfstring{JoueurReel()}{JoueurReel()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Joueur\+Reel\+::\+Joueur\+Reel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructeur de la classe \mbox{\hyperlink{classJoueur}{Joueur}} qui génère automatiquement les bateaux. 
+
+Définition du construsteur de la classe \mbox{\hyperlink{classJoueur}{Joueur}} avec création des bateau auto 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classJoueurReel_acc0e71157fd2630d94e0585f7a05b669}\label{classJoueurReel_acc0e71157fd2630d94e0585f7a05b669}} 
+\index{JoueurReel@{JoueurReel}!AfficherJoueur@{AfficherJoueur}}
+\index{AfficherJoueur@{AfficherJoueur}!JoueurReel@{JoueurReel}}
+\doxysubsubsection{\texorpdfstring{AfficherJoueur()}{AfficherJoueur()}}
+{\footnotesize\ttfamily void Joueur\+Reel\+::\+Afficher\+Joueur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{classAfficher}{Afficher}} la table du jeu à l\textquotesingle{}utilisateur avec les bateaux du \mbox{\hyperlink{classJoueur}{Joueur}} \mbox{\Hypertarget{classJoueurReel_a6d69db64edd56b18ee9a312d2c6469e8}\label{classJoueurReel_a6d69db64edd56b18ee9a312d2c6469e8}} 
+\index{JoueurReel@{JoueurReel}!RenseignerCoordonnee@{RenseignerCoordonnee}}
+\index{RenseignerCoordonnee@{RenseignerCoordonnee}!JoueurReel@{JoueurReel}}
+\doxysubsubsection{\texorpdfstring{RenseignerCoordonnee()}{RenseignerCoordonnee()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCoordonnee}{Coordonnee}} Joueur\+Reel\+::\+Renseigner\+Coordonnee (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Interroge l\textquotesingle{}utilisateur sur un jeu de coordonnée
+
+les coordonnées renseignées sont vérifier par la méthode
+
+\begin{DoxyReturn}{Returns}
+Retourne les coordonnées rentrées par l\textquotesingle{}utilisateur
+\end{DoxyReturn}
+Définition de la Definir\+Liste\+Coord Recupération de l\textquotesingle{}abscisse Boucles jusqu\textquotesingle{}à avoir une valeur autorisée
+
+Recupération de l\textquotesingle{}ordonnee Boucles jusqu\textquotesingle{}à avoir une valeur autorisée
+
+Implements \mbox{\hyperlink{classJoueur_a35e450dd0d1d0fabc6e7843ead0b806d}{Joueur}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{JoueurReel_8hpp}{Joueur\+Reel.\+hpp}}\item 
+Joueur\+Reel.\+cpp\end{DoxyCompactItemize}

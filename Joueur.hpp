@@ -63,9 +63,9 @@ class Joueur {
   
       /**
       *  Définir la liste des coordonnées à partir du point arrière du bateau, de la taille et de son orientation
-      *  \param taille      Taille du bateau
-      *  \param point_coord Point de coordonnée de l'arrière du bateau
-      *  \param orientation orientation du bateau
+      *  \param nom         Nom du bateau
+      *  \param coord Point de coordonnée de l'arrière du bateau
+      *  \param orientation Orientation du bateau
       *
       *  \return Retourne la liste des coordonnées qu'occupe le bateau
       */
@@ -109,7 +109,7 @@ class Joueur {
       /**
       *  Interroge l'utilisateur sur un jeu de coordonnée
       *
-      *  \detail C'est une méthode virtuelle à redéfinir dans les sous-classe
+      *  \details C'est une méthode virtuelle à redéfinir dans les sous-classe
       *  Les entrées de l'utilisateurs seront vérifiées
       *
       *  \return Retourne les coordonnées rentrées par l'utilisateur
@@ -165,9 +165,12 @@ class Joueur {
       /**
       *  Vérifier que le bateau n'est pas adjacent à un autre bateau
       *  
-      * \return Retourne Vrai si il est adjacent, sinon Faux
+      *  \param coord Coordonnée à vérifier
+      *  \param orientation Orientation du bateau
+
+      *  \return Retourne Vrai si il est adjacent, sinon Faux
       */  
-      bool VerifAdjacentBateau(std::vector<Coordonnee> coord);
+      bool VerifAdjacentBateauConflit(std::vector<Coordonnee> coord, bool orientation);
 
 
       /**

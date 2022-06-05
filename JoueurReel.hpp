@@ -46,7 +46,7 @@ class JoueurReel : public Joueur{
     /**
     *  Interroge l'utilisateur sur un jeu de coordonnée
     *
-    *  \detail les coordonnées renseignées sont vérifier par la méthode
+    *  \details les coordonnées renseignées sont vérifier par la méthode
     *
     *  \return Retourne les coordonnées rentrées par l'utilisateur
     */
