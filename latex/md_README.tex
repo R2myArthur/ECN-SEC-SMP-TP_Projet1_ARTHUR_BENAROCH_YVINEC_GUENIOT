@@ -7,14 +7,28 @@
 \item G\+U\+E\+N\+I\+OT Corentin
 \item Y\+V\+I\+N\+EC Dorine
 \end{DoxyItemize}\hypertarget{md_README_autotoc_md3}{}\doxysubsection{Compiler et Executer le code}\label{md_README_autotoc_md3}
-Utiliser le bouton \textquotesingle{}{\bfseries{Run}}\textquotesingle{}\hypertarget{md_README_autotoc_md4}{}\doxysubsection{Executer les Tests Unitaires}\label{md_README_autotoc_md4}
-Executer la ligne de commande suivante \+: \begin{quote}
-{\ttfamily make mytest} \end{quote}
+Utiliser le bouton \textquotesingle{}{\bfseries{Run}}\textquotesingle{} OU 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make main}
+\DoxyCodeLine{./main}
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md4}{}\doxysubsection{Executer les Tests Unitaires}\label{md_README_autotoc_md4}
+Executer les lignes de commande suivante \+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make Bateau\_Gtest.out}
+\DoxyCodeLine{./Bateau\_Gtest.out}
+\end{DoxyCode}
+
+
+ou 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make Coordonnee\_Gtest.out}
+\DoxyCodeLine{./Coordonnee\_Gtest.out}
+\end{DoxyCode}
 \hypertarget{md_README_autotoc_md5}{}\doxysubsection{Générer la documentation Doxygen}\label{md_README_autotoc_md5}
 Le fichier de config utilisé est {\ttfamily config\+\_\+doxy}. Pour générer la documenation Doxygen, executer la ligne de commande suivante dans la console \+: \begin{quote}
 {\ttfamily doxygen config\+\_\+doxy} \end{quote}
 
 
-Dans le dossier html \+: lancer le fichier {\ttfamily index.\+html}\hypertarget{md_README_autotoc_md6}{}\doxysubsection{Makefile pour test}\label{md_README_autotoc_md6}
-\begin{quote}
-Pour executer les tests remplacer le fichier {\ttfamily Makefile} par le fichier {\ttfamily Makefile\+\_\+\+Pour\+\_\+\+Test} \end{quote}
+Pour afficher le résultat aller dans le dossier {\ttfamily html} \+: \begin{quote}
+lancer le fichier {\ttfamily index.\+html} \end{quote}

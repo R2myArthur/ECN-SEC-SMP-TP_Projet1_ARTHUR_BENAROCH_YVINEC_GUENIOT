@@ -277,7 +277,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Retourner une coordonnée à attaquer en fonction de la difficulté de l'IA. Fonctionnement est détaillé dans la méthode</p>
+<p>Mettre à jour les coordonnées à attaquer en fonction de la difficulté de l'IA. Fonctionnement est détaillé dans la méthode</p>
 <p>La fonction met à jour le paramètre coord</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -289,8 +289,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Stratégie en fonction de la difficulté</p>
 <p>IA SIMPLE : Tirage aléatoire sur toute la partie</p>
 <p>IA MOYENNE : 1 - Tire aléatoire jusqu'à toucher un bateau 2 - Tirer sur les case adjacentes dans les prochains tours (x+1, x-1, y+1, y-1) Vérifier que les cases soient dans le plateau et pas encore jouée ne coule pas forcément le bateau</p>
-<p>SI table a tirer est vide ALORS Tirage aléatoire</p>
-<p>SINON tirer les coordonnées du tableau <a class="el" href="classJoueurIA.html#ad710c30b7ca85e903df03b07211f30cb" title="Liste des coordonnées à tirer dans les tours suivants.">coordonnees_a_tirer</a></p>
+<p>SI table a tirer est vide ALORS Tirage aléatoire SINON tirer les coordonnées du tableau <a class="el" href="classJoueurIA.html#ad710c30b7ca85e903df03b07211f30cb" title="Liste des coordonnées à tirer dans les tours suivants.">coordonnees_a_tirer</a></p>
 <p>La liste peut contenir des éléments si un l'IA a touché un bateau au tour précédent</p>
 <p>récupérer la valeur à tirer en commencant par la dernière rentrée</p>
 <p>Supprimer le dernier élément du tableau</p>

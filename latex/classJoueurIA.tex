@@ -104,7 +104,7 @@ Si case non déja jouée par le joueur ET dans le plateau, Ce sera une case à a
 \doxysubsubsection{\texorpdfstring{GestionCoordonneeAttaque()}{GestionCoordonneeAttaque()}}
 {\footnotesize\ttfamily void Joueur\+I\+A\+::\+Gestion\+Coordonnee\+Attaque (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classJoueurReel}{Joueur\+Reel}} \&}]{adversaire,  }\item[{\mbox{\hyperlink{classCoordonnee}{Coordonnee}} \&}]{coord }\end{DoxyParamCaption})}
 
-Retourner une coordonnée à attaquer en fonction de la difficulté de l\textquotesingle{}IA. Fonctionnement est détaillé dans la méthode
+Mettre à jour les coordonnées à attaquer en fonction de la difficulté de l\textquotesingle{}IA. Fonctionnement est détaillé dans la méthode
 
 La fonction met à jour le paramètre coord
 
@@ -121,9 +121,7 @@ IA S\+I\+M\+P\+LE \+: Tirage aléatoire sur toute la partie
 
 IA M\+O\+Y\+E\+N\+NE \+: 1 -\/ Tire aléatoire jusqu\textquotesingle{}à toucher un bateau 2 -\/ Tirer sur les case adjacentes dans les prochains tours (x+1, x-\/1, y+1, y-\/1) Vérifier que les cases soient dans le plateau et pas encore jouée ne coule pas forcément le bateau
 
-SI table a tirer est vide A\+L\+O\+RS Tirage aléatoire
-
-S\+I\+N\+ON tirer les coordonnées du tableau \mbox{\hyperlink{classJoueurIA_ad710c30b7ca85e903df03b07211f30cb}{coordonnees\+\_\+a\+\_\+tirer}}
+SI table a tirer est vide A\+L\+O\+RS Tirage aléatoire S\+I\+N\+ON tirer les coordonnées du tableau \mbox{\hyperlink{classJoueurIA_ad710c30b7ca85e903df03b07211f30cb}{coordonnees\+\_\+a\+\_\+tirer}}
 
 La liste peut contenir des éléments si un l\textquotesingle{}IA a touché un bateau au tour précédent
 
