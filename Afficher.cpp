@@ -278,9 +278,7 @@ void Afficher::InitialisationJoueurVsIA(JoueurReel &j1, JoueurIA &jIA) {
 */
 void Afficher::DeroulementJoueurIA(JoueurIA &joueur_qui_joue, JoueurReel &adversaire){
   srand(time(0));
-  bool condition_rebouclage = false;
   Coordonnee coord;
-  Coordonnee coord_future;
 
   /** Effacer la console */
   this->ClearScrollback();

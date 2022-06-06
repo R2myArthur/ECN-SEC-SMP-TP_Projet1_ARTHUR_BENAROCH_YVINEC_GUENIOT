@@ -10,18 +10,27 @@
 
 ### Compiler et Executer le code
 Utiliser le bouton '**Run**'
+OU
+```
+make main
+./main
+```
 
 ### Executer les Tests Unitaires
-Executer la ligne de commande suivante :
-> `make`
-> ./gtest
-
+Executer les lignes de commande suivante :
+```
+make Bateau_Gtest.out
+./Bateau_Gtest.out
+```
+ou
+```
+make Coordonnee_Gtest.out
+./Coordonnee_Gtest.out
+```
 
 ### Générer la documentation Doxygen
 Le fichier de config utilisé est `config_doxy`. Pour générer la documenation Doxygen, executer la ligne de commande suivante dans la console :
 > `doxygen config_doxy`
 
-Dans le dossier html : lancer le fichier `index.html`
-
-### Makefile pour test
-> Pour executer les tests remplacer le fichier `Makefile` par le fichier `Makefile_Pour_Test`
+Pour afficher le résultat aller dans le dossier `html` :
+> lancer le fichier `index.html`

@@ -135,11 +135,7 @@ void JoueurIA::GestionCoordonneeAttaque(JoueurReel &adversaire, Coordonnee &coor
     * 2 - Tirer sur les case adjacentes dans les prochains tours (x+1, x-1, y+1, y-1) Vérifier que les cases soient dans le plateau et pas encore jouée ne coule pas forcément le bateau
     */
     case MOYEN: {
-      /** SI table a tirer est vide ALORS Tirage aléatoire */
-      /** SINON tirer les coordonnées du tableau #coordonnees_a_tirer
-      */
-      for(auto &it : this->coordonnees_a_tirer){
-      }
+      /** SI table a tirer est vide ALORS Tirage aléatoire SINON tirer les coordonnées du tableau #coordonnees_a_tirer */
       /** La liste peut contenir des éléments si un l'IA a touché un bateau au tour précédent */
       if ( this->coordonnees_a_tirer.empty() == true ){
         do {

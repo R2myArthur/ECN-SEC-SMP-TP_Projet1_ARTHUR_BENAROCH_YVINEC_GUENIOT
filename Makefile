@@ -15,7 +15,7 @@ Coordonnee_Gtest.out: Coordonnee_Gtest.o Coordonnee.o
 Bateau_Gtest.out: Bateau_Gtest.o Bateau.o  Coordonnee.o
 	g++ $(CPP_FLAGS) -o Bateau_Gtest.out Bateau_Gtest.o Bateau.o Coordonnee.o -lpthread $(GTEST_LIB)/libgtest.a $(GTEST_LIB)/libgtest_main.a
 
-main: Joueur.o JoueurIA.o JoueurReel.o Bateau.o Coordonnee.o main.o Afficher.o
+main: clean Joueur.o JoueurIA.o JoueurReel.o Bateau.o Coordonnee.o Afficher.o main.o
 	g++ -o main Joueur.o JoueurIA.o JoueurReel.o Bateau.o Coordonnee.o main.o Afficher.o
 
 main.o: main.cpp
