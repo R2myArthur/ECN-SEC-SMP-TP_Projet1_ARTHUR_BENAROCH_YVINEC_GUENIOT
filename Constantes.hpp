@@ -16,7 +16,7 @@
 using namespace std;
 
 /**
- * <ul> TYPE DEF
+ * <li> TYPE DEF
  */
 
 /**
@@ -61,7 +61,7 @@ typedef enum {
 } e_level_IA_t;
 
 /**
- * <ul>CONSTANTES
+ * <li>CONSTANTES
  */
 
 /**
